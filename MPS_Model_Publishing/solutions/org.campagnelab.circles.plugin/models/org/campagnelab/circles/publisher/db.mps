@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:91ebe4da-074d-4399-9772-58218cd6828d(org.campagnelab.circles.publisher.db)">
+<model ref="r:839ef8fb-1aee-4153-a27a-e44c8cb9d82a(org.campagnelab.circles.publisher.db)">
   <persistence version="9" />
   <languages>
     <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
@@ -30,6 +30,14 @@
     <node concept="2tJIrI" id="5Ci2biiL$z6" role="jymVt" />
     <node concept="2tJIrI" id="5Ci2biiL$z8" role="jymVt" />
     <node concept="3Tm1VV" id="5Ci2biiL$yN" role="1B3o_S" />
+  </node>
+  <node concept="312cEu" id="3v5cxLOW0Yc">
+    <property role="TrG5h" value="MongoDbAccess" />
+    <node concept="2tJIrI" id="3v5cxLOW3eQ" role="jymVt" />
+    <node concept="2tJIrI" id="3v5cxLOW3eS" role="jymVt" />
+    <node concept="2tJIrI" id="3v5cxLOW3eV" role="jymVt" />
+    <node concept="2tJIrI" id="3v5cxLOW3eZ" role="jymVt" />
+    <node concept="3Tm1VV" id="3v5cxLOW0Yd" role="1B3o_S" />
   </node>
 </model>
 
