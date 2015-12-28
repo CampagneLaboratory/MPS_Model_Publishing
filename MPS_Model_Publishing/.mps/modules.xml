@@ -5,6 +5,7 @@
       <modulePath path="$PROJECT_DIR$/languages/org.campagnelab.circles.publishing/org.campagnelab.circles.publishing.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/com.mongodb.driver/com.mongodb.driver.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/org.campagnelab.circles.plugin/org.campagnelab.circles.plugin.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/org.campagnelab.circles.publisher/org.campagnelab.circles.publisher.msd" folder="" />
     </projectModules>
   </component>
 </project>
