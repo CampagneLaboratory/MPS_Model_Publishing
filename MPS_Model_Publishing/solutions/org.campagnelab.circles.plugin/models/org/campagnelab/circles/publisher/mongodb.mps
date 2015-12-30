@@ -33,6 +33,10 @@
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
+      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA">
+        <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
+        <property id="6468716278899125786" name="isTransient" index="2dld4O" />
+      </concept>
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -41,6 +45,10 @@
         <child id="1081256993305" name="classType" index="2ZW6by" />
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
       </concept>
+      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
+        <reference id="1144433057691" name="classifier" index="1PxDUh" />
+      </concept>
+      <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
         <property id="8606350594693632173" name="isTransient" index="eg7rD" />
@@ -84,6 +92,9 @@
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT" />
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
+      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
+        <property id="1068580320021" name="value" index="3cmrfH" />
+      </concept>
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
@@ -146,11 +157,6 @@
       <node concept="3uibUv" id="43Z2Okkke97" role="1tU5fm">
         <ref role="3uigEE" to="wvt1:~MongoClient" resolve="MongoClient" />
       </node>
-      <node concept="2ShNRf" id="43Z2Okkkecf" role="33vP2m">
-        <node concept="1pGfFk" id="43Z2Okkkeo4" role="2ShVmc">
-          <ref role="37wK5l" to="wvt1:~MongoClient.&lt;init&gt;()" resolve="MongoClient" />
-        </node>
-      </node>
     </node>
     <node concept="312cEg" id="43Z2Okkkevn" role="jymVt">
       <property role="34CwA1" value="false" />
@@ -162,10 +168,34 @@
         <ref role="3uigEE" to="skwk:~MongoDatabase" resolve="MongoDatabase" />
       </node>
     </node>
+    <node concept="2tJIrI" id="7MNizV3obIG" role="jymVt" />
     <node concept="3clFbW" id="43Z2OkkkdGq" role="jymVt">
       <node concept="3cqZAl" id="43Z2OkkkdGs" role="3clF45" />
       <node concept="3Tm1VV" id="43Z2OkkkdGt" role="1B3o_S" />
       <node concept="3clFbS" id="43Z2OkkkdGu" role="3clF47">
+        <node concept="3clFbF" id="7MNizV3oaSf" role="3cqZAp">
+          <node concept="37vLTI" id="7MNizV3oaYk" role="3clFbG">
+            <node concept="2ShNRf" id="7MNizV3oaZL" role="37vLTx">
+              <node concept="1pGfFk" id="7MNizV3obct" role="2ShVmc">
+                <ref role="37wK5l" to="wvt1:~MongoClient.&lt;init&gt;(java.lang.String,int)" resolve="MongoClient" />
+                <node concept="10M0yZ" id="7MNizV3obet" role="37wK5m">
+                  <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
+                  <ref role="3cqZAo" node="7MNizV3oaoI" resolve="hostname" />
+                </node>
+                <node concept="10M0yZ" id="7MNizV3obiJ" role="37wK5m">
+                  <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
+                  <ref role="3cqZAo" node="7MNizV3oapu" resolve="port" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="7MNizV3oaTl" role="37vLTJ">
+              <node concept="Xjq3P" id="7MNizV3oaSd" role="2Oq$k0" />
+              <node concept="2OwXpG" id="7MNizV3oaUT" role="2OqNvi">
+                <ref role="2Oxat5" node="43Z2Okkke9e" resolve="client" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="43Z2Okkke_m" role="3cqZAp">
           <node concept="37vLTI" id="43Z2OkkkeCT" role="3clFbG">
             <node concept="2OqwBi" id="43Z2OkkkeFe" role="37vLTx">
@@ -194,38 +224,78 @@
       </node>
     </node>
     <node concept="2tJIrI" id="43Z2Okkkey6" role="jymVt" />
+    <node concept="3clFb_" id="7MNizV3obQM" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getDatabase" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="7MNizV3obQP" role="3clF47">
+        <node concept="3clFbF" id="7MNizV3obWM" role="3cqZAp">
+          <node concept="2OqwBi" id="7MNizV3obY1" role="3clFbG">
+            <node concept="37vLTw" id="7MNizV3obWL" role="2Oq$k0">
+              <ref role="3cqZAo" node="43Z2Okkke9e" resolve="client" />
+            </node>
+            <node concept="liA8E" id="7MNizV3oc3G" role="2OqNvi">
+              <ref role="37wK5l" to="wvt1:~MongoClient.getDatabase(java.lang.String):com.mongodb.client.MongoDatabase" resolve="getDatabase" />
+              <node concept="37vLTw" id="7MNizV3oc5j" role="37wK5m">
+                <ref role="3cqZAo" node="7MNizV3obTD" resolve="databaseName" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="7MNizV3obNN" role="1B3o_S" />
+      <node concept="3uibUv" id="7MNizV3obQD" role="3clF45">
+        <ref role="3uigEE" to="skwk:~MongoDatabase" resolve="MongoDatabase" />
+      </node>
+      <node concept="37vLTG" id="7MNizV3obTD" role="3clF46">
+        <property role="TrG5h" value="databaseName" />
+        <node concept="17QB3L" id="7MNizV3obTC" role="1tU5fm" />
+      </node>
+    </node>
     <node concept="3Tm1VV" id="3v5cxLOW0Yd" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="43Z2Okkk0Wq">
     <property role="TrG5h" value="Configuration" />
     <node concept="2tJIrI" id="43Z2Okkk0WC" role="jymVt" />
-    <node concept="312cEg" id="43Z2Okkk0WM" role="jymVt">
-      <property role="34CwA1" value="false" />
-      <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="url" />
+    <node concept="Wx3nA" id="7MNizV3oaoI" role="jymVt">
+      <property role="TrG5h" value="hostname" />
+      <property role="2dlcS1" value="false" />
       <property role="3TUv4t" value="true" />
-      <node concept="17QB3L" id="43Z2Okkk0WK" role="1tU5fm" />
-      <node concept="Xl_RD" id="43Z2Okkk0Xo" role="33vP2m">
-        <property role="Xl_RC" value="http://localhost:27017/" />
+      <property role="2dld4O" value="false" />
+      <node concept="17QB3L" id="7MNizV3oaoK" role="1tU5fm" />
+      <node concept="Xl_RD" id="7MNizV3oaoL" role="33vP2m">
+        <property role="Xl_RC" value="localhost" />
       </node>
     </node>
-    <node concept="312cEg" id="43Z2Okkk0ZN" role="jymVt">
-      <property role="34CwA1" value="false" />
-      <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="username" />
+    <node concept="Wx3nA" id="7MNizV3oapu" role="jymVt">
+      <property role="TrG5h" value="port" />
+      <property role="2dlcS1" value="false" />
       <property role="3TUv4t" value="true" />
-      <node concept="17QB3L" id="43Z2Okkk0ZO" role="1tU5fm" />
-      <node concept="Xl_RD" id="43Z2Okkk0ZP" role="33vP2m">
+      <property role="2dld4O" value="false" />
+      <node concept="10Oyi0" id="7MNizV3oapw" role="1tU5fm" />
+      <node concept="3cmrfG" id="7MNizV3oapx" role="33vP2m">
+        <property role="3cmrfH" value="27017" />
+      </node>
+    </node>
+    <node concept="Wx3nA" id="7MNizV3oaqe" role="jymVt">
+      <property role="TrG5h" value="username" />
+      <property role="2dlcS1" value="false" />
+      <property role="3TUv4t" value="true" />
+      <property role="2dld4O" value="false" />
+      <node concept="17QB3L" id="7MNizV3oaqg" role="1tU5fm" />
+      <node concept="Xl_RD" id="7MNizV3oaqh" role="33vP2m">
         <property role="Xl_RC" value="admin" />
       </node>
     </node>
-    <node concept="312cEg" id="43Z2Okkk10r" role="jymVt">
-      <property role="34CwA1" value="false" />
-      <property role="eg7rD" value="false" />
+    <node concept="Wx3nA" id="7MNizV3oaqY" role="jymVt">
       <property role="TrG5h" value="pwd" />
+      <property role="2dlcS1" value="false" />
       <property role="3TUv4t" value="true" />
-      <node concept="17QB3L" id="43Z2Okkk10s" role="1tU5fm" />
-      <node concept="Xl_RD" id="43Z2Okkk10t" role="33vP2m" />
+      <property role="2dld4O" value="false" />
+      <node concept="17QB3L" id="7MNizV3oar0" role="1tU5fm" />
+      <node concept="Xl_RD" id="7MNizV3oar1" role="33vP2m" />
     </node>
     <node concept="2tJIrI" id="43Z2Okkk10b" role="jymVt" />
     <node concept="2tJIrI" id="43Z2Okkk0ZH" role="jymVt" />
