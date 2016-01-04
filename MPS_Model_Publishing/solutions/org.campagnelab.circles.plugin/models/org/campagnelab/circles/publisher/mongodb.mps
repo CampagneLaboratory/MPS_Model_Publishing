@@ -297,42 +297,46 @@
     <node concept="Wx3nA" id="5Ci2biiMbe1" role="jymVt">
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
-      <property role="TrG5h" value="projectCollection" />
+      <property role="TrG5h" value="projectsCollection" />
       <property role="3TUv4t" value="true" />
       <node concept="17QB3L" id="5Ci2biiMbe2" role="1tU5fm" />
       <node concept="Xl_RD" id="5Ci2biiMbe3" role="33vP2m">
         <property role="Xl_RC" value="projects" />
       </node>
+      <node concept="3Tm1VV" id="3jMt7I9fb5y" role="1B3o_S" />
     </node>
     <node concept="Wx3nA" id="5Ci2biiMbeA" role="jymVt">
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
-      <property role="TrG5h" value="moduleCollection" />
+      <property role="TrG5h" value="modulesCollection" />
       <property role="3TUv4t" value="true" />
       <node concept="17QB3L" id="5Ci2biiMbeB" role="1tU5fm" />
       <node concept="Xl_RD" id="5Ci2biiMbeC" role="33vP2m">
         <property role="Xl_RC" value="modules" />
       </node>
+      <node concept="3Tm1VV" id="3jMt7I9fb5H" role="1B3o_S" />
     </node>
     <node concept="Wx3nA" id="5Ci2biiMbf8" role="jymVt">
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
-      <property role="TrG5h" value="modelCollection" />
+      <property role="TrG5h" value="modelsCollection" />
       <property role="3TUv4t" value="true" />
       <node concept="17QB3L" id="5Ci2biiMbf9" role="1tU5fm" />
       <node concept="Xl_RD" id="5Ci2biiMbfa" role="33vP2m">
         <property role="Xl_RC" value="models" />
       </node>
+      <node concept="3Tm1VV" id="3jMt7I9fb5S" role="1B3o_S" />
     </node>
     <node concept="Wx3nA" id="5Ci2biiMbfH" role="jymVt">
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
-      <property role="TrG5h" value="nodeCollection" />
+      <property role="TrG5h" value="nodesCollection" />
       <property role="3TUv4t" value="true" />
       <node concept="17QB3L" id="5Ci2biiMbfI" role="1tU5fm" />
       <node concept="Xl_RD" id="5Ci2biiMbfJ" role="33vP2m">
         <property role="Xl_RC" value="root_nodes" />
       </node>
+      <node concept="3Tm1VV" id="3jMt7I9fb63" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="43Z2Okkk10b" role="jymVt" />
     <node concept="2tJIrI" id="43Z2Okkk0ZH" role="jymVt" />
@@ -667,7 +671,7 @@
                 <ref role="3cqZAo" node="5Ci2biiMbCy" resolve="database" />
               </node>
               <node concept="10M0yZ" id="5Ci2biiMds5" role="37wK5m">
-                <ref role="3cqZAo" node="5Ci2biiMbe1" resolve="projectCollection" />
+                <ref role="3cqZAo" node="5Ci2biiMbe1" resolve="projectsCollection" />
                 <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
               </node>
             </node>
@@ -682,7 +686,7 @@
               </node>
               <node concept="10M0yZ" id="5Ci2biiMdqe" role="37wK5m">
                 <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
-                <ref role="3cqZAo" node="5Ci2biiMbeA" resolve="moduleCollection" />
+                <ref role="3cqZAo" node="5Ci2biiMbeA" resolve="modulesCollection" />
               </node>
             </node>
           </node>
@@ -696,7 +700,7 @@
               </node>
               <node concept="10M0yZ" id="5Ci2biiMdwf" role="37wK5m">
                 <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
-                <ref role="3cqZAo" node="5Ci2biiMbf8" resolve="modelCollection" />
+                <ref role="3cqZAo" node="5Ci2biiMbf8" resolve="modelsCollection" />
               </node>
             </node>
           </node>
@@ -710,7 +714,7 @@
               </node>
               <node concept="10M0yZ" id="5Ci2biiMdyF" role="37wK5m">
                 <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
-                <ref role="3cqZAo" node="5Ci2biiMbfH" resolve="nodeCollection" />
+                <ref role="3cqZAo" node="5Ci2biiMbfH" resolve="nodesCollection" />
               </node>
             </node>
           </node>
@@ -1071,7 +1075,7 @@
     </node>
     <node concept="2tJIrI" id="5Ci2biiM8ag" role="jymVt" />
     <node concept="3clFb_" id="5Ci2biiM43o" role="jymVt">
-      <property role="TrG5h" value="addModuleId" />
+      <property role="TrG5h" value="addModule" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="37vLTG" id="5Ci2biiM43p" role="3clF46">
@@ -1301,7 +1305,7 @@
     <node concept="312cEg" id="5Ci2biiMafN" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="svgRendering" />
+      <property role="TrG5h" value="svgFragment" />
       <property role="3TUv4t" value="false" />
       <node concept="17QB3L" id="5Ci2biiMas9" role="1tU5fm" />
       <node concept="3Tm6S6" id="5Ci2biiMafQ" role="1B3o_S" />
@@ -1345,13 +1349,13 @@
       <node concept="3Tm1VV" id="5Ci2biiMag7" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="5Ci2biiMag8" role="jymVt">
-      <property role="TrG5h" value="getSvgRendering" />
+      <property role="TrG5h" value="getSvgFragment" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="5Ci2biiMag9" role="3clF47">
         <node concept="3cpWs6" id="5Ci2biiMaga" role="3cqZAp">
           <node concept="37vLTw" id="5Ci2biiMagb" role="3cqZAk">
-            <ref role="3cqZAo" node="5Ci2biiMafN" resolve="svgRendering" />
+            <ref role="3cqZAo" node="5Ci2biiMafN" resolve="svgFragment" />
           </node>
         </node>
       </node>
@@ -1359,11 +1363,11 @@
       <node concept="17QB3L" id="5Ci2biiMa$2" role="3clF45" />
     </node>
     <node concept="3clFb_" id="5Ci2biiMage" role="jymVt">
-      <property role="TrG5h" value="setSvgRendering" />
+      <property role="TrG5h" value="setSvgFragment" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="37vLTG" id="5Ci2biiMagf" role="3clF46">
-        <property role="TrG5h" value="svgRendering" />
+        <property role="TrG5h" value="svgFragment" />
         <property role="3TUv4t" value="false" />
         <node concept="17QB3L" id="5Ci2biiMaB_" role="1tU5fm" />
       </node>
@@ -1373,11 +1377,11 @@
             <node concept="2OqwBi" id="5Ci2biiMagk" role="37vLTJ">
               <node concept="Xjq3P" id="5Ci2biiMagl" role="2Oq$k0" />
               <node concept="2OwXpG" id="5Ci2biiMagm" role="2OqNvi">
-                <ref role="2Oxat5" node="5Ci2biiMafN" resolve="svgRendering" />
+                <ref role="2Oxat5" node="5Ci2biiMafN" resolve="svgFragment" />
               </node>
             </node>
             <node concept="37vLTw" id="5Ci2biiMagn" role="37vLTx">
-              <ref role="3cqZAo" node="5Ci2biiMagf" resolve="svgRendering" />
+              <ref role="3cqZAo" node="5Ci2biiMagf" resolve="svgFragment" />
             </node>
           </node>
         </node>
@@ -1395,7 +1399,7 @@
                 <property role="Xl_RC" value="SVG" />
               </node>
               <node concept="37vLTw" id="5Ci2biiMagv" role="37wK5m">
-                <ref role="3cqZAo" node="5Ci2biiMagf" resolve="svgRendering" />
+                <ref role="3cqZAo" node="5Ci2biiMagf" resolve="svgFragment" />
               </node>
             </node>
           </node>
