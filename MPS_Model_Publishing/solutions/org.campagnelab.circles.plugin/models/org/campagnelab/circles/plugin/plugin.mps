@@ -59,9 +59,6 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
-      <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
-        <property id="1070475926801" name="value" index="Xl_RC" />
-      </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
@@ -85,12 +82,6 @@
         <reference id="1205756909548" name="member" index="2WH_rO" />
       </concept>
     </language>
-    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-      </concept>
-    </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -100,44 +91,10 @@
   <node concept="2DaZZR" id="RKPJ9dqIFX">
     <property role="3_H9TB" value="true" />
   </node>
-  <node concept="sE7Ow" id="RKPJ9dqOB2">
-    <property role="TrG5h" value="DefineDbSchema" />
-    <property role="2uzpH1" value="Define DB Schema" />
-    <node concept="tnohg" id="RKPJ9dqOB3" role="tncku">
-      <node concept="3clFbS" id="RKPJ9dqOB4" role="2VODD2">
-        <node concept="3clFbF" id="7MNizV3nRpq" role="3cqZAp">
-          <node concept="2YIFZM" id="7MNizV3nXl$" role="3clFbG">
-            <ref role="37wK5l" to="tt5a:7MNizV3nXfs" resolve="createDb" />
-            <ref role="1Pybhc" to="tt5a:5Ci2biiL$yM" resolve="ModuleSerializer" />
-            <node concept="2OqwBi" id="7MNizV3nXt5" role="37wK5m">
-              <node concept="2WthIp" id="7MNizV3nXrr" role="2Oq$k0" />
-              <node concept="1DTwFV" id="7MNizV3nX$V" role="2OqNvi">
-                <ref role="2WH_rO" node="RKPJ9dqOBM" resolve="project" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="34ab3g" id="4UvP5h6M9hc" role="3cqZAp">
-          <property role="35gtTG" value="info" />
-          <node concept="Xl_RD" id="4UvP5h6M9he" role="34bqiv">
-            <property role="Xl_RC" value="Done with define schema" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1DS2jV" id="RKPJ9dqOBM" role="1NuT2Z">
-      <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
-      <node concept="1oajcY" id="RKPJ9dqOBN" role="1oa70y" />
-    </node>
-  </node>
   <node concept="tC5Ba" id="RKPJ9dqXlt">
     <property role="TrG5h" value="AddCirclesActions" />
     <node concept="ftmFs" id="RKPJ9dqXoJ" role="ftER_">
       <node concept="2a7GMi" id="RKPJ9dr0sf" role="ftvYc" />
-      <node concept="tCFHf" id="RKPJ9dr0s9" role="ftvYc">
-        <ref role="tCJdB" node="RKPJ9dqOB2" resolve="DefineDbSchema" />
-      </node>
       <node concept="tCFHf" id="3Uieg3MsTbM" role="ftvYc">
         <ref role="tCJdB" node="3Uieg3Mrup8" resolve="DropDbSchema" />
       </node>
