@@ -96,7 +96,7 @@
     <node concept="ftmFs" id="RKPJ9dqXoJ" role="ftER_">
       <node concept="2a7GMi" id="RKPJ9dr0sf" role="ftvYc" />
       <node concept="tCFHf" id="3Uieg3MsTbM" role="ftvYc">
-        <ref role="tCJdB" node="3Uieg3Mrup8" resolve="DropDbSchema" />
+        <ref role="tCJdB" node="3Uieg3Mrup8" resolve="DropDatabase" />
       </node>
       <node concept="tCFHf" id="5eOdMaeZokq" role="ftvYc">
         <ref role="tCJdB" node="5eOdMaeZc8r" resolve="SerializeModulesToDB" />
@@ -107,8 +107,8 @@
     </node>
   </node>
   <node concept="sE7Ow" id="3Uieg3Mrup8">
-    <property role="TrG5h" value="DropDbSchema" />
-    <property role="2uzpH1" value="Drop DB Schema" />
+    <property role="TrG5h" value="DropDatabase" />
+    <property role="2uzpH1" value="Drop Database" />
     <node concept="tnohg" id="3Uieg3Mrup9" role="tncku">
       <node concept="3clFbS" id="3Uieg3Mrupa" role="2VODD2">
         <node concept="3clFbF" id="7MNizV3nRiZ" role="3cqZAp">

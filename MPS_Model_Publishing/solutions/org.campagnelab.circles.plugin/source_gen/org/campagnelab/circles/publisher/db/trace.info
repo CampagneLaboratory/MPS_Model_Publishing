@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root nodeRef="r:839ef8fb-1aee-4153-a27a-e44c8cb9d82a(org.campagnelab.circles.publisher.db)/4683474528810102630">
+    <file name="DbFactory.java">
+      <node id="8985607314960473208" at="9,49,10,38" concept="2" />
+      <node id="8985607314960479213" at="9,0,12,0" concept="3" trace="getGenerator#()Lorg/campagnelab/circles/publisher/db/SchemaManager;" />
+      <scope id="8985607314960473177" at="9,49,10,38" />
+      <scope id="8985607314960479213" at="9,0,12,0" />
+      <unit id="4683474528810102630" at="7,0,13,0" name="org.campagnelab.circles.publisher.db.DbFactory" />
+    </file>
+  </root>
+  <root nodeRef="r:839ef8fb-1aee-4153-a27a-e44c8cb9d82a(org.campagnelab.circles.publisher.db)/6490259584643909810">
+    <file name="ModuleSerializer.java">
+      <node id="8985607314960536746" at="11,93,12,22" concept="0" />
+      <node id="8985607314960512602" at="14,49,15,42" concept="0" />
+      <node id="8985607314960536542" at="17,51,18,44" concept="0" />
+      <node id="8985607314960470988" at="11,0,14,0" concept="3" trace="serializeProjectWithModules#(Ljetbrains/mps/project/MPSProject;Ljava/util/List;)V" />
+      <node id="8985607314960512529" at="14,0,17,0" concept="3" trace="dropDb#(Ljetbrains/mps/project/MPSProject;)V" />
+      <node id="8985607314960536540" at="17,0,20,0" concept="3" trace="createDb#(Ljetbrains/mps/project/MPSProject;)V" />
+      <scope id="8985607314960470991" at="11,93,12,22" />
+      <scope id="8985607314960512532" at="14,49,15,42" />
+      <scope id="8985607314960536541" at="17,51,18,44" />
+      <scope id="8985607314960470988" at="11,0,14,0">
+        <var name="modules" id="8985607314960471101" />
+        <var name="project" id="8985607314960471064" />
+      </scope>
+      <scope id="8985607314960512529" at="14,0,17,0">
+        <var name="project" id="8985607314960536996" />
+      </scope>
+      <scope id="8985607314960536540" at="17,0,20,0">
+        <var name="project" id="8985607314960537104" />
+      </scope>
+      <unit id="6490259584643909810" at="9,0,21,0" name="org.campagnelab.circles.publisher.db.ModuleSerializer" />
+    </file>
+  </root>
+  <root nodeRef="r:839ef8fb-1aee-4153-a27a-e44c8cb9d82a(org.campagnelab.circles.publisher.db)/9113217352497212278">
+    <file name="SchemaManager.java">
+      <node id="8985607314960479743" at="8,0,9,0" concept="1" trace="dropSchema#()V" />
+      <node id="8985607314960473239" at="10,0,11,0" concept="1" trace="createSchema#()V" />
+      <scope id="8985607314960479743" at="8,0,9,0" />
+      <scope id="8985607314960473239" at="10,0,11,0" />
+      <unit id="9113217352497212278" at="6,0,12,0" name="org.campagnelab.circles.publisher.db.SchemaManager" />
+    </file>
+  </root>
+</debug-info>
+
