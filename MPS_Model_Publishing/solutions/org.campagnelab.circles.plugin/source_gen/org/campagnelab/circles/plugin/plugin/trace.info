@@ -107,8 +107,8 @@
   <root nodeRef="r:d3b37b30-cdff-43c0-8fa0-a9526797ea6b(org.campagnelab.circles.plugin.plugin)/6031506422523281947">
     <file name="SerializeModulesToDB_Action.java">
       <node id="6031506422523281947" at="17,0,18,0" concept="9" trace="ICON" />
-      <node id="6031506422523281947" at="18,40,19,47" concept="10" />
-      <node id="6031506422523281947" at="19,47,20,35" concept="2" />
+      <node id="6031506422523281947" at="18,40,19,41" concept="10" />
+      <node id="6031506422523281947" at="19,41,20,35" concept="2" />
       <node id="6031506422523281947" at="20,35,21,41" concept="2" />
       <node id="6031506422523281947" at="24,32,25,16" concept="7" />
       <node id="8985607314960462749" at="28,87,29,16" concept="7" />

@@ -17,6 +17,7 @@ public abstract class BaseCirclesDocument {
 
   public BaseCirclesDocument() {
     this.document = new Document();
+    // default id 
     this.setId(UUID.randomUUID().toString());
   }
   public BaseCirclesDocument(String name) {

@@ -10,10 +10,10 @@ public class MongoDbSchemaManager extends SchemaManager {
 
   public void createSchema() {
     MongoDatabase database = MongoDbAccess.open();
-    new MongoDbCollection(database, Configuration.projectCollection);
-    new MongoDbCollection(database, Configuration.moduleCollection);
-    new MongoDbCollection(database, Configuration.modelCollection);
-    new MongoDbCollection(database, Configuration.nodeCollection);
+    new MongoDbCollection(database, Configuration.projectsCollection);
+    new MongoDbCollection(database, Configuration.modulesCollection);
+    new MongoDbCollection(database, Configuration.modelsCollection);
+    new MongoDbCollection(database, Configuration.nodesCollection);
   }
   public void dropSchema() {
     MongoDbAccess.drop(MongoDbAccess.open());

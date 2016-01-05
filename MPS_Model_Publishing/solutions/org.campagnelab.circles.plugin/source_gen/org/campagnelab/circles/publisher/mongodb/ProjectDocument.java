@@ -19,7 +19,7 @@ public class ProjectDocument extends BaseCirclesDocument {
     return Collections.unmodifiableList(modules);
   }
 
-  public void addModuleId(String moduleId) {
+  public void addModule(String moduleId) {
     this.modules.add(moduleId);
     this.document.append("moduleId", String.join(",", this.modules));
   }

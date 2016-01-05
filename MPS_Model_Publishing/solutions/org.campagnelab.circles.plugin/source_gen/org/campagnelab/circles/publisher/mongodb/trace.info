@@ -8,6 +8,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -17,8 +18,8 @@
       <node id="6490259584644004985" at="10,38,11,90" concept="6" />
       <node id="6490259584644004990" at="11,90,12,59" concept="7" />
       <node id="6490259584644004999" at="14,45,15,14" concept="1" />
-      <node id="6490259584644004995" at="14,0,17,0" concept="9" trace="drop#(Lcom/mongodb/client/MongoDatabase;)V" />
-      <node id="6490259584644004982" at="10,0,14,0" concept="9" trace="open#()Lcom/mongodb/client/MongoDatabase;" />
+      <node id="6490259584644004995" at="14,0,17,0" concept="10" trace="drop#(Lcom/mongodb/client/MongoDatabase;)V" />
+      <node id="6490259584644004982" at="10,0,14,0" concept="10" trace="open#()Lcom/mongodb/client/MongoDatabase;" />
       <scope id="6490259584644004998" at="14,45,15,14" />
       <scope id="6490259584644004983" at="10,38,12,59">
         <var name="mongoClient" id="6490259584644004984" />
@@ -32,15 +33,15 @@
   </root>
   <root nodeRef="r:39038425-9225-43fd-83ff-4f4e9f7a1f9b(org.campagnelab.circles.publisher.mongodb)/4683474528810045210">
     <file name="Configuration.java">
-      <node id="8985607314960590382" at="8,0,9,0" concept="8" trace="hostname" />
-      <node id="8985607314960590430" at="9,0,10,0" concept="8" trace="port" />
-      <node id="8985607314960590478" at="10,0,11,0" concept="8" trace="username" />
-      <node id="8985607314960590526" at="11,0,12,0" concept="8" trace="pwd" />
-      <node id="6490259584644006623" at="12,0,13,0" concept="8" trace="database" />
-      <node id="6490259584644068225" at="13,0,14,0" concept="8" trace="projectCollection" />
-      <node id="6490259584644068262" at="14,0,15,0" concept="8" trace="moduleCollection" />
-      <node id="6490259584644068296" at="15,0,16,0" concept="8" trace="modelCollection" />
-      <node id="6490259584644068333" at="16,0,17,0" concept="8" trace="nodeCollection" />
+      <node id="8985607314960590382" at="8,0,9,0" concept="9" trace="hostname" />
+      <node id="8985607314960590430" at="9,0,10,0" concept="9" trace="port" />
+      <node id="8985607314960590478" at="10,0,11,0" concept="9" trace="username" />
+      <node id="8985607314960590526" at="11,0,12,0" concept="9" trace="pwd" />
+      <node id="6490259584644006623" at="12,0,13,0" concept="9" trace="database" />
+      <node id="6490259584644068225" at="13,0,14,0" concept="9" trace="projectsCollection" />
+      <node id="6490259584644068262" at="14,0,15,0" concept="9" trace="modulesCollection" />
+      <node id="6490259584644068296" at="15,0,16,0" concept="9" trace="modelsCollection" />
+      <node id="6490259584644068333" at="16,0,17,0" concept="9" trace="nodesCollection" />
       <unit id="4683474528810045210" at="6,0,20,0" name="org.campagnelab.circles.publisher.mongodb.Configuration" />
     </file>
   </root>
@@ -101,60 +102,61 @@
       <node id="6490259584644030592" at="15,0,16,0" concept="2" trace="name" />
       <node id="6490259584644030596" at="16,0,17,0" concept="2" trace="format" />
       <node id="6490259584644030606" at="18,32,19,35" concept="1" />
-      <node id="6490259584644030612" at="19,35,20,45" concept="1" />
-      <node id="6490259584644030698" at="22,43,23,11" concept="11" />
-      <node id="6490259584644030625" at="23,11,24,23" concept="1" />
-      <node id="6490259584644030634" at="26,27,27,16" concept="7" />
-      <node id="6490259584644030642" at="29,37,30,21" concept="1" />
-      <node id="6490259584644030648" at="30,21,31,39" concept="1" />
-      <node id="6490259584644030660" at="33,25,34,14" concept="7" />
-      <node id="6490259584644030668" at="36,32,37,17" concept="1" />
-      <node id="6490259584644030674" at="37,17,38,36" concept="1" />
-      <node id="6490259584644030686" at="40,27,41,25" concept="7" />
-      <node id="6490259584644030632" at="26,0,29,0" concept="5" trace="getName#()Ljava/lang/String;" />
-      <node id="6490259584644030658" at="33,0,36,0" concept="5" trace="getId#()Ljava/lang/String;" />
-      <node id="6490259584644030684" at="40,0,43,0" concept="5" trace="toDoc#()Lorg/bson/Document;" />
-      <node id="6490259584644030603" at="18,0,22,0" concept="0" trace="BaseCirclesDocument#()V" />
-      <node id="6490259584644030620" at="22,0,26,0" concept="0" trace="BaseCirclesDocument#(Ljava/lang/String;)V" />
-      <node id="6490259584644030638" at="29,0,33,0" concept="5" trace="setName#(Ljava/lang/String;)V" />
-      <node id="6490259584644030664" at="36,0,40,0" concept="5" trace="setId#(Ljava/lang/String;)V" />
-      <scope id="6490259584644030633" at="26,27,27,16" />
-      <scope id="6490259584644030659" at="33,25,34,14" />
-      <scope id="6490259584644030685" at="40,27,41,25" />
-      <scope id="6490259584644030605" at="18,32,20,45" />
-      <scope id="6490259584644030624" at="22,43,24,23" />
-      <scope id="6490259584644030641" at="29,37,31,39" />
-      <scope id="6490259584644030667" at="36,32,38,36" />
-      <scope id="6490259584644030632" at="26,0,29,0" />
-      <scope id="6490259584644030658" at="33,0,36,0" />
-      <scope id="6490259584644030684" at="40,0,43,0" />
-      <scope id="6490259584644030603" at="18,0,22,0" />
-      <scope id="6490259584644030620" at="22,0,26,0">
+      <node id="7925247488702532365" at="19,35,20,18" concept="8" />
+      <node id="6490259584644030612" at="20,18,21,45" concept="1" />
+      <node id="6490259584644030698" at="23,43,24,11" concept="12" />
+      <node id="6490259584644030625" at="24,11,25,23" concept="1" />
+      <node id="6490259584644030634" at="27,27,28,16" concept="7" />
+      <node id="6490259584644030642" at="30,37,31,21" concept="1" />
+      <node id="6490259584644030648" at="31,21,32,39" concept="1" />
+      <node id="6490259584644030660" at="34,25,35,14" concept="7" />
+      <node id="6490259584644030668" at="37,32,38,17" concept="1" />
+      <node id="6490259584644030674" at="38,17,39,36" concept="1" />
+      <node id="6490259584644030686" at="41,27,42,25" concept="7" />
+      <node id="6490259584644030632" at="27,0,30,0" concept="5" trace="getName#()Ljava/lang/String;" />
+      <node id="6490259584644030658" at="34,0,37,0" concept="5" trace="getId#()Ljava/lang/String;" />
+      <node id="6490259584644030684" at="41,0,44,0" concept="5" trace="toDoc#()Lorg/bson/Document;" />
+      <node id="6490259584644030620" at="23,0,27,0" concept="0" trace="BaseCirclesDocument#(Ljava/lang/String;)V" />
+      <node id="6490259584644030638" at="30,0,34,0" concept="5" trace="setName#(Ljava/lang/String;)V" />
+      <node id="6490259584644030664" at="37,0,41,0" concept="5" trace="setId#(Ljava/lang/String;)V" />
+      <node id="6490259584644030603" at="18,0,23,0" concept="0" trace="BaseCirclesDocument#()V" />
+      <scope id="6490259584644030633" at="27,27,28,16" />
+      <scope id="6490259584644030659" at="34,25,35,14" />
+      <scope id="6490259584644030685" at="41,27,42,25" />
+      <scope id="6490259584644030624" at="23,43,25,23" />
+      <scope id="6490259584644030641" at="30,37,32,39" />
+      <scope id="6490259584644030667" at="37,32,39,36" />
+      <scope id="6490259584644030605" at="18,32,21,45" />
+      <scope id="6490259584644030632" at="27,0,30,0" />
+      <scope id="6490259584644030658" at="34,0,37,0" />
+      <scope id="6490259584644030684" at="41,0,44,0" />
+      <scope id="6490259584644030620" at="23,0,27,0">
         <var name="name" id="6490259584644030622" />
       </scope>
-      <scope id="6490259584644030638" at="29,0,33,0">
+      <scope id="6490259584644030638" at="30,0,34,0">
         <var name="name" id="6490259584644030639" />
       </scope>
-      <scope id="6490259584644030664" at="36,0,40,0">
+      <scope id="6490259584644030664" at="37,0,41,0">
         <var name="id" id="6490259584644030665" />
       </scope>
-      <unit id="6490259584644030559" at="11,0,45,0" name="org.campagnelab.circles.publisher.mongodb.BaseCirclesDocument" />
+      <scope id="6490259584644030603" at="18,0,23,0" />
+      <unit id="6490259584644030559" at="11,0,46,0" name="org.campagnelab.circles.publisher.mongodb.BaseCirclesDocument" />
     </file>
   </root>
   <root nodeRef="r:39038425-9225-43fd-83ff-4f4e9f7a1f9b(org.campagnelab.circles.publisher.mongodb)/6490259584644038120">
     <file name="ProjectDocument.java">
       <node id="6490259584644038846" at="11,0,12,0" concept="2" trace="modules" />
-      <node id="6490259584644038913" at="13,39,14,16" concept="10" />
+      <node id="6490259584644038913" at="13,39,14,16" concept="11" />
       <node id="6490259584644038856" at="14,16,15,38" concept="1" />
       <node id="6490259584644038866" at="18,36,19,49" concept="7" />
-      <node id="6490259584644038876" at="22,44,23,31" concept="1" />
+      <node id="6490259584644038876" at="22,42,23,31" concept="1" />
       <node id="6490259584644038899" at="23,31,24,69" concept="1" />
       <node id="6490259584644038864" at="18,0,21,0" concept="5" trace="getModules#()Ljava/util/List;" />
       <node id="6490259584644038851" at="13,0,17,0" concept="0" trace="ProjectDocument#(Ljava/lang/String;)V" />
-      <node id="6490259584644038872" at="22,0,26,0" concept="5" trace="addModuleId#(Ljava/lang/String;)V" />
+      <node id="6490259584644038872" at="22,0,26,0" concept="5" trace="addModule#(Ljava/lang/String;)V" />
       <scope id="6490259584644038865" at="18,36,19,49" />
       <scope id="6490259584644038855" at="13,39,15,38" />
-      <scope id="6490259584644038875" at="22,44,24,69" />
+      <scope id="6490259584644038875" at="22,42,24,69" />
       <scope id="6490259584644038864" at="18,0,21,0" />
       <scope id="6490259584644038851" at="13,0,17,0">
         <var name="name" id="6490259584644038853" />
@@ -168,7 +170,7 @@
   <root nodeRef="r:39038425-9225-43fd-83ff-4f4e9f7a1f9b(org.campagnelab.circles.publisher.mongodb)/6490259584644054082">
     <file name="ModuleDocument.java">
       <node id="6490259584644058258" at="11,0,12,0" concept="2" trace="models" />
-      <node id="6490259584644058305" at="13,38,14,16" concept="10" />
+      <node id="6490259584644058305" at="13,38,14,16" concept="11" />
       <node id="6490259584644058268" at="14,16,15,37" concept="1" />
       <node id="6490259584644058278" at="18,35,19,48" concept="7" />
       <node id="6490259584644058288" at="22,40,23,24" concept="1" />
@@ -191,7 +193,7 @@
   </root>
   <root nodeRef="r:39038425-9225-43fd-83ff-4f4e9f7a1f9b(org.campagnelab.circles.publisher.mongodb)/6490259584644054641">
     <file name="ModelDocument.java">
-      <node id="6490259584644064133" at="8,37,9,16" concept="10" />
+      <node id="6490259584644064133" at="8,37,9,16" concept="11" />
       <node id="6490259584644064125" at="8,0,11,0" concept="0" trace="ModelDocument#(Ljava/lang/String;)V" />
       <scope id="6490259584644064129" at="8,37,9,16" />
       <scope id="6490259584644064125" at="8,0,11,0">
@@ -202,27 +204,27 @@
   </root>
   <root nodeRef="r:39038425-9225-43fd-83ff-4f4e9f7a1f9b(org.campagnelab.circles.publisher.mongodb)/6490259584644054692">
     <file name="RootNodeDocument.java">
-      <node id="6490259584644064243" at="8,0,9,0" concept="2" trace="svgRendering" />
+      <node id="6490259584644064243" at="8,0,9,0" concept="2" trace="svgFragment" />
       <node id="6490259584644064247" at="9,0,10,0" concept="2" trace="modelId" />
-      <node id="6490259584644064316" at="10,29,11,12" concept="10" />
-      <node id="6490259584644064317" at="13,40,14,16" concept="10" />
-      <node id="6490259584644064266" at="16,35,17,24" concept="7" />
-      <node id="6490259584644064274" at="19,52,20,37" concept="1" />
-      <node id="6490259584644064280" at="20,37,21,46" concept="1" />
+      <node id="6490259584644064316" at="10,29,11,12" concept="11" />
+      <node id="6490259584644064317" at="13,40,14,16" concept="11" />
+      <node id="6490259584644064266" at="16,34,17,23" concept="7" />
+      <node id="6490259584644064274" at="19,50,20,35" concept="1" />
+      <node id="6490259584644064280" at="20,35,21,45" concept="1" />
       <node id="6490259584644064292" at="23,30,24,19" concept="7" />
       <node id="6490259584644064300" at="26,42,27,27" concept="1" />
       <node id="6490259584644064306" at="27,27,28,45" concept="1" />
       <node id="6490259584644064251" at="10,0,13,0" concept="0" trace="RootNodeDocument#()V" />
       <node id="6490259584644064256" at="13,0,16,0" concept="0" trace="RootNodeDocument#(Ljava/lang/String;)V" />
-      <node id="6490259584644064264" at="16,0,19,0" concept="5" trace="getSvgRendering#()Ljava/lang/String;" />
+      <node id="6490259584644064264" at="16,0,19,0" concept="5" trace="getSvgFragment#()Ljava/lang/String;" />
       <node id="6490259584644064290" at="23,0,26,0" concept="5" trace="getModelId#()Ljava/lang/String;" />
-      <node id="6490259584644064270" at="19,0,23,0" concept="5" trace="setSvgRendering#(Ljava/lang/String;)V" />
+      <node id="6490259584644064270" at="19,0,23,0" concept="5" trace="setSvgFragment#(Ljava/lang/String;)V" />
       <node id="6490259584644064296" at="26,0,30,0" concept="5" trace="setModelId#(Ljava/lang/String;)V" />
       <scope id="6490259584644064253" at="10,29,11,12" />
       <scope id="6490259584644064260" at="13,40,14,16" />
-      <scope id="6490259584644064265" at="16,35,17,24" />
+      <scope id="6490259584644064265" at="16,34,17,23" />
       <scope id="6490259584644064291" at="23,30,24,19" />
-      <scope id="6490259584644064273" at="19,52,21,46" />
+      <scope id="6490259584644064273" at="19,50,21,45" />
       <scope id="6490259584644064299" at="26,42,28,45" />
       <scope id="6490259584644064251" at="10,0,13,0" />
       <scope id="6490259584644064256" at="13,0,16,0">
@@ -231,7 +233,7 @@
       <scope id="6490259584644064264" at="16,0,19,0" />
       <scope id="6490259584644064290" at="23,0,26,0" />
       <scope id="6490259584644064270" at="19,0,23,0">
-        <var name="svgRendering" id="6490259584644064271" />
+        <var name="svgFragment" id="6490259584644064271" />
       </scope>
       <scope id="6490259584644064296" at="26,0,30,0">
         <var name="modelId" id="6490259584644064297" />
@@ -242,16 +244,16 @@
   <root nodeRef="r:39038425-9225-43fd-83ff-4f4e9f7a1f9b(org.campagnelab.circles.publisher.mongodb)/8985607314960473302">
     <file name="MongoDbSchemaManager.java">
       <node id="6490259584644069921" at="11,30,12,50" concept="6" />
-      <node id="6490259584644077312" at="12,50,13,69" concept="1" />
-      <node id="6490259584644077464" at="13,69,14,68" concept="1" />
-      <node id="6490259584644077578" at="14,68,15,67" concept="1" />
-      <node id="6490259584644077734" at="15,67,16,66" concept="1" />
+      <node id="6490259584644077312" at="12,50,13,70" concept="1" />
+      <node id="6490259584644077464" at="13,70,14,69" concept="1" />
+      <node id="6490259584644077578" at="14,69,15,68" concept="1" />
+      <node id="6490259584644077734" at="15,68,16,67" concept="1" />
       <node id="6490259584644068991" at="18,28,19,45" concept="1" />
       <node id="8985607314960479863" at="18,0,21,0" concept="5" trace="dropSchema#()V" />
       <node id="8985607314960473373" at="11,0,18,0" concept="5" trace="createSchema#()V" />
       <scope id="8985607314960479867" at="18,28,19,45" />
       <scope id="8985607314960479863" at="18,0,21,0" />
-      <scope id="8985607314960473377" at="11,30,16,66">
+      <scope id="8985607314960473377" at="11,30,16,67">
         <var name="database" id="6490259584644069922" />
       </scope>
       <scope id="8985607314960473373" at="11,0,18,0" />

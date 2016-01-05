@@ -133,7 +133,7 @@
   </node>
   <node concept="sE7Ow" id="5eOdMaeZc8r">
     <property role="TrG5h" value="SerializeModulesToDB" />
-    <property role="2uzpH1" value="Serialize Modules to DB" />
+    <property role="2uzpH1" value="Publish Module(s)" />
     <node concept="tnohg" id="5eOdMaeZc8s" role="tncku">
       <node concept="3clFbS" id="5eOdMaeZc8t" role="2VODD2">
         <node concept="3clFbF" id="7MNizV3nHco" role="3cqZAp">

@@ -16,7 +16,7 @@ import org.campagnelab.circles.publisher.db.ModuleSerializer;
 public class SerializeModulesToDB_Action extends BaseAction {
   private static final Icon ICON = null;
   public SerializeModulesToDB_Action() {
-    super("Serialize Modules to DB", "", ICON);
+    super("Publish Module(s)", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }

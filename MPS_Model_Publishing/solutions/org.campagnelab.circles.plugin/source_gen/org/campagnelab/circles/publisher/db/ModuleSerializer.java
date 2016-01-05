@@ -5,16 +5,66 @@ package org.campagnelab.circles.publisher.db;
 import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
+import com.mongodb.client.MongoDatabase;
+import org.campagnelab.circles.publisher.mongodb.MongoDbAccess;
+import org.campagnelab.circles.publisher.mongodb.MongoDbCollection;
+import org.campagnelab.circles.publisher.mongodb.Configuration;
+import org.campagnelab.circles.publisher.mongodb.ProjectDocument;
+import org.campagnelab.circles.publisher.mongodb.ModuleDocument;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.campagnelab.circles.publisher.mongodb.ModelDocument;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.campagnelab.circles.publisher.mongodb.RootNodeDocument;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.campagnelab.mps.editor2pdf.behavior.EditorAnnotation__BehaviorDescriptor;
 
 public class ModuleSerializer {
 
   public static void serializeProjectWithModules(MPSProject project, List<SModule> modules) {
-    createDb(project);
+    MongoDatabase database = MongoDbAccess.open();
+    MongoDbCollection projectsCol = new MongoDbCollection(database, Configuration.projectsCollection);
+    MongoDbCollection modulesCol = new MongoDbCollection(database, Configuration.modulesCollection);
+    MongoDbCollection modelsCol = new MongoDbCollection(database, Configuration.modelsCollection);
+    MongoDbCollection nodesCol = new MongoDbCollection(database, Configuration.nodesCollection);
+
+    ProjectDocument projectDoc = new ProjectDocument(project.getName());
+    for (SModule module : modules) {
+      ModuleDocument moduleDoc = new ModuleDocument(module.getModuleName());
+      moduleDoc.setId(module.getModuleId().toString());
+      for (SModel model : module.getModels()) {
+        ModelDocument modelDoc = new ModelDocument(model.getModelName());
+        modelDoc.setId(model.getModelId().toString());
+        for (SNode snode : model.getRootNodes()) {
+          RootNodeDocument nodeDoc;
+          if (snode.isInstanceOfConcept(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
+            nodeDoc = new RootNodeDocument(SNodeAccessUtil.getProperty(snode, "name"));
+          } else {
+            nodeDoc = new RootNodeDocument();
+          }
+          nodeDoc.setId(snode.getNodeId().toString());
+          nodeDoc.setModelId(modelDoc.getId());
+          NodeWriter writer = new NodeWriter(nodeDoc, nodesCol);
+          SNode annotation = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x93bc01ac08ca4f11L, 0x9c7d614d04055dfbL, 0x79754067868533ecL, "org.campagnelab.mps.editor2pdf.structure.EditorAnnotation")));
+          EditorAnnotation__BehaviorDescriptor.renderSvg_idTE4nIlnV$W.invoke(annotation, snode, writer);
+        }
+        modelsCol.addDocument(modelDoc.toDoc());
+        moduleDoc.addModel(modelDoc.getId());
+      }
+      modulesCol.addDocument(moduleDoc.toDoc());
+      projectDoc.addModule(moduleDoc.getId());
+    }
+    projectsCol.addDocument(projectDoc.toDoc());
   }
+
   public static void dropDb(MPSProject project) {
     DbFactory.getGenerator().dropSchema();
   }
+
   public static void createDb(MPSProject project) {
     DbFactory.getGenerator().createSchema();
   }
+
 }

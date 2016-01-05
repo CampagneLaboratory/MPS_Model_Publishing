@@ -10,10 +10,10 @@ public class Configuration {
   /*package*/ static final String username = "admin";
   /*package*/ static final String pwd = "";
   /*package*/ static final String database = "circles";
-  /*package*/ static final String projectCollection = "projects";
-  /*package*/ static final String moduleCollection = "modules";
-  /*package*/ static final String modelCollection = "models";
-  /*package*/ static final String nodeCollection = "root_nodes";
+  public static final String projectsCollection = "projects";
+  public static final String modulesCollection = "modules";
+  public static final String modelsCollection = "models";
+  public static final String nodesCollection = "root_nodes";
 
 
 }

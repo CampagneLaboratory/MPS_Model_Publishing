@@ -5,7 +5,7 @@ package org.campagnelab.circles.publisher.mongodb;
 
 public class RootNodeDocument extends BaseCirclesDocument {
 
-  private String svgRendering;
+  private String svgFragment;
   private String modelId;
   public RootNodeDocument() {
     super();
@@ -13,12 +13,12 @@ public class RootNodeDocument extends BaseCirclesDocument {
   public RootNodeDocument(String name) {
     super(name);
   }
-  public String getSvgRendering() {
-    return svgRendering;
+  public String getSvgFragment() {
+    return svgFragment;
   }
-  public void setSvgRendering(String svgRendering) {
-    this.svgRendering = svgRendering;
-    this.document.append("SVG", svgRendering);
+  public void setSvgFragment(String svgFragment) {
+    this.svgFragment = svgFragment;
+    this.document.append("SVG", svgFragment);
   }
   public String getModelId() {
     return modelId;
