@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="org.campagnelab.circles.publisher.mongodb.BaseCirclesDocument" file="BaseCirclesDocument.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.text.DateFormat" />
+    <classNode dependClassName="java.text.SimpleDateFormat" />
+    <classNode dependClassName="java.util.Locale" />
+    <classNode dependClassName="java.util.UUID" />
+    <classNode dependClassName="org.bson.Document" />
+  </dependency>
+  <dependency className="org.campagnelab.circles.publisher.mongodb.Configuration" file="Configuration.java">
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="org.campagnelab.circles.publisher.mongodb.ModelDocument" file="ModelDocument.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="org.campagnelab.circles.publisher.mongodb.BaseCirclesDocument" />
+  </dependency>
+  <dependency className="org.campagnelab.circles.publisher.mongodb.ModuleDocument" file="ModuleDocument.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.List" />
+    <classNode extendsClassName="org.campagnelab.circles.publisher.mongodb.BaseCirclesDocument" />
+  </dependency>
+  <dependency className="org.campagnelab.circles.publisher.mongodb.MongoDbAccess" file="MongoDbAccess.java">
+    <classNode dependClassName="com.mongodb.MongoClient" />
+    <classNode dependClassName="com.mongodb.client.MongoDatabase" />
+    <classNode dependClassName="org.campagnelab.circles.publisher.mongodb.Configuration" />
+  </dependency>
+  <dependency className="org.campagnelab.circles.publisher.mongodb.MongoDbCollection" file="MongoDbCollection.java">
+    <classNode dependClassName="com.mongodb.client.MongoCollection" />
+    <classNode dependClassName="com.mongodb.client.MongoDatabase" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.bson.Document" />
+  </dependency>
+  <dependency className="org.campagnelab.circles.publisher.mongodb.MongoDbSchemaManager" file="MongoDbSchemaManager.java">
+    <classNode dependClassName="com.mongodb.client.MongoDatabase" />
+    <classNode dependClassName="org.campagnelab.circles.publisher.mongodb.Configuration" />
+    <classNode dependClassName="org.campagnelab.circles.publisher.mongodb.MongoDbAccess" />
+    <classNode dependClassName="org.campagnelab.circles.publisher.mongodb.MongoDbCollection" />
+    <classNode extendsClassName="org.campagnelab.circles.publisher.db.SchemaManager" />
+  </dependency>
+  <dependency className="org.campagnelab.circles.publisher.mongodb.ProjectDocument" file="ProjectDocument.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.List" />
+    <classNode extendsClassName="org.campagnelab.circles.publisher.mongodb.BaseCirclesDocument" />
+  </dependency>
+  <dependency className="org.campagnelab.circles.publisher.mongodb.RootNodeDocument" file="RootNodeDocument.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="org.campagnelab.circles.publisher.mongodb.BaseCirclesDocument" />
+  </dependency>
+</dependenciesRoot>
+
