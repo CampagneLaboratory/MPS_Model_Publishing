@@ -179,6 +179,77 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="5Ci2biiLVLR" role="3clF47">
+        <node concept="3cpWs8" id="5QK6GxzAI_V" role="3cqZAp">
+          <node concept="3cpWsn" id="5QK6GxzAIA1" role="3cpWs9">
+            <property role="TrG5h" value="address" />
+            <node concept="3uibUv" id="5QK6GxzAIA3" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~List" resolve="List" />
+              <node concept="3uibUv" id="5QK6GxzAIBq" role="11_B2D">
+                <ref role="3uigEE" to="wvt1:~ServerAddress" resolve="ServerAddress" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="5QK6GxzAID7" role="33vP2m">
+              <node concept="1pGfFk" id="5QK6GxzAJWA" role="2ShVmc">
+                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
+                <node concept="3uibUv" id="5QK6GxzAK13" role="1pMfVU">
+                  <ref role="3uigEE" to="wvt1:~ServerAddress" resolve="ServerAddress" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5QK6GxzAK5q" role="3cqZAp">
+          <node concept="2OqwBi" id="5QK6GxzAK8Q" role="3clFbG">
+            <node concept="37vLTw" id="5QK6GxzAK5o" role="2Oq$k0">
+              <ref role="3cqZAo" node="5QK6GxzAIA1" resolve="address" />
+            </node>
+            <node concept="liA8E" id="5QK6GxzAKdR" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="2ShNRf" id="5QK6GxzAKgQ" role="37wK5m">
+                <node concept="1pGfFk" id="5QK6GxzAKAA" role="2ShVmc">
+                  <ref role="37wK5l" to="wvt1:~ServerAddress.&lt;init&gt;(java.lang.String,int)" resolve="ServerAddress" />
+                  <node concept="10M0yZ" id="5QK6GxzAKDe" role="37wK5m">
+                    <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
+                    <ref role="3cqZAo" node="7MNizV3oaoI" resolve="hostname" />
+                  </node>
+                  <node concept="10M0yZ" id="5QK6GxzALJD" role="37wK5m">
+                    <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
+                    <ref role="3cqZAo" node="7MNizV3oapu" resolve="port" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="5QK6GxzAOlb" role="3cqZAp">
+          <node concept="3cpWsn" id="5QK6GxzAOlc" role="3cpWs9">
+            <property role="TrG5h" value="credentials" />
+            <node concept="3uibUv" id="5QK6GxzAOld" role="1tU5fm">
+              <ref role="3uigEE" to="wvt1:~MongoCredential" resolve="MongoCredential" />
+            </node>
+            <node concept="2YIFZM" id="5QK6GxzAP_S" role="33vP2m">
+              <ref role="37wK5l" to="wvt1:~MongoCredential.createCredential(java.lang.String,java.lang.String,char[]):com.mongodb.MongoCredential" resolve="createCredential" />
+              <ref role="1Pybhc" to="wvt1:~MongoCredential" resolve="MongoCredential" />
+              <node concept="10M0yZ" id="5QK6GxzAPDa" role="37wK5m">
+                <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
+                <ref role="3cqZAo" node="7MNizV3oaqe" resolve="username" />
+              </node>
+              <node concept="10M0yZ" id="5QK6GxzAPKs" role="37wK5m">
+                <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
+                <ref role="3cqZAo" node="5Ci2biiLWbv" resolve="database" />
+              </node>
+              <node concept="2OqwBi" id="5QK6GxzAPYz" role="37wK5m">
+                <node concept="10M0yZ" id="5QK6GxzAPSb" role="2Oq$k0">
+                  <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
+                  <ref role="3cqZAo" node="7MNizV3oaqY" resolve="pwd" />
+                </node>
+                <node concept="liA8E" id="5QK6GxzAQ2M" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~String.toCharArray():char[]" resolve="toCharArray" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="5Ci2biiLVLT" role="3cqZAp">
           <node concept="3cpWsn" id="5Ci2biiLVLS" role="3cpWs9">
             <property role="3TUv4t" value="false" />
@@ -187,15 +258,17 @@
               <ref role="3uigEE" to="wvt1:~MongoClient" resolve="MongoClient" />
             </node>
             <node concept="2ShNRf" id="5Ci2biiLVMb" role="33vP2m">
-              <node concept="1pGfFk" id="5Ci2biiLVNc" role="2ShVmc">
-                <ref role="37wK5l" to="wvt1:~MongoClient.&lt;init&gt;(java.lang.String,int)" resolve="MongoClient" />
-                <node concept="10M0yZ" id="5Ci2biiLW3B" role="37wK5m">
-                  <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
-                  <ref role="3cqZAo" node="7MNizV3oaoI" resolve="hostname" />
+              <node concept="1pGfFk" id="5QK6GxzAN2B" role="2ShVmc">
+                <ref role="37wK5l" to="wvt1:~MongoClient.&lt;init&gt;(java.util.List,java.util.List)" resolve="MongoClient" />
+                <node concept="37vLTw" id="5QK6GxzAN9z" role="37wK5m">
+                  <ref role="3cqZAo" node="5QK6GxzAIA1" resolve="address" />
                 </node>
-                <node concept="10M0yZ" id="5Ci2biiLW79" role="37wK5m">
-                  <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
-                  <ref role="3cqZAo" node="7MNizV3oapu" resolve="port" />
+                <node concept="2YIFZM" id="5QK6GxzAQDb" role="37wK5m">
+                  <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+                  <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
+                  <node concept="37vLTw" id="5QK6GxzAQKv" role="37wK5m">
+                    <ref role="3cqZAo" node="5QK6GxzAOlc" resolve="credentials" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -280,7 +353,7 @@
       <property role="2dld4O" value="false" />
       <node concept="17QB3L" id="7MNizV3oaqg" role="1tU5fm" />
       <node concept="Xl_RD" id="7MNizV3oaqh" role="33vP2m">
-        <property role="Xl_RC" value="admin" />
+        <property role="Xl_RC" value="MPS" />
       </node>
     </node>
     <node concept="Wx3nA" id="7MNizV3oaqY" role="jymVt">
@@ -289,7 +362,9 @@
       <property role="3TUv4t" value="true" />
       <property role="2dld4O" value="false" />
       <node concept="17QB3L" id="7MNizV3oar0" role="1tU5fm" />
-      <node concept="Xl_RD" id="7MNizV3oar1" role="33vP2m" />
+      <node concept="Xl_RD" id="7MNizV3oar1" role="33vP2m">
+        <property role="Xl_RC" value="MPS" />
+      </node>
     </node>
     <node concept="Wx3nA" id="5Ci2biiLWbv" role="jymVt">
       <property role="2dlcS1" value="false" />
