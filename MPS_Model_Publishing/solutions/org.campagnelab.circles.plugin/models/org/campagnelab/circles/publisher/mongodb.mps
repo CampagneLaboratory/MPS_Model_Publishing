@@ -16,6 +16,7 @@
     <import index="25x5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.text(JDK/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="ha1n" ref="r:117db92d-261b-4ba2-97fe-04df0369434b(org.campagnelab.mps.editor2pdf.behavior)" />
+    <import index="z1c3" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -174,6 +175,66 @@
   <node concept="312cEu" id="3v5cxLOW0Yc">
     <property role="TrG5h" value="MongoDbAccess" />
     <node concept="2tJIrI" id="5Ci2biiLVUr" role="jymVt" />
+    <node concept="Wx3nA" id="3bxG5bqwCib" role="jymVt">
+      <property role="TrG5h" value="db" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3uibUv" id="3bxG5bqwCbk" role="1tU5fm">
+        <ref role="3uigEE" to="skwk:~MongoDatabase" resolve="MongoDatabase" />
+      </node>
+      <node concept="3Tm6S6" id="3bxG5bqwClD" role="1B3o_S" />
+    </node>
+    <node concept="Wx3nA" id="3bxG5bqw_pU" role="jymVt">
+      <property role="TrG5h" value="projectsCol" />
+      <property role="2dlcS1" value="false" />
+      <property role="3TUv4t" value="false" />
+      <property role="2dld4O" value="false" />
+      <node concept="3uibUv" id="3bxG5bqw_pX" role="1tU5fm">
+        <ref role="3uigEE" node="43Z2OkkkeYv" resolve="MongoDbCollection" />
+      </node>
+      <node concept="3Tm6S6" id="3bxG5bqw_pW" role="1B3o_S" />
+    </node>
+    <node concept="Wx3nA" id="3bxG5bqw_sH" role="jymVt">
+      <property role="TrG5h" value="modulesCol" />
+      <property role="2dlcS1" value="false" />
+      <property role="3TUv4t" value="false" />
+      <property role="2dld4O" value="false" />
+      <node concept="3uibUv" id="3bxG5bqw_sK" role="1tU5fm">
+        <ref role="3uigEE" node="43Z2OkkkeYv" resolve="MongoDbCollection" />
+      </node>
+      <node concept="3Tm6S6" id="3bxG5bqw_sJ" role="1B3o_S" />
+    </node>
+    <node concept="Wx3nA" id="3bxG5bqw_v7" role="jymVt">
+      <property role="TrG5h" value="modelsCol" />
+      <property role="2dlcS1" value="false" />
+      <property role="3TUv4t" value="false" />
+      <property role="2dld4O" value="false" />
+      <node concept="3uibUv" id="3bxG5bqw_va" role="1tU5fm">
+        <ref role="3uigEE" node="43Z2OkkkeYv" resolve="MongoDbCollection" />
+      </node>
+      <node concept="3Tm6S6" id="3bxG5bqw_v9" role="1B3o_S" />
+    </node>
+    <node concept="Wx3nA" id="3bxG5bqw_xx" role="jymVt">
+      <property role="TrG5h" value="nodesCol" />
+      <property role="2dlcS1" value="false" />
+      <property role="3TUv4t" value="false" />
+      <property role="2dld4O" value="false" />
+      <node concept="3uibUv" id="3bxG5bqw_x$" role="1tU5fm">
+        <ref role="3uigEE" node="43Z2OkkkeYv" resolve="MongoDbCollection" />
+      </node>
+      <node concept="3Tm6S6" id="3bxG5bqw_xz" role="1B3o_S" />
+    </node>
+    <node concept="Wx3nA" id="3bxG5bqwB$3" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="open" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="3bxG5bqwBwQ" role="1B3o_S" />
+      <node concept="10P_77" id="3bxG5bqwBzX" role="1tU5fm" />
+      <node concept="3clFbT" id="3bxG5bqwBAQ" role="33vP2m">
+        <property role="3clFbU" value="false" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3bxG5bqw_8T" role="jymVt" />
     <node concept="2YIFZL" id="5Ci2biiLVLQ" role="jymVt">
       <property role="TrG5h" value="open" />
       <property role="DiZV1" value="false" />
@@ -274,18 +335,46 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="5Ci2biiLVLY" role="3cqZAp">
-          <node concept="2OqwBi" id="5Ci2biiLVNh" role="3cqZAk">
-            <node concept="37vLTw" id="5Ci2biiLVNg" role="2Oq$k0">
-              <ref role="3cqZAo" node="5Ci2biiLVLS" resolve="mongoClient" />
-            </node>
-            <node concept="liA8E" id="5Ci2biiLVNi" role="2OqNvi">
-              <ref role="37wK5l" to="wvt1:~MongoClient.getDatabase(java.lang.String):com.mongodb.client.MongoDatabase" resolve="getDatabase" />
-              <node concept="10M0yZ" id="5Ci2biiLWfU" role="37wK5m">
-                <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
-                <ref role="3cqZAo" node="5Ci2biiLWbv" resolve="database" />
+        <node concept="3clFbF" id="3bxG5bqwClL" role="3cqZAp">
+          <node concept="37vLTI" id="3bxG5bqwClN" role="3clFbG">
+            <node concept="2OqwBi" id="3bxG5bqw_Xl" role="37vLTx">
+              <node concept="37vLTw" id="3bxG5bqw_Xm" role="2Oq$k0">
+                <ref role="3cqZAo" node="5Ci2biiLVLS" resolve="mongoClient" />
+              </node>
+              <node concept="liA8E" id="3bxG5bqw_Xn" role="2OqNvi">
+                <ref role="37wK5l" to="wvt1:~MongoClient.getDatabase(java.lang.String):com.mongodb.client.MongoDatabase" resolve="getDatabase" />
+                <node concept="10M0yZ" id="3bxG5bqw_Xo" role="37wK5m">
+                  <ref role="3cqZAo" node="5Ci2biiLWbv" resolve="database" />
+                  <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
+                </node>
               </node>
             </node>
+            <node concept="37vLTw" id="3bxG5bqwClR" role="37vLTJ">
+              <ref role="3cqZAo" node="3bxG5bqwCib" resolve="db" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3bxG5bqwAe2" role="3cqZAp">
+          <node concept="1rXfSq" id="3bxG5bqwAe0" role="3clFbG">
+            <ref role="37wK5l" node="3bxG5bqw_43" resolve="createSchema" />
+            <node concept="37vLTw" id="3bxG5bqwAkn" role="37wK5m">
+              <ref role="3cqZAo" node="3bxG5bqwCib" resolve="db" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3bxG5bqwBHU" role="3cqZAp">
+          <node concept="37vLTI" id="3bxG5bqwBPv" role="3clFbG">
+            <node concept="3clFbT" id="3bxG5bqwBUB" role="37vLTx">
+              <property role="3clFbU" value="true" />
+            </node>
+            <node concept="37vLTw" id="3bxG5bqwBHS" role="37vLTJ">
+              <ref role="3cqZAo" node="3bxG5bqwB$3" resolve="open" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5Ci2biiLVLY" role="3cqZAp">
+          <node concept="37vLTw" id="3bxG5bqwA3g" role="3cqZAk">
+            <ref role="3cqZAo" node="3bxG5bqwCib" resolve="db" />
           </node>
         </node>
       </node>
@@ -294,26 +383,254 @@
         <ref role="3uigEE" to="skwk:~MongoDatabase" resolve="MongoDatabase" />
       </node>
     </node>
+    <node concept="2tJIrI" id="3bxG5bqwAkN" role="jymVt" />
+    <node concept="2YIFZL" id="3bxG5bqw_43" role="jymVt">
+      <property role="TrG5h" value="createSchema" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="3bxG5bqw_46" role="3clF47">
+        <node concept="3clFbF" id="3bxG5bqw_lG" role="3cqZAp">
+          <node concept="37vLTI" id="3bxG5bqw_lI" role="3clFbG">
+            <node concept="2ShNRf" id="3bxG5bqw_66" role="37vLTx">
+              <node concept="1pGfFk" id="3bxG5bqw_67" role="2ShVmc">
+                <ref role="37wK5l" node="5Ci2biiLWkK" resolve="MongoDbCollection" />
+                <node concept="37vLTw" id="3bxG5bqw_68" role="37wK5m">
+                  <ref role="3cqZAo" node="3bxG5bqw_5I" resolve="database" />
+                </node>
+                <node concept="10M0yZ" id="3bxG5bqw_69" role="37wK5m">
+                  <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
+                  <ref role="3cqZAo" node="5Ci2biiMbe1" resolve="projectsCollection" />
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="3bxG5bqw_lM" role="37vLTJ">
+              <ref role="3cqZAo" node="3bxG5bqw_pU" resolve="projectsCol" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3bxG5bqw_zK" role="3cqZAp">
+          <node concept="37vLTI" id="3bxG5bqw_zM" role="3clFbG">
+            <node concept="2ShNRf" id="3jMt7I9fcdO" role="37vLTx">
+              <node concept="1pGfFk" id="3jMt7I9fcdP" role="2ShVmc">
+                <ref role="37wK5l" node="5Ci2biiLWkK" resolve="MongoDbCollection" />
+                <node concept="37vLTw" id="3jMt7I9fcdQ" role="37wK5m">
+                  <ref role="3cqZAo" node="3bxG5bqw_5I" resolve="database" />
+                </node>
+                <node concept="10M0yZ" id="3jMt7I9fcdR" role="37wK5m">
+                  <ref role="3cqZAo" node="5Ci2biiMbeA" resolve="modulesCollection" />
+                  <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="3bxG5bqw_zQ" role="37vLTJ">
+              <ref role="3cqZAo" node="3bxG5bqw_sH" resolve="modulesCol" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3bxG5bqw_Ap" role="3cqZAp">
+          <node concept="37vLTI" id="3bxG5bqw_Ar" role="3clFbG">
+            <node concept="2ShNRf" id="3jMt7I9fcqP" role="37vLTx">
+              <node concept="1pGfFk" id="3jMt7I9fcqQ" role="2ShVmc">
+                <ref role="37wK5l" node="5Ci2biiLWkK" resolve="MongoDbCollection" />
+                <node concept="37vLTw" id="3jMt7I9fcqR" role="37wK5m">
+                  <ref role="3cqZAo" node="3bxG5bqw_5I" resolve="database" />
+                </node>
+                <node concept="10M0yZ" id="3jMt7I9fcqS" role="37wK5m">
+                  <ref role="3cqZAo" node="5Ci2biiMbf8" resolve="modelsCollection" />
+                  <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="3bxG5bqw_Av" role="37vLTJ">
+              <ref role="3cqZAo" node="3bxG5bqw_v7" resolve="modelsCol" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3bxG5bqw_D0" role="3cqZAp">
+          <node concept="37vLTI" id="3bxG5bqw_D2" role="3clFbG">
+            <node concept="2ShNRf" id="3jMt7I9fcBW" role="37vLTx">
+              <node concept="1pGfFk" id="3jMt7I9fcBX" role="2ShVmc">
+                <ref role="37wK5l" node="5Ci2biiLWkK" resolve="MongoDbCollection" />
+                <node concept="37vLTw" id="3jMt7I9fcBY" role="37wK5m">
+                  <ref role="3cqZAo" node="3bxG5bqw_5I" resolve="database" />
+                </node>
+                <node concept="10M0yZ" id="3jMt7I9fcBZ" role="37wK5m">
+                  <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
+                  <ref role="3cqZAo" node="5Ci2biiMbfH" resolve="nodesCollection" />
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="3bxG5bqw_D6" role="37vLTJ">
+              <ref role="3cqZAo" node="3bxG5bqw_xx" resolve="nodesCol" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="3bxG5bqw_2A" role="1B3o_S" />
+      <node concept="3cqZAl" id="3bxG5bqw_5l" role="3clF45" />
+      <node concept="37vLTG" id="3bxG5bqw_5I" role="3clF46">
+        <property role="TrG5h" value="database" />
+        <node concept="3uibUv" id="3bxG5bqw_5H" role="1tU5fm">
+          <ref role="3uigEE" to="skwk:~MongoDatabase" resolve="MongoDatabase" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3bxG5bqwAQU" role="jymVt" />
+    <node concept="2YIFZL" id="3bxG5bqwAFA" role="jymVt">
+      <property role="TrG5h" value="getProjectsCollection" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="3bxG5bqwArW" role="3clF47">
+        <node concept="3clFbJ" id="3bxG5bqwBVT" role="3cqZAp">
+          <node concept="3clFbS" id="3bxG5bqwBVV" role="3clFbx">
+            <node concept="3clFbF" id="3bxG5bqwBZq" role="3cqZAp">
+              <node concept="1rXfSq" id="3bxG5bqwBZo" role="3clFbG">
+                <ref role="37wK5l" node="5Ci2biiLVLQ" resolve="open" />
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="3bxG5bqwBWE" role="3clFbw">
+            <node concept="37vLTw" id="3bxG5bqwBXQ" role="3fr31v">
+              <ref role="3cqZAo" node="3bxG5bqwB$3" resolve="open" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3bxG5bqwAvE" role="3cqZAp">
+          <node concept="37vLTw" id="3bxG5bqwAvD" role="3clFbG">
+            <ref role="3cqZAo" node="3bxG5bqw_pU" resolve="projectsCol" />
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="3bxG5bqwAr_" role="3clF45">
+        <ref role="3uigEE" node="43Z2OkkkeYv" resolve="MongoDbCollection" />
+      </node>
+      <node concept="3Tm1VV" id="3bxG5bqwApc" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="3bxG5bqwATq" role="jymVt" />
+    <node concept="2YIFZL" id="3bxG5bqwAIr" role="jymVt">
+      <property role="TrG5h" value="getModulesCollection" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="3bxG5bqwAvW" role="3clF47">
+        <node concept="3clFbJ" id="3bxG5bqwC00" role="3cqZAp">
+          <node concept="3clFbS" id="3bxG5bqwC01" role="3clFbx">
+            <node concept="3clFbF" id="3bxG5bqwC02" role="3cqZAp">
+              <node concept="1rXfSq" id="3bxG5bqwC03" role="3clFbG">
+                <ref role="37wK5l" node="5Ci2biiLVLQ" resolve="open" />
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="3bxG5bqwC04" role="3clFbw">
+            <node concept="37vLTw" id="3bxG5bqwC07" role="3fr31v">
+              <ref role="3cqZAo" node="3bxG5bqwB$3" resolve="open" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3bxG5bqwAvX" role="3cqZAp">
+          <node concept="37vLTw" id="3bxG5bqwABL" role="3clFbG">
+            <ref role="3cqZAo" node="3bxG5bqw_sH" resolve="modulesCol" />
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="3bxG5bqwAvZ" role="3clF45">
+        <ref role="3uigEE" node="43Z2OkkkeYv" resolve="MongoDbCollection" />
+      </node>
+      <node concept="3Tm1VV" id="3bxG5bqwAvY" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="3bxG5bqwAVV" role="jymVt" />
+    <node concept="2YIFZL" id="3bxG5bqwALg" role="jymVt">
+      <property role="TrG5h" value="getModelsCollection" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="3bxG5bqwAy4" role="3clF47">
+        <node concept="3clFbJ" id="3bxG5bqwC1y" role="3cqZAp">
+          <node concept="3clFbS" id="3bxG5bqwC1z" role="3clFbx">
+            <node concept="3clFbF" id="3bxG5bqwC1$" role="3cqZAp">
+              <node concept="1rXfSq" id="3bxG5bqwC1_" role="3clFbG">
+                <ref role="37wK5l" node="5Ci2biiLVLQ" resolve="open" />
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="3bxG5bqwC1A" role="3clFbw">
+            <node concept="37vLTw" id="3bxG5bqwC1D" role="3fr31v">
+              <ref role="3cqZAo" node="3bxG5bqwB$3" resolve="open" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3bxG5bqwAy5" role="3cqZAp">
+          <node concept="37vLTw" id="3bxG5bqwADQ" role="3clFbG">
+            <ref role="3cqZAo" node="3bxG5bqw_v7" resolve="modelsCol" />
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="3bxG5bqwAy7" role="3clF45">
+        <ref role="3uigEE" node="43Z2OkkkeYv" resolve="MongoDbCollection" />
+      </node>
+      <node concept="3Tm1VV" id="3bxG5bqwAy6" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="3bxG5bqwAYt" role="jymVt" />
+    <node concept="2YIFZL" id="3bxG5bqwAO5" role="jymVt">
+      <property role="TrG5h" value="getNodesCollection" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="3bxG5bqwA$i" role="3clF47">
+        <node concept="3clFbJ" id="3bxG5bqwC35" role="3cqZAp">
+          <node concept="3clFbS" id="3bxG5bqwC36" role="3clFbx">
+            <node concept="3clFbF" id="3bxG5bqwC37" role="3cqZAp">
+              <node concept="1rXfSq" id="3bxG5bqwC38" role="3clFbG">
+                <ref role="37wK5l" node="5Ci2biiLVLQ" resolve="open" />
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="3bxG5bqwC39" role="3clFbw">
+            <node concept="37vLTw" id="3bxG5bqwC3c" role="3fr31v">
+              <ref role="3cqZAo" node="3bxG5bqwB$3" resolve="open" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3bxG5bqwA$j" role="3cqZAp">
+          <node concept="37vLTw" id="3bxG5bqwAEJ" role="3clFbG">
+            <ref role="3cqZAo" node="3bxG5bqw_xx" resolve="nodesCol" />
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="3bxG5bqwA$l" role="3clF45">
+        <ref role="3uigEE" node="43Z2OkkkeYv" resolve="MongoDbCollection" />
+      </node>
+      <node concept="3Tm1VV" id="3bxG5bqwA$k" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="3bxG5bqwB10" role="jymVt" />
     <node concept="2YIFZL" id="5Ci2biiLVM3" role="jymVt">
       <property role="TrG5h" value="drop" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
-      <node concept="37vLTG" id="5Ci2biiLVM4" role="3clF46">
-        <property role="TrG5h" value="db" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="5Ci2biiLVM5" role="1tU5fm">
-          <ref role="3uigEE" to="skwk:~MongoDatabase" resolve="MongoDatabase" />
-        </node>
-      </node>
       <node concept="3clFbS" id="5Ci2biiLVM6" role="3clF47">
-        <node concept="3clFbF" id="5Ci2biiLVM7" role="3cqZAp">
-          <node concept="2OqwBi" id="5Ci2biiLVNn" role="3clFbG">
-            <node concept="37vLTw" id="5Ci2biiLVNm" role="2Oq$k0">
-              <ref role="3cqZAo" node="5Ci2biiLVM4" resolve="db" />
+        <node concept="3clFbJ" id="3bxG5bqwC4P" role="3cqZAp">
+          <node concept="3clFbS" id="3bxG5bqwC4Q" role="3clFbx">
+            <node concept="3clFbF" id="5Ci2biiLVM7" role="3cqZAp">
+              <node concept="2OqwBi" id="5Ci2biiLVNn" role="3clFbG">
+                <node concept="37vLTw" id="5Ci2biiLVNm" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3bxG5bqwCib" resolve="db" />
+                </node>
+                <node concept="liA8E" id="5Ci2biiLVNo" role="2OqNvi">
+                  <ref role="37wK5l" to="skwk:~MongoDatabase.drop():void" resolve="drop" />
+                </node>
+              </node>
             </node>
-            <node concept="liA8E" id="5Ci2biiLVNo" role="2OqNvi">
-              <ref role="37wK5l" to="skwk:~MongoDatabase.drop():void" resolve="drop" />
+            <node concept="3clFbF" id="3bxG5bqwCD$" role="3cqZAp">
+              <node concept="37vLTI" id="3bxG5bqwCHy" role="3clFbG">
+                <node concept="3clFbT" id="3bxG5bqwCIP" role="37vLTx">
+                  <property role="3clFbU" value="false" />
+                </node>
+                <node concept="37vLTw" id="3bxG5bqwCDy" role="37vLTJ">
+                  <ref role="3cqZAo" node="3bxG5bqwB$3" resolve="open" />
+                </node>
+              </node>
             </node>
+          </node>
+          <node concept="37vLTw" id="3bxG5bqwC4W" role="3clFbw">
+            <ref role="3cqZAo" node="3bxG5bqwB$3" resolve="open" />
           </node>
         </node>
       </node>
@@ -750,72 +1067,10 @@
       <node concept="3cqZAl" id="7MNizV3nHOv" role="3clF45" />
       <node concept="3Tm1VV" id="7MNizV3nHOw" role="1B3o_S" />
       <node concept="3clFbS" id="7MNizV3nHOx" role="3clF47">
-        <node concept="3cpWs8" id="5Ci2biiMbCx" role="3cqZAp">
-          <node concept="3cpWsn" id="5Ci2biiMbCy" role="3cpWs9">
-            <property role="TrG5h" value="database" />
-            <node concept="3uibUv" id="5Ci2biiMbCz" role="1tU5fm">
-              <ref role="3uigEE" to="skwk:~MongoDatabase" resolve="MongoDatabase" />
-            </node>
-            <node concept="2YIFZM" id="5Ci2biiMbE6" role="33vP2m">
-              <ref role="37wK5l" node="5Ci2biiLVLQ" resolve="open" />
-              <ref role="1Pybhc" node="3v5cxLOW0Yc" resolve="MongoDbAccess" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5Ci2biiMds0" role="3cqZAp">
-          <node concept="2ShNRf" id="5Ci2biiMds2" role="3clFbG">
-            <node concept="1pGfFk" id="5Ci2biiMds3" role="2ShVmc">
-              <ref role="37wK5l" node="5Ci2biiLWkK" resolve="MongoDbCollection" />
-              <node concept="37vLTw" id="5Ci2biiMds4" role="37wK5m">
-                <ref role="3cqZAo" node="5Ci2biiMbCy" resolve="database" />
-              </node>
-              <node concept="10M0yZ" id="5Ci2biiMds5" role="37wK5m">
-                <ref role="3cqZAo" node="5Ci2biiMbe1" resolve="projectsCollection" />
-                <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5Ci2biiMduo" role="3cqZAp">
-          <node concept="2ShNRf" id="5Ci2biiMbJh" role="3clFbG">
-            <node concept="1pGfFk" id="5Ci2biiMdo4" role="2ShVmc">
-              <ref role="37wK5l" node="5Ci2biiLWkK" resolve="MongoDbCollection" />
-              <node concept="37vLTw" id="5Ci2biiMdoU" role="37wK5m">
-                <ref role="3cqZAo" node="5Ci2biiMbCy" resolve="database" />
-              </node>
-              <node concept="10M0yZ" id="5Ci2biiMdqe" role="37wK5m">
-                <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
-                <ref role="3cqZAo" node="5Ci2biiMbeA" resolve="modulesCollection" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5Ci2biiMdwa" role="3cqZAp">
-          <node concept="2ShNRf" id="5Ci2biiMdwc" role="3clFbG">
-            <node concept="1pGfFk" id="5Ci2biiMdwd" role="2ShVmc">
-              <ref role="37wK5l" node="5Ci2biiLWkK" resolve="MongoDbCollection" />
-              <node concept="37vLTw" id="5Ci2biiMdwe" role="37wK5m">
-                <ref role="3cqZAo" node="5Ci2biiMbCy" resolve="database" />
-              </node>
-              <node concept="10M0yZ" id="5Ci2biiMdwf" role="37wK5m">
-                <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
-                <ref role="3cqZAo" node="5Ci2biiMbf8" resolve="modelsCollection" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5Ci2biiMdyA" role="3cqZAp">
-          <node concept="2ShNRf" id="5Ci2biiMdyC" role="3clFbG">
-            <node concept="1pGfFk" id="5Ci2biiMdyD" role="2ShVmc">
-              <ref role="37wK5l" node="5Ci2biiLWkK" resolve="MongoDbCollection" />
-              <node concept="37vLTw" id="5Ci2biiMdyE" role="37wK5m">
-                <ref role="3cqZAo" node="5Ci2biiMbCy" resolve="database" />
-              </node>
-              <node concept="10M0yZ" id="5Ci2biiMdyF" role="37wK5m">
-                <ref role="1PxDUh" node="43Z2Okkk0Wq" resolve="Configuration" />
-                <ref role="3cqZAo" node="5Ci2biiMbfH" resolve="nodesCollection" />
-              </node>
-            </node>
+        <node concept="3clFbF" id="3bxG5bqwD6T" role="3cqZAp">
+          <node concept="2YIFZM" id="3bxG5bqwD7v" role="3clFbG">
+            <ref role="37wK5l" node="5Ci2biiLVLQ" resolve="open" />
+            <ref role="1Pybhc" node="3v5cxLOW0Yc" resolve="MongoDbAccess" />
           </node>
         </node>
       </node>
@@ -832,13 +1087,24 @@
           <node concept="2YIFZM" id="5Ci2biiMbqJ" role="3clFbG">
             <ref role="37wK5l" node="5Ci2biiLVM3" resolve="drop" />
             <ref role="1Pybhc" node="3v5cxLOW0Yc" resolve="MongoDbAccess" />
-            <node concept="2YIFZM" id="5Ci2biiMblJ" role="37wK5m">
-              <ref role="37wK5l" node="5Ci2biiLVLQ" resolve="open" />
-              <ref role="1Pybhc" node="3v5cxLOW0Yc" resolve="MongoDbAccess" />
-            </node>
           </node>
         </node>
       </node>
+    </node>
+    <node concept="3clFb_" id="3bxG5bqw$bM" role="jymVt">
+      <property role="TrG5h" value="dropProject" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="1EzhhJ" value="false" />
+      <node concept="37vLTG" id="3bxG5bqw$bN" role="3clF46">
+        <property role="TrG5h" value="project" />
+        <node concept="3uibUv" id="3bxG5bqw$bO" role="1tU5fm">
+          <ref role="3uigEE" to="z1c3:~MPSProject" resolve="MPSProject" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="3bxG5bqw$bQ" role="3clF45" />
+      <node concept="3Tm1VV" id="3bxG5bqw$bR" role="1B3o_S" />
+      <node concept="3clFbS" id="3bxG5bqw$bS" role="3clF47" />
     </node>
   </node>
   <node concept="312cEu" id="5Ci2biiM21v">
