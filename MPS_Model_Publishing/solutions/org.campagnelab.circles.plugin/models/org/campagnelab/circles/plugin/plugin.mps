@@ -108,12 +108,12 @@
   </node>
   <node concept="sE7Ow" id="3Uieg3Mrup8">
     <property role="TrG5h" value="DropDatabase" />
-    <property role="2uzpH1" value="Drop Database" />
+    <property role="2uzpH1" value="Drop Project" />
     <node concept="tnohg" id="3Uieg3Mrup9" role="tncku">
       <node concept="3clFbS" id="3Uieg3Mrupa" role="2VODD2">
         <node concept="3clFbF" id="7MNizV3nRiZ" role="3cqZAp">
           <node concept="2YIFZM" id="7MNizV3nXBl" role="3clFbG">
-            <ref role="37wK5l" to="tt5a:7MNizV3nRoh" resolve="dropDb" />
+            <ref role="37wK5l" to="tt5a:7MNizV3nRoh" resolve="dropProject" />
             <ref role="1Pybhc" to="tt5a:5Ci2biiL$yM" resolve="ModuleSerializer" />
             <node concept="2OqwBi" id="7MNizV3nXBQ" role="37wK5m">
               <node concept="2WthIp" id="7MNizV3nXBT" role="2Oq$k0" />
