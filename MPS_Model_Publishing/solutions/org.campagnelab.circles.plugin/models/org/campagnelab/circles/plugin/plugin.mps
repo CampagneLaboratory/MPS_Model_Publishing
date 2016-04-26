@@ -31,6 +31,7 @@
         <property id="1205250923097" name="caption" index="2uzpH1" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
+        <child id="1205851242421" name="methodDeclaration" index="32lrUH" />
         <child id="1217413222820" name="parameter" index="1NuT2Z" />
       </concept>
       <concept id="1203083511112" name="jetbrains.mps.lang.plugin.structure.ExecuteBlock" flags="in" index="tnohg" />
@@ -212,6 +213,8 @@
       <concept id="1205756064662" name="jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation" flags="ng" index="2WEnae">
         <reference id="1205756909548" name="member" index="2WH_rO" />
       </concept>
+      <concept id="1205769003971" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" flags="ng" index="2XrIbr" />
+      <concept id="1205769149993" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" flags="nn" index="2XshWL" />
     </language>
     <language id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings">
       <concept id="2722628536111969416" name="jetbrains.mps.execution.settings.structure.GridBagConstraints" flags="nn" index="1rwKMM">
@@ -246,8 +249,134 @@
   <node concept="sE7Ow" id="3Uieg3Mrup8">
     <property role="TrG5h" value="DropProject" />
     <property role="2uzpH1" value="Drop Project" />
+    <node concept="2XrIbr" id="1jNpE3AdD9h" role="32lrUH">
+      <property role="TrG5h" value="refresh" />
+      <node concept="3clFbS" id="1jNpE3AdD9i" role="3clF47">
+        <node concept="3clFbF" id="1jNpE3AdDdC" role="3cqZAp">
+          <node concept="37vLTI" id="1jNpE3AdDdD" role="3clFbG">
+            <node concept="10M0yZ" id="1jNpE3AdDdE" role="37vLTJ">
+              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+              <ref role="3cqZAo" to="tt5a:7MNizV3oaoI" resolve="hostname" />
+            </node>
+            <node concept="2OqwBi" id="1jNpE3AdDdF" role="37vLTx">
+              <node concept="2EnYce" id="1jNpE3AdDdG" role="2Oq$k0">
+                <node concept="2YIFZM" id="1jNpE3AdDdH" role="2Oq$k0">
+                  <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                  <node concept="2OqwBi" id="1jNpE3AdDdI" role="37wK5m">
+                    <node concept="2WthIp" id="1jNpE3AdDdJ" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="1jNpE3AdDdK" role="2OqNvi">
+                      <ref role="2WH_rO" node="3Uieg3MrupK" resolve="project" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="LR4Ub" id="1jNpE3AdDdL" role="2OqNvi">
+                  <ref role="LR4Ua" node="2rIRh_WVGqi" resolve="PublisherConnection" />
+                </node>
+              </node>
+              <node concept="34pFcN" id="1jNpE3AdDdM" role="2OqNvi">
+                <ref role="2WH_rO" node="2uFXGB4HUkr" resolve="hostname" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1jNpE3AdDdN" role="3cqZAp">
+          <node concept="37vLTI" id="1jNpE3AdDdO" role="3clFbG">
+            <node concept="10M0yZ" id="1jNpE3AdDdP" role="37vLTJ">
+              <ref role="3cqZAo" to="tt5a:7MNizV3oapu" resolve="port" />
+              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+            </node>
+            <node concept="2OqwBi" id="1jNpE3AdDdQ" role="37vLTx">
+              <node concept="2EnYce" id="1jNpE3AdDdR" role="2Oq$k0">
+                <node concept="2YIFZM" id="1jNpE3AdDdS" role="2Oq$k0">
+                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                  <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+                  <node concept="2OqwBi" id="1jNpE3AdDdT" role="37wK5m">
+                    <node concept="2WthIp" id="1jNpE3AdDdU" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="1jNpE3AdDdV" role="2OqNvi">
+                      <ref role="2WH_rO" node="3Uieg3MrupK" resolve="project" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="LR4Ub" id="1jNpE3AdDdW" role="2OqNvi">
+                  <ref role="LR4Ua" node="2rIRh_WVGqi" resolve="PublisherConnection" />
+                </node>
+              </node>
+              <node concept="34pFcN" id="1jNpE3AdDdX" role="2OqNvi">
+                <ref role="2WH_rO" node="6R$jUV_5XlE" resolve="port" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1jNpE3AdDdY" role="3cqZAp">
+          <node concept="37vLTI" id="1jNpE3AdDdZ" role="3clFbG">
+            <node concept="10M0yZ" id="1jNpE3AdDe0" role="37vLTJ">
+              <ref role="3cqZAo" to="tt5a:7MNizV3oaqe" resolve="username" />
+              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+            </node>
+            <node concept="2OqwBi" id="1jNpE3AdDe1" role="37vLTx">
+              <node concept="2EnYce" id="1jNpE3AdDe2" role="2Oq$k0">
+                <node concept="2YIFZM" id="1jNpE3AdDe3" role="2Oq$k0">
+                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                  <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+                  <node concept="2OqwBi" id="1jNpE3AdDe4" role="37wK5m">
+                    <node concept="2WthIp" id="1jNpE3AdDe5" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="1jNpE3AdDe6" role="2OqNvi">
+                      <ref role="2WH_rO" node="3Uieg3MrupK" resolve="project" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="LR4Ub" id="1jNpE3AdDe7" role="2OqNvi">
+                  <ref role="LR4Ua" node="2rIRh_WVGqi" resolve="PublisherConnection" />
+                </node>
+              </node>
+              <node concept="34pFcN" id="1jNpE3AdDe8" role="2OqNvi">
+                <ref role="2WH_rO" node="7jqSt7$RDmk" resolve="username" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1jNpE3AdDe9" role="3cqZAp">
+          <node concept="37vLTI" id="1jNpE3AdDea" role="3clFbG">
+            <node concept="10M0yZ" id="1jNpE3AdDeb" role="37vLTJ">
+              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+              <ref role="3cqZAo" to="tt5a:7MNizV3oaqY" resolve="pwd" />
+            </node>
+            <node concept="2OqwBi" id="1jNpE3AdDec" role="37vLTx">
+              <node concept="2EnYce" id="1jNpE3AdDed" role="2Oq$k0">
+                <node concept="2YIFZM" id="1jNpE3AdDee" role="2Oq$k0">
+                  <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                  <node concept="2OqwBi" id="1jNpE3AdDef" role="37wK5m">
+                    <node concept="2WthIp" id="1jNpE3AdDeg" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="1jNpE3AdDeh" role="2OqNvi">
+                      <ref role="2WH_rO" node="3Uieg3MrupK" resolve="project" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="LR4Ub" id="1jNpE3AdDei" role="2OqNvi">
+                  <ref role="LR4Ua" node="2rIRh_WVGqi" resolve="PublisherConnection" />
+                </node>
+              </node>
+              <node concept="34pFcN" id="1jNpE3AdDej" role="2OqNvi">
+                <ref role="2WH_rO" node="7jqSt7ya6yC" resolve="password" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3cqZAl" id="1jNpE3AdDds" role="3clF45" />
+    </node>
     <node concept="tnohg" id="3Uieg3Mrup9" role="tncku">
       <node concept="3clFbS" id="3Uieg3Mrupa" role="2VODD2">
+        <node concept="3clFbF" id="1jNpE3AdDIv" role="3cqZAp">
+          <node concept="2OqwBi" id="1jNpE3AdDIp" role="3clFbG">
+            <node concept="2WthIp" id="1jNpE3AdDIs" role="2Oq$k0" />
+            <node concept="2XshWL" id="1jNpE3AdDIu" role="2OqNvi">
+              <ref role="2WH_rO" node="1jNpE3AdD9h" resolve="refresh" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="7MNizV3nRiZ" role="3cqZAp">
           <node concept="2YIFZM" id="7MNizV3nXBl" role="3clFbG">
             <ref role="37wK5l" to="tt5a:7MNizV3nRoh" resolve="dropProject" />
@@ -271,117 +400,131 @@
   <node concept="sE7Ow" id="5eOdMaeZc8r">
     <property role="TrG5h" value="SerializeModulesToDB" />
     <property role="2uzpH1" value="Publish Module(s)" />
-    <node concept="tnohg" id="5eOdMaeZc8s" role="tncku">
-      <node concept="3clFbS" id="5eOdMaeZc8t" role="2VODD2">
-        <node concept="3clFbF" id="6R$jUV_7kk4" role="3cqZAp">
-          <node concept="37vLTI" id="6R$jUV_7p9o" role="3clFbG">
-            <node concept="10M0yZ" id="6R$jUV_7p0b" role="37vLTJ">
-              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+    <node concept="2XrIbr" id="1jNpE3AdGxm" role="32lrUH">
+      <property role="TrG5h" value="refresh" />
+      <node concept="3clFbS" id="1jNpE3AdGxn" role="3clF47">
+        <node concept="3clFbF" id="1jNpE3AdGxo" role="3cqZAp">
+          <node concept="37vLTI" id="1jNpE3AdGxp" role="3clFbG">
+            <node concept="10M0yZ" id="1jNpE3AdGxq" role="37vLTJ">
               <ref role="3cqZAo" to="tt5a:7MNizV3oaoI" resolve="hostname" />
+              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
             </node>
-            <node concept="2OqwBi" id="6R$jUV_7xiW" role="37vLTx">
-              <node concept="2EnYce" id="65yh485pG8X" role="2Oq$k0">
-                <node concept="2YIFZM" id="65yh485pG8Y" role="2Oq$k0">
+            <node concept="2OqwBi" id="1jNpE3AdGxr" role="37vLTx">
+              <node concept="2EnYce" id="1jNpE3AdGxs" role="2Oq$k0">
+                <node concept="2YIFZM" id="1jNpE3AdGxt" role="2Oq$k0">
                   <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
                   <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-                  <node concept="2OqwBi" id="6R$jUV_7x9R" role="37wK5m">
-                    <node concept="2WthIp" id="6R$jUV_7x81" role="2Oq$k0" />
-                    <node concept="1DTwFV" id="6R$jUV_7xfp" role="2OqNvi">
+                  <node concept="2OqwBi" id="1jNpE3AdGxu" role="37wK5m">
+                    <node concept="2WthIp" id="1jNpE3AdGxv" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="1jNpE3AdGxw" role="2OqNvi">
                       <ref role="2WH_rO" node="5eOdMaeZcyv" resolve="project" />
                     </node>
                   </node>
                 </node>
-                <node concept="LR4Ub" id="65yh485pG90" role="2OqNvi">
+                <node concept="LR4Ub" id="1jNpE3AdGxx" role="2OqNvi">
                   <ref role="LR4Ua" node="2rIRh_WVGqi" resolve="PublisherConnection" />
                 </node>
               </node>
-              <node concept="34pFcN" id="6R$jUV_7xnZ" role="2OqNvi">
+              <node concept="34pFcN" id="1jNpE3AdGxy" role="2OqNvi">
                 <ref role="2WH_rO" node="2uFXGB4HUkr" resolve="hostname" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="6R$jUV_7xMe" role="3cqZAp">
-          <node concept="37vLTI" id="6R$jUV_7xMf" role="3clFbG">
-            <node concept="10M0yZ" id="6R$jUV_7xMg" role="37vLTJ">
+        <node concept="3clFbF" id="1jNpE3AdGxz" role="3cqZAp">
+          <node concept="37vLTI" id="1jNpE3AdGx$" role="3clFbG">
+            <node concept="10M0yZ" id="1jNpE3AdGx_" role="37vLTJ">
               <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
               <ref role="3cqZAo" to="tt5a:7MNizV3oapu" resolve="port" />
             </node>
-            <node concept="2OqwBi" id="6R$jUV_7xMh" role="37vLTx">
-              <node concept="2EnYce" id="6R$jUV_7xMi" role="2Oq$k0">
-                <node concept="2YIFZM" id="6R$jUV_7xMj" role="2Oq$k0">
-                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+            <node concept="2OqwBi" id="1jNpE3AdGxA" role="37vLTx">
+              <node concept="2EnYce" id="1jNpE3AdGxB" role="2Oq$k0">
+                <node concept="2YIFZM" id="1jNpE3AdGxC" role="2Oq$k0">
                   <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-                  <node concept="2OqwBi" id="6R$jUV_7xMk" role="37wK5m">
-                    <node concept="2WthIp" id="6R$jUV_7xMl" role="2Oq$k0" />
-                    <node concept="1DTwFV" id="6R$jUV_7xMm" role="2OqNvi">
+                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                  <node concept="2OqwBi" id="1jNpE3AdGxD" role="37wK5m">
+                    <node concept="2WthIp" id="1jNpE3AdGxE" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="1jNpE3AdGxF" role="2OqNvi">
                       <ref role="2WH_rO" node="5eOdMaeZcyv" resolve="project" />
                     </node>
                   </node>
                 </node>
-                <node concept="LR4Ub" id="6R$jUV_7xMn" role="2OqNvi">
+                <node concept="LR4Ub" id="1jNpE3AdGxG" role="2OqNvi">
                   <ref role="LR4Ua" node="2rIRh_WVGqi" resolve="PublisherConnection" />
                 </node>
               </node>
-              <node concept="34pFcN" id="6R$jUV_7y8B" role="2OqNvi">
+              <node concept="34pFcN" id="1jNpE3AdGxH" role="2OqNvi">
                 <ref role="2WH_rO" node="6R$jUV_5XlE" resolve="port" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="6R$jUV_7xSK" role="3cqZAp">
-          <node concept="37vLTI" id="6R$jUV_7xSL" role="3clFbG">
-            <node concept="10M0yZ" id="6R$jUV_7xSM" role="37vLTJ">
-              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+        <node concept="3clFbF" id="1jNpE3AdGxI" role="3cqZAp">
+          <node concept="37vLTI" id="1jNpE3AdGxJ" role="3clFbG">
+            <node concept="10M0yZ" id="1jNpE3AdGxK" role="37vLTJ">
               <ref role="3cqZAo" to="tt5a:7MNizV3oaqe" resolve="username" />
+              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
             </node>
-            <node concept="2OqwBi" id="6R$jUV_7xSN" role="37vLTx">
-              <node concept="2EnYce" id="6R$jUV_7xSO" role="2Oq$k0">
-                <node concept="2YIFZM" id="6R$jUV_7xSP" role="2Oq$k0">
+            <node concept="2OqwBi" id="1jNpE3AdGxL" role="37vLTx">
+              <node concept="2EnYce" id="1jNpE3AdGxM" role="2Oq$k0">
+                <node concept="2YIFZM" id="1jNpE3AdGxN" role="2Oq$k0">
                   <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
                   <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-                  <node concept="2OqwBi" id="6R$jUV_7xSQ" role="37wK5m">
-                    <node concept="2WthIp" id="6R$jUV_7xSR" role="2Oq$k0" />
-                    <node concept="1DTwFV" id="6R$jUV_7xSS" role="2OqNvi">
+                  <node concept="2OqwBi" id="1jNpE3AdGxO" role="37wK5m">
+                    <node concept="2WthIp" id="1jNpE3AdGxP" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="1jNpE3AdGxQ" role="2OqNvi">
                       <ref role="2WH_rO" node="5eOdMaeZcyv" resolve="project" />
                     </node>
                   </node>
                 </node>
-                <node concept="LR4Ub" id="6R$jUV_7xST" role="2OqNvi">
+                <node concept="LR4Ub" id="1jNpE3AdGxR" role="2OqNvi">
                   <ref role="LR4Ua" node="2rIRh_WVGqi" resolve="PublisherConnection" />
                 </node>
               </node>
-              <node concept="34pFcN" id="6R$jUV_7yru" role="2OqNvi">
+              <node concept="34pFcN" id="1jNpE3AdGxS" role="2OqNvi">
                 <ref role="2WH_rO" node="7jqSt7$RDmk" resolve="username" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="6R$jUV_7xGm" role="3cqZAp">
-          <node concept="37vLTI" id="6R$jUV_7xGn" role="3clFbG">
-            <node concept="10M0yZ" id="6R$jUV_7xGo" role="37vLTJ">
+        <node concept="3clFbF" id="1jNpE3AdGxT" role="3cqZAp">
+          <node concept="37vLTI" id="1jNpE3AdGxU" role="3clFbG">
+            <node concept="10M0yZ" id="1jNpE3AdGxV" role="37vLTJ">
               <ref role="3cqZAo" to="tt5a:7MNizV3oaqY" resolve="pwd" />
               <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
             </node>
-            <node concept="2OqwBi" id="6R$jUV_7xGp" role="37vLTx">
-              <node concept="2EnYce" id="6R$jUV_7xGq" role="2Oq$k0">
-                <node concept="2YIFZM" id="6R$jUV_7xGr" role="2Oq$k0">
-                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+            <node concept="2OqwBi" id="1jNpE3AdGxW" role="37vLTx">
+              <node concept="2EnYce" id="1jNpE3AdGxX" role="2Oq$k0">
+                <node concept="2YIFZM" id="1jNpE3AdGxY" role="2Oq$k0">
                   <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-                  <node concept="2OqwBi" id="6R$jUV_7xGs" role="37wK5m">
-                    <node concept="2WthIp" id="6R$jUV_7xGt" role="2Oq$k0" />
-                    <node concept="1DTwFV" id="6R$jUV_7xGu" role="2OqNvi">
+                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                  <node concept="2OqwBi" id="1jNpE3AdGxZ" role="37wK5m">
+                    <node concept="2WthIp" id="1jNpE3AdGy0" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="1jNpE3AdGy1" role="2OqNvi">
                       <ref role="2WH_rO" node="5eOdMaeZcyv" resolve="project" />
                     </node>
                   </node>
                 </node>
-                <node concept="LR4Ub" id="6R$jUV_7xGv" role="2OqNvi">
+                <node concept="LR4Ub" id="1jNpE3AdGy2" role="2OqNvi">
                   <ref role="LR4Ua" node="2rIRh_WVGqi" resolve="PublisherConnection" />
                 </node>
               </node>
-              <node concept="34pFcN" id="6R$jUV_7yAs" role="2OqNvi">
+              <node concept="34pFcN" id="1jNpE3AdGy3" role="2OqNvi">
                 <ref role="2WH_rO" node="7jqSt7ya6yC" resolve="password" />
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3cqZAl" id="1jNpE3AdGy4" role="3clF45" />
+    </node>
+    <node concept="tnohg" id="5eOdMaeZc8s" role="tncku">
+      <node concept="3clFbS" id="5eOdMaeZc8t" role="2VODD2">
+        <node concept="3clFbF" id="1jNpE3AdH8L" role="3cqZAp">
+          <node concept="2OqwBi" id="1jNpE3AdH8F" role="3clFbG">
+            <node concept="2WthIp" id="1jNpE3AdH8I" role="2Oq$k0" />
+            <node concept="2XshWL" id="1jNpE3AdH8K" role="2OqNvi">
+              <ref role="2WH_rO" node="1jNpE3AdGxm" resolve="refresh" />
             </node>
           </node>
         </node>
