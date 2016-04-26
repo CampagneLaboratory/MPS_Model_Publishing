@@ -59,6 +59,10 @@
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
+      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA">
+        <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
+        <property id="6468716278899125786" name="isTransient" index="2dld4O" />
+      </concept>
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -67,6 +71,7 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
+      <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
         <property id="8606350594693632173" name="isTransient" index="eg7rD" />
         <property id="1240249534625" name="isVolatile" index="34CwA1" />
@@ -111,6 +116,9 @@
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
+      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
+        <property id="1068580320021" name="value" index="3cmrfH" />
+      </concept>
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
@@ -950,6 +958,51 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+  </node>
+  <node concept="312cEu" id="43Z2Okkk0Wq">
+    <property role="TrG5h" value="Configuration" />
+    <node concept="2tJIrI" id="43Z2Okkk0WC" role="jymVt" />
+    <node concept="Wx3nA" id="7MNizV3oaoI" role="jymVt">
+      <property role="TrG5h" value="hostname" />
+      <property role="2dlcS1" value="false" />
+      <property role="3TUv4t" value="false" />
+      <property role="2dld4O" value="false" />
+      <node concept="17QB3L" id="7MNizV3oaoK" role="1tU5fm" />
+      <node concept="Xl_RD" id="7MNizV3oaoL" role="33vP2m" />
+      <node concept="3Tm1VV" id="6R$jUV_7k3I" role="1B3o_S" />
+    </node>
+    <node concept="Wx3nA" id="7MNizV3oapu" role="jymVt">
+      <property role="TrG5h" value="port" />
+      <property role="2dlcS1" value="false" />
+      <property role="3TUv4t" value="false" />
+      <property role="2dld4O" value="false" />
+      <node concept="10Oyi0" id="7MNizV3oapw" role="1tU5fm" />
+      <node concept="3cmrfG" id="7MNizV3oapx" role="33vP2m">
+        <property role="3cmrfH" value="0" />
+      </node>
+      <node concept="3Tm1VV" id="6R$jUV_7k3T" role="1B3o_S" />
+    </node>
+    <node concept="Wx3nA" id="7MNizV3oaqe" role="jymVt">
+      <property role="TrG5h" value="username" />
+      <property role="2dlcS1" value="false" />
+      <property role="3TUv4t" value="false" />
+      <property role="2dld4O" value="false" />
+      <node concept="17QB3L" id="7MNizV3oaqg" role="1tU5fm" />
+      <node concept="Xl_RD" id="7MNizV3oaqh" role="33vP2m" />
+      <node concept="3Tm1VV" id="6R$jUV_7k44" role="1B3o_S" />
+    </node>
+    <node concept="Wx3nA" id="7MNizV3oaqY" role="jymVt">
+      <property role="TrG5h" value="pwd" />
+      <property role="2dlcS1" value="false" />
+      <property role="3TUv4t" value="false" />
+      <property role="2dld4O" value="false" />
+      <node concept="17QB3L" id="7MNizV3oar0" role="1tU5fm" />
+      <node concept="Xl_RD" id="7MNizV3oar1" role="33vP2m" />
+      <node concept="3Tm1VV" id="6R$jUV_7k4f" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="43Z2Okkk10b" role="jymVt" />
+    <node concept="2tJIrI" id="43Z2Okkk0ZH" role="jymVt" />
+    <node concept="3Tm1VV" id="43Z2Okkk0Wr" role="1B3o_S" />
   </node>
 </model>
 

@@ -8,6 +8,7 @@
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings" version="0" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
   </languages>
   <imports>
     <import index="qq03" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.actions(MPS.Platform/)" />
@@ -17,6 +18,7 @@
     <import index="qqrq" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui.components(MPS.IDEA/)" />
     <import index="r791" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.text(JDK/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -73,6 +75,9 @@
       <concept id="7520713872864775836" name="jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor" flags="ng" index="2DaZZR">
         <property id="6862207549896125199" name="needInitConfig" index="3_H9TB" />
       </concept>
+      <concept id="681855071694758168" name="jetbrains.mps.lang.plugin.standalone.structure.GetPreferencesComponentInProjectOperation" flags="nn" index="LR4Ub">
+        <reference id="681855071694758169" name="componentDeclaration" index="LR4Ua" />
+      </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1224071154655" name="jetbrains.mps.baseLanguage.structure.AsExpression" flags="nn" index="0kSF2">
@@ -110,6 +115,9 @@
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
+      </concept>
+      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
+        <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
@@ -196,6 +204,9 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
     </language>
+    <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots">
+      <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
+    </language>
     <language id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers">
       <concept id="1205752633985" name="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" flags="nn" index="2WthIp" />
       <concept id="1205756064662" name="jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation" flags="ng" index="2WEnae">
@@ -262,6 +273,118 @@
     <property role="2uzpH1" value="Publish Module(s)" />
     <node concept="tnohg" id="5eOdMaeZc8s" role="tncku">
       <node concept="3clFbS" id="5eOdMaeZc8t" role="2VODD2">
+        <node concept="3clFbF" id="6R$jUV_7kk4" role="3cqZAp">
+          <node concept="37vLTI" id="6R$jUV_7p9o" role="3clFbG">
+            <node concept="10M0yZ" id="6R$jUV_7p0b" role="37vLTJ">
+              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+              <ref role="3cqZAo" to="tt5a:7MNizV3oaoI" resolve="hostname" />
+            </node>
+            <node concept="2OqwBi" id="6R$jUV_7xiW" role="37vLTx">
+              <node concept="2EnYce" id="65yh485pG8X" role="2Oq$k0">
+                <node concept="2YIFZM" id="65yh485pG8Y" role="2Oq$k0">
+                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                  <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+                  <node concept="2OqwBi" id="6R$jUV_7x9R" role="37wK5m">
+                    <node concept="2WthIp" id="6R$jUV_7x81" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="6R$jUV_7xfp" role="2OqNvi">
+                      <ref role="2WH_rO" node="5eOdMaeZcyv" resolve="project" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="LR4Ub" id="65yh485pG90" role="2OqNvi">
+                  <ref role="LR4Ua" node="2rIRh_WVGqi" resolve="PublisherConnection" />
+                </node>
+              </node>
+              <node concept="34pFcN" id="6R$jUV_7xnZ" role="2OqNvi">
+                <ref role="2WH_rO" node="2uFXGB4HUkr" resolve="hostname" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6R$jUV_7xMe" role="3cqZAp">
+          <node concept="37vLTI" id="6R$jUV_7xMf" role="3clFbG">
+            <node concept="10M0yZ" id="6R$jUV_7xMg" role="37vLTJ">
+              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+              <ref role="3cqZAo" to="tt5a:7MNizV3oapu" resolve="port" />
+            </node>
+            <node concept="2OqwBi" id="6R$jUV_7xMh" role="37vLTx">
+              <node concept="2EnYce" id="6R$jUV_7xMi" role="2Oq$k0">
+                <node concept="2YIFZM" id="6R$jUV_7xMj" role="2Oq$k0">
+                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                  <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+                  <node concept="2OqwBi" id="6R$jUV_7xMk" role="37wK5m">
+                    <node concept="2WthIp" id="6R$jUV_7xMl" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="6R$jUV_7xMm" role="2OqNvi">
+                      <ref role="2WH_rO" node="5eOdMaeZcyv" resolve="project" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="LR4Ub" id="6R$jUV_7xMn" role="2OqNvi">
+                  <ref role="LR4Ua" node="2rIRh_WVGqi" resolve="PublisherConnection" />
+                </node>
+              </node>
+              <node concept="34pFcN" id="6R$jUV_7y8B" role="2OqNvi">
+                <ref role="2WH_rO" node="6R$jUV_5XlE" resolve="port" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6R$jUV_7xSK" role="3cqZAp">
+          <node concept="37vLTI" id="6R$jUV_7xSL" role="3clFbG">
+            <node concept="10M0yZ" id="6R$jUV_7xSM" role="37vLTJ">
+              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+              <ref role="3cqZAo" to="tt5a:7MNizV3oaqe" resolve="username" />
+            </node>
+            <node concept="2OqwBi" id="6R$jUV_7xSN" role="37vLTx">
+              <node concept="2EnYce" id="6R$jUV_7xSO" role="2Oq$k0">
+                <node concept="2YIFZM" id="6R$jUV_7xSP" role="2Oq$k0">
+                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                  <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+                  <node concept="2OqwBi" id="6R$jUV_7xSQ" role="37wK5m">
+                    <node concept="2WthIp" id="6R$jUV_7xSR" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="6R$jUV_7xSS" role="2OqNvi">
+                      <ref role="2WH_rO" node="5eOdMaeZcyv" resolve="project" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="LR4Ub" id="6R$jUV_7xST" role="2OqNvi">
+                  <ref role="LR4Ua" node="2rIRh_WVGqi" resolve="PublisherConnection" />
+                </node>
+              </node>
+              <node concept="34pFcN" id="6R$jUV_7yru" role="2OqNvi">
+                <ref role="2WH_rO" node="7jqSt7$RDmk" resolve="username" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6R$jUV_7xGm" role="3cqZAp">
+          <node concept="37vLTI" id="6R$jUV_7xGn" role="3clFbG">
+            <node concept="10M0yZ" id="6R$jUV_7xGo" role="37vLTJ">
+              <ref role="3cqZAo" to="tt5a:7MNizV3oaqY" resolve="pwd" />
+              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+            </node>
+            <node concept="2OqwBi" id="6R$jUV_7xGp" role="37vLTx">
+              <node concept="2EnYce" id="6R$jUV_7xGq" role="2Oq$k0">
+                <node concept="2YIFZM" id="6R$jUV_7xGr" role="2Oq$k0">
+                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                  <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+                  <node concept="2OqwBi" id="6R$jUV_7xGs" role="37wK5m">
+                    <node concept="2WthIp" id="6R$jUV_7xGt" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="6R$jUV_7xGu" role="2OqNvi">
+                      <ref role="2WH_rO" node="5eOdMaeZcyv" resolve="project" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="LR4Ub" id="6R$jUV_7xGv" role="2OqNvi">
+                  <ref role="LR4Ua" node="2rIRh_WVGqi" resolve="PublisherConnection" />
+                </node>
+              </node>
+              <node concept="34pFcN" id="6R$jUV_7yAs" role="2OqNvi">
+                <ref role="2WH_rO" node="7jqSt7ya6yC" resolve="password" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="7MNizV3nHco" role="3cqZAp">
           <node concept="2YIFZM" id="7MNizV3nHlR" role="3clFbG">
             <ref role="37wK5l" to="tt5a:7MNizV3nHfc" resolve="serializeProjectWithModules" />
