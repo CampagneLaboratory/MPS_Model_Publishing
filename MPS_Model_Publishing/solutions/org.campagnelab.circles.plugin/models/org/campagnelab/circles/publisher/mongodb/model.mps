@@ -49,8 +49,16 @@
       <concept id="1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" flags="nn" index="2OwXpG">
         <reference id="1197029500499" name="fieldDeclaration" index="2Oxat5" />
       </concept>
+      <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
+        <child id="1164879758292" name="body" index="SfCbr" />
+        <child id="1164903496223" name="catchClause" index="TEbGg" />
+      </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
+      </concept>
+      <concept id="1164903280175" name="jetbrains.mps.baseLanguage.structure.CatchClause" flags="nn" index="TDmWw">
+        <child id="1164903359218" name="catchBody" index="TDEfX" />
+        <child id="1164903359217" name="throwable" index="TDEfY" />
       </concept>
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA">
         <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
@@ -1892,22 +1900,41 @@
       <node concept="3Tm1VV" id="6RW8DBDcbg1" role="1B3o_S" />
       <node concept="3cqZAl" id="6RW8DBDcbg2" role="3clF45" />
       <node concept="3clFbS" id="6RW8DBDcbg3" role="3clF47">
-        <node concept="3clFbF" id="6RW8DBDccUg" role="3cqZAp">
-          <node concept="2OqwBi" id="6RW8DBDccWx" role="3clFbG">
-            <node concept="37vLTw" id="6RW8DBDccUf" role="2Oq$k0">
-              <ref role="3cqZAo" node="6RW8DBDcbYL" resolve="parentCollection" />
-            </node>
-            <node concept="liA8E" id="6RW8DBDccZh" role="2OqNvi">
-              <ref role="37wK5l" node="5Ci2biiLWma" resolve="addDocument" />
-              <node concept="2OqwBi" id="6RW8DBDcded" role="37wK5m">
-                <node concept="2OqwBi" id="6RW8DBDcd5P" role="2Oq$k0">
-                  <node concept="Xjq3P" id="6RW8DBDcd39" role="2Oq$k0" />
-                  <node concept="2OwXpG" id="6RW8DBDcda0" role="2OqNvi">
-                    <ref role="2Oxat5" node="6RW8DBDcbFa" resolve="node" />
+        <node concept="SfApY" id="6U_J9TPS$rh" role="3cqZAp">
+          <node concept="3clFbS" id="6U_J9TPS$rj" role="SfCbr">
+            <node concept="3clFbF" id="6RW8DBDccUg" role="3cqZAp">
+              <node concept="2OqwBi" id="6RW8DBDccWx" role="3clFbG">
+                <node concept="37vLTw" id="6RW8DBDccUf" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6RW8DBDcbYL" resolve="parentCollection" />
+                </node>
+                <node concept="liA8E" id="6RW8DBDccZh" role="2OqNvi">
+                  <ref role="37wK5l" node="5Ci2biiLWma" resolve="addDocument" />
+                  <node concept="2OqwBi" id="6RW8DBDcded" role="37wK5m">
+                    <node concept="2OqwBi" id="6RW8DBDcd5P" role="2Oq$k0">
+                      <node concept="Xjq3P" id="6RW8DBDcd39" role="2Oq$k0" />
+                      <node concept="2OwXpG" id="6RW8DBDcda0" role="2OqNvi">
+                        <ref role="2Oxat5" node="6RW8DBDcbFa" resolve="node" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="6RW8DBDcdiB" role="2OqNvi">
+                      <ref role="37wK5l" node="5Ci2biiM23s" resolve="toDoc" />
+                    </node>
                   </node>
                 </node>
-                <node concept="liA8E" id="6RW8DBDcdiB" role="2OqNvi">
-                  <ref role="37wK5l" node="5Ci2biiM23s" resolve="toDoc" />
+              </node>
+            </node>
+          </node>
+          <node concept="TDmWw" id="6U_J9TPS$rk" role="TEbGg">
+            <node concept="3cpWsn" id="6U_J9TPS$rm" role="TDEfY">
+              <property role="TrG5h" value="mwe" />
+              <node concept="3uibUv" id="6U_J9TPS$$M" role="1tU5fm">
+                <ref role="3uigEE" to="wvt1:~MongoWriteException" resolve="MongoWriteException" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="6U_J9TPS$rq" role="TDEfX">
+              <node concept="3SKdUt" id="6U_J9TPS$CU" role="3cqZAp">
+                <node concept="3SKdUq" id="6U_J9TPS$CV" role="3SKWNk">
+                  <property role="3SKdUp" value="node already exists" />
                 </node>
               </node>
             </node>
