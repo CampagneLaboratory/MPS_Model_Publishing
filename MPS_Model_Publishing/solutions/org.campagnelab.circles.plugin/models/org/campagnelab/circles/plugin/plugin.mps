@@ -19,6 +19,8 @@
     <import index="r791" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.text(JDK/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
+    <import index="7fgt" ref="r:39038425-9225-43fd-83ff-4f4e9f7a1f9b(org.campagnelab.circles.publisher.mongodb.model)" />
+    <import index="vdtg" ref="r:deb87fab-190d-40b1-8364-c6d9ac5e7577(org.campagnelab.circles.publisher.mongodb.shell)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -255,7 +257,7 @@
         <node concept="3clFbF" id="1jNpE3AdDdC" role="3cqZAp">
           <node concept="37vLTI" id="1jNpE3AdDdD" role="3clFbG">
             <node concept="10M0yZ" id="1jNpE3AdDdE" role="37vLTJ">
-              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Connection" />
               <ref role="3cqZAo" to="tt5a:7MNizV3oaoI" resolve="hostname" />
             </node>
             <node concept="2OqwBi" id="1jNpE3AdDdF" role="37vLTx">
@@ -284,7 +286,7 @@
           <node concept="37vLTI" id="1jNpE3AdDdO" role="3clFbG">
             <node concept="10M0yZ" id="1jNpE3AdDdP" role="37vLTJ">
               <ref role="3cqZAo" to="tt5a:7MNizV3oapu" resolve="port" />
-              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Connection" />
             </node>
             <node concept="2OqwBi" id="1jNpE3AdDdQ" role="37vLTx">
               <node concept="2EnYce" id="1jNpE3AdDdR" role="2Oq$k0">
@@ -312,7 +314,7 @@
           <node concept="37vLTI" id="1jNpE3AdDdZ" role="3clFbG">
             <node concept="10M0yZ" id="1jNpE3AdDe0" role="37vLTJ">
               <ref role="3cqZAo" to="tt5a:7MNizV3oaqe" resolve="username" />
-              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Connection" />
             </node>
             <node concept="2OqwBi" id="1jNpE3AdDe1" role="37vLTx">
               <node concept="2EnYce" id="1jNpE3AdDe2" role="2Oq$k0">
@@ -339,7 +341,7 @@
         <node concept="3clFbF" id="1jNpE3AdDe9" role="3cqZAp">
           <node concept="37vLTI" id="1jNpE3AdDea" role="3clFbG">
             <node concept="10M0yZ" id="1jNpE3AdDeb" role="37vLTJ">
-              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Connection" />
               <ref role="3cqZAo" to="tt5a:7MNizV3oaqY" resolve="pwd" />
             </node>
             <node concept="2OqwBi" id="1jNpE3AdDec" role="37vLTx">
@@ -377,14 +379,19 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="7MNizV3nRiZ" role="3cqZAp">
-          <node concept="2YIFZM" id="7MNizV3nXBl" role="3clFbG">
-            <ref role="37wK5l" to="tt5a:7MNizV3nRoh" resolve="dropProject" />
-            <ref role="1Pybhc" to="tt5a:5Ci2biiL$yM" resolve="ModuleSerializer" />
-            <node concept="2OqwBi" id="7MNizV3nXBQ" role="37wK5m">
-              <node concept="2WthIp" id="7MNizV3nXBT" role="2Oq$k0" />
-              <node concept="1DTwFV" id="7MNizV3nXBV" role="2OqNvi">
-                <ref role="2WH_rO" node="3Uieg3MrupK" resolve="project" />
+        <node concept="3clFbF" id="6U_J9TPSfiz" role="3cqZAp">
+          <node concept="2OqwBi" id="6U_J9TPSfl5" role="3clFbG">
+            <node concept="2YIFZM" id="6U_J9TPSfk0" role="2Oq$k0">
+              <ref role="37wK5l" to="tt5a:6U_J9TPS5aK" resolve="getSerializer" />
+              <ref role="1Pybhc" to="tt5a:43Z2OkkkeXA" resolve="DbFactory" />
+            </node>
+            <node concept="liA8E" id="6U_J9TPSfot" role="2OqNvi">
+              <ref role="37wK5l" to="tt5a:7MNizV3nHMn" resolve="dropProject" />
+              <node concept="2OqwBi" id="6U_J9TPSfrC" role="37wK5m">
+                <node concept="2WthIp" id="6U_J9TPSfpw" role="2Oq$k0" />
+                <node concept="1DTwFV" id="6U_J9TPSf$Z" role="2OqNvi">
+                  <ref role="2WH_rO" node="3Uieg3MrupK" resolve="project" />
+                </node>
               </node>
             </node>
           </node>
@@ -407,7 +414,7 @@
           <node concept="37vLTI" id="1jNpE3AdGxp" role="3clFbG">
             <node concept="10M0yZ" id="1jNpE3AdGxq" role="37vLTJ">
               <ref role="3cqZAo" to="tt5a:7MNizV3oaoI" resolve="hostname" />
-              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Connection" />
             </node>
             <node concept="2OqwBi" id="1jNpE3AdGxr" role="37vLTx">
               <node concept="2EnYce" id="1jNpE3AdGxs" role="2Oq$k0">
@@ -434,7 +441,7 @@
         <node concept="3clFbF" id="1jNpE3AdGxz" role="3cqZAp">
           <node concept="37vLTI" id="1jNpE3AdGx$" role="3clFbG">
             <node concept="10M0yZ" id="1jNpE3AdGx_" role="37vLTJ">
-              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Connection" />
               <ref role="3cqZAo" to="tt5a:7MNizV3oapu" resolve="port" />
             </node>
             <node concept="2OqwBi" id="1jNpE3AdGxA" role="37vLTx">
@@ -463,7 +470,7 @@
           <node concept="37vLTI" id="1jNpE3AdGxJ" role="3clFbG">
             <node concept="10M0yZ" id="1jNpE3AdGxK" role="37vLTJ">
               <ref role="3cqZAo" to="tt5a:7MNizV3oaqe" resolve="username" />
-              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Connection" />
             </node>
             <node concept="2OqwBi" id="1jNpE3AdGxL" role="37vLTx">
               <node concept="2EnYce" id="1jNpE3AdGxM" role="2Oq$k0">
@@ -491,7 +498,7 @@
           <node concept="37vLTI" id="1jNpE3AdGxU" role="3clFbG">
             <node concept="10M0yZ" id="1jNpE3AdGxV" role="37vLTJ">
               <ref role="3cqZAo" to="tt5a:7MNizV3oaqY" resolve="pwd" />
-              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+              <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Connection" />
             </node>
             <node concept="2OqwBi" id="1jNpE3AdGxW" role="37vLTx">
               <node concept="2EnYce" id="1jNpE3AdGxX" role="2Oq$k0">
@@ -528,20 +535,25 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="7MNizV3nHco" role="3cqZAp">
-          <node concept="2YIFZM" id="7MNizV3nHlR" role="3clFbG">
-            <ref role="37wK5l" to="tt5a:7MNizV3nHfc" resolve="serializeProjectWithModules" />
-            <ref role="1Pybhc" to="tt5a:5Ci2biiL$yM" resolve="ModuleSerializer" />
-            <node concept="2OqwBi" id="7MNizV3nHp2" role="37wK5m">
-              <node concept="2WthIp" id="7MNizV3nHnk" role="2Oq$k0" />
-              <node concept="1DTwFV" id="7MNizV3nHu3" role="2OqNvi">
-                <ref role="2WH_rO" node="5eOdMaeZcyv" resolve="project" />
-              </node>
+        <node concept="3clFbF" id="6U_J9TPSe3w" role="3cqZAp">
+          <node concept="2OqwBi" id="6U_J9TPSea3" role="3clFbG">
+            <node concept="2YIFZM" id="6U_J9TPSe8Q" role="2Oq$k0">
+              <ref role="37wK5l" to="tt5a:6U_J9TPS5aK" resolve="getSerializer" />
+              <ref role="1Pybhc" to="tt5a:43Z2OkkkeXA" resolve="DbFactory" />
             </node>
-            <node concept="2OqwBi" id="7MNizV3nHxO" role="37wK5m">
-              <node concept="2WthIp" id="7MNizV3nHvM" role="2Oq$k0" />
-              <node concept="1DTwFV" id="7MNizV3nHFl" role="2OqNvi">
-                <ref role="2WH_rO" node="5eOdMaeZcow" resolve="modules" />
+            <node concept="liA8E" id="6U_J9TPSedr" role="2OqNvi">
+              <ref role="37wK5l" to="tt5a:7MNizV3nJnZ" resolve="serializeProjectWithModules" />
+              <node concept="2OqwBi" id="6U_J9TPSegZ" role="37wK5m">
+                <node concept="2WthIp" id="6U_J9TPSeeK" role="2Oq$k0" />
+                <node concept="1DTwFV" id="6U_J9TPSezA" role="2OqNvi">
+                  <ref role="2WH_rO" node="5eOdMaeZcyv" resolve="project" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="6U_J9TPSeCD" role="37wK5m">
+                <node concept="2WthIp" id="6U_J9TPSeA6" role="2Oq$k0" />
+                <node concept="1DTwFV" id="6U_J9TPSeWu" role="2OqNvi">
+                  <ref role="2WH_rO" node="5eOdMaeZcow" resolve="modules" />
+                </node>
               </node>
             </node>
           </node>

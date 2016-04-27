@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:39038425-9225-43fd-83ff-4f4e9f7a1f9b(org.campagnelab.circles.publisher.mongodb)">
+<model ref="r:39038425-9225-43fd-83ff-4f4e9f7a1f9b(org.campagnelab.circles.publisher.mongodb.model)">
   <persistence version="9" />
   <languages>
     <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
   </languages>
   <imports>
     <import index="tt5a" ref="r:839ef8fb-1aee-4153-a27a-e44c8cb9d82a(org.campagnelab.circles.publisher.db)" />
@@ -19,6 +20,10 @@
     <import index="z1c3" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="n0jz" ref="8a9532d6-8a70-4740-b535-cf759be9dbd2/java:com.mongodb.client.model(com.mongodb.driver/)" />
     <import index="ncvd" ref="8a9532d6-8a70-4740-b535-cf759be9dbd2/java:org.bson.conversions(com.mongodb.driver/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <import index="3t4d" ref="r:7a57a805-2fc1-49f5-991a-6bd531b99008(org.campagnelab.mps.editor2pdf.structure)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -28,6 +33,12 @@
       </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
+      <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
+        <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+      </concept>
+      <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
+        <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -64,6 +75,7 @@
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
+        <child id="1095933932569" name="implementedInterface" index="EKbjA" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -269,11 +281,11 @@
                   <ref role="37wK5l" to="wvt1:~ServerAddress.&lt;init&gt;(java.lang.String,int)" resolve="ServerAddress" />
                   <node concept="10M0yZ" id="5QK6GxzAKDe" role="37wK5m">
                     <ref role="3cqZAo" to="tt5a:7MNizV3oaoI" resolve="hostname" />
-                    <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+                    <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Connection" />
                   </node>
                   <node concept="10M0yZ" id="5QK6GxzALJD" role="37wK5m">
                     <ref role="3cqZAo" to="tt5a:7MNizV3oapu" resolve="port" />
-                    <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+                    <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Connection" />
                   </node>
                 </node>
               </node>
@@ -291,7 +303,7 @@
               <ref role="1Pybhc" to="wvt1:~MongoCredential" resolve="MongoCredential" />
               <node concept="10M0yZ" id="5QK6GxzAPDa" role="37wK5m">
                 <ref role="3cqZAo" to="tt5a:7MNizV3oaqe" resolve="username" />
-                <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+                <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Connection" />
               </node>
               <node concept="10M0yZ" id="5QK6GxzAPKs" role="37wK5m">
                 <ref role="3cqZAo" node="5Ci2biiLWbv" resolve="database" />
@@ -300,7 +312,7 @@
               <node concept="2OqwBi" id="5QK6GxzAPYz" role="37wK5m">
                 <node concept="10M0yZ" id="5QK6GxzAPSb" role="2Oq$k0">
                   <ref role="3cqZAo" to="tt5a:7MNizV3oaqY" resolve="pwd" />
-                  <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+                  <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Connection" />
                 </node>
                 <node concept="liA8E" id="5QK6GxzAQ2M" role="2OqNvi">
                   <ref role="37wK5l" to="wyt6:~String.toCharArray():char[]" resolve="toCharArray" />
@@ -921,7 +933,7 @@
               </node>
               <node concept="10M0yZ" id="3bxG5bqwokT" role="37wK5m">
                 <ref role="3cqZAo" to="tt5a:7MNizV3oaqe" resolve="username" />
-                <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
+                <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Connection" />
               </node>
             </node>
           </node>
@@ -947,510 +959,6 @@
       <node concept="3cqZAl" id="5Ci2biiLWmm" role="3clF45" />
     </node>
     <node concept="2tJIrI" id="5Ci2biiLWin" role="jymVt" />
-  </node>
-  <node concept="312cEu" id="7MNizV3nHNm">
-    <property role="TrG5h" value="MongoDbSchemaManager" />
-    <node concept="2tJIrI" id="7MNizV3nHPb" role="jymVt" />
-    <node concept="3Tm1VV" id="7MNizV3nHNn" role="1B3o_S" />
-    <node concept="3uibUv" id="7MNizV3nHOd" role="1zkMxy">
-      <ref role="3uigEE" to="tt5a:7TSDInKxqHQ" resolve="SchemaManager" />
-    </node>
-    <node concept="3clFb_" id="7MNizV3nHOt" role="jymVt">
-      <property role="TrG5h" value="createSchema" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <property role="1EzhhJ" value="false" />
-      <node concept="3cqZAl" id="7MNizV3nHOv" role="3clF45" />
-      <node concept="3Tm1VV" id="7MNizV3nHOw" role="1B3o_S" />
-      <node concept="3clFbS" id="7MNizV3nHOx" role="3clF47">
-        <node concept="3clFbF" id="3bxG5bqwD6T" role="3cqZAp">
-          <node concept="2YIFZM" id="3bxG5bqwD7v" role="3clFbG">
-            <ref role="37wK5l" node="5Ci2biiLVLQ" resolve="open" />
-            <ref role="1Pybhc" node="3v5cxLOW0Yc" resolve="MongoDbAccess" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="7MNizV3nJpR" role="jymVt">
-      <property role="TrG5h" value="dropSchema" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <property role="1EzhhJ" value="false" />
-      <node concept="3cqZAl" id="7MNizV3nJpT" role="3clF45" />
-      <node concept="3Tm1VV" id="7MNizV3nJpU" role="1B3o_S" />
-      <node concept="3clFbS" id="7MNizV3nJpV" role="3clF47">
-        <node concept="3clFbF" id="5Ci2biiMbpZ" role="3cqZAp">
-          <node concept="2YIFZM" id="5Ci2biiMbqJ" role="3clFbG">
-            <ref role="37wK5l" node="5Ci2biiLVM3" resolve="drop" />
-            <ref role="1Pybhc" node="3v5cxLOW0Yc" resolve="MongoDbAccess" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="3bxG5bqw$bM" role="jymVt">
-      <property role="TrG5h" value="dropProject" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <property role="1EzhhJ" value="false" />
-      <node concept="37vLTG" id="3bxG5bqw$bN" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="3bxG5bqw$bO" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~MPSProject" resolve="MPSProject" />
-        </node>
-      </node>
-      <node concept="3cqZAl" id="3bxG5bqw$bQ" role="3clF45" />
-      <node concept="3Tm1VV" id="3bxG5bqw$bR" role="1B3o_S" />
-      <node concept="3clFbS" id="3bxG5bqw$bS" role="3clF47">
-        <node concept="3cpWs8" id="3jMt7I9fa_C" role="3cqZAp">
-          <node concept="3cpWsn" id="3jMt7I9fa_D" role="3cpWs9">
-            <property role="TrG5h" value="projectsCol" />
-            <node concept="3uibUv" id="3jMt7I9fa_E" role="1tU5fm">
-              <ref role="3uigEE" node="43Z2OkkkeYv" resolve="MongoDbCollection" />
-            </node>
-            <node concept="2YIFZM" id="3bxG5bqwB8b" role="33vP2m">
-              <ref role="1Pybhc" node="3v5cxLOW0Yc" resolve="MongoDbAccess" />
-              <ref role="37wK5l" node="3bxG5bqwAFA" resolve="getProjectsCollection" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="3jMt7I9fcdL" role="3cqZAp">
-          <node concept="3cpWsn" id="3jMt7I9fcdM" role="3cpWs9">
-            <property role="TrG5h" value="modulesCol" />
-            <node concept="3uibUv" id="3jMt7I9fcdN" role="1tU5fm">
-              <ref role="3uigEE" node="43Z2OkkkeYv" resolve="MongoDbCollection" />
-            </node>
-            <node concept="2YIFZM" id="3bxG5bqwBbX" role="33vP2m">
-              <ref role="1Pybhc" node="3v5cxLOW0Yc" resolve="MongoDbAccess" />
-              <ref role="37wK5l" node="3bxG5bqwAIr" resolve="getModulesCollection" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="3jMt7I9fcqM" role="3cqZAp">
-          <node concept="3cpWsn" id="3jMt7I9fcqN" role="3cpWs9">
-            <property role="TrG5h" value="modelsCol" />
-            <node concept="3uibUv" id="3jMt7I9fcqO" role="1tU5fm">
-              <ref role="3uigEE" node="43Z2OkkkeYv" resolve="MongoDbCollection" />
-            </node>
-            <node concept="2YIFZM" id="6U_J9TPR$pa" role="33vP2m">
-              <ref role="37wK5l" node="3bxG5bqwALg" resolve="getModelsCollection" />
-              <ref role="1Pybhc" node="3v5cxLOW0Yc" resolve="MongoDbAccess" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="3jMt7I9fcBT" role="3cqZAp">
-          <node concept="3cpWsn" id="3jMt7I9fcBU" role="3cpWs9">
-            <property role="TrG5h" value="nodesCol" />
-            <node concept="3uibUv" id="3jMt7I9fcBV" role="1tU5fm">
-              <ref role="3uigEE" node="43Z2OkkkeYv" resolve="MongoDbCollection" />
-            </node>
-            <node concept="2YIFZM" id="3bxG5bqwBlL" role="33vP2m">
-              <ref role="1Pybhc" node="3v5cxLOW0Yc" resolve="MongoDbAccess" />
-              <ref role="37wK5l" node="3bxG5bqwAO5" resolve="getNodesCollection" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="1jNpE3Ae0dF" role="3cqZAp">
-          <node concept="3cpWsn" id="1jNpE3Ae0dG" role="3cpWs9">
-            <property role="TrG5h" value="projectFilter" />
-            <node concept="3uibUv" id="1jNpE3Ae0dH" role="1tU5fm">
-              <ref role="3uigEE" to="ncvd:~Bson" resolve="Bson" />
-            </node>
-            <node concept="2YIFZM" id="1jNpE3Ae0ud" role="33vP2m">
-              <ref role="1Pybhc" to="n0jz:~Filters" resolve="Filters" />
-              <ref role="37wK5l" to="n0jz:~Filters.and(org.bson.conversions.Bson...):org.bson.conversions.Bson" resolve="and" />
-              <node concept="2YIFZM" id="1jNpE3Ae0ue" role="37wK5m">
-                <ref role="1Pybhc" to="n0jz:~Filters" resolve="Filters" />
-                <ref role="37wK5l" to="n0jz:~Filters.and(org.bson.conversions.Bson...):org.bson.conversions.Bson" resolve="and" />
-                <node concept="2YIFZM" id="1jNpE3Ae0uf" role="37wK5m">
-                  <ref role="1Pybhc" to="n0jz:~Filters" resolve="Filters" />
-                  <ref role="37wK5l" to="n0jz:~Filters.eq(java.lang.String,java.lang.Object):org.bson.conversions.Bson" resolve="eq" />
-                  <node concept="Xl_RD" id="1jNpE3Ae0ug" role="37wK5m">
-                    <property role="Xl_RC" value="name" />
-                  </node>
-                  <node concept="2OqwBi" id="1jNpE3Ae0uh" role="37wK5m">
-                    <node concept="37vLTw" id="1jNpE3Ae0ui" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3bxG5bqw$bN" resolve="project" />
-                    </node>
-                    <node concept="liA8E" id="1jNpE3Ae0uj" role="2OqNvi">
-                      <ref role="37wK5l" to="z1c3:~MPSProject.getName():java.lang.String" resolve="getName" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="2YIFZM" id="1jNpE3Ae0uk" role="37wK5m">
-                  <ref role="37wK5l" to="n0jz:~Filters.eq(java.lang.String,java.lang.Object):org.bson.conversions.Bson" resolve="eq" />
-                  <ref role="1Pybhc" to="n0jz:~Filters" resolve="Filters" />
-                  <node concept="Xl_RD" id="1jNpE3Ae0ul" role="37wK5m">
-                    <property role="Xl_RC" value="createdBy" />
-                  </node>
-                  <node concept="10M0yZ" id="1jNpE3Ae0um" role="37wK5m">
-                    <ref role="3cqZAo" to="tt5a:7MNizV3oaqe" resolve="username" />
-                    <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="1jNpE3AdO7g" role="3cqZAp">
-          <node concept="3cpWsn" id="1jNpE3AdO7h" role="3cpWs9">
-            <property role="TrG5h" value="projects" />
-            <node concept="3uibUv" id="1jNpE3AdO7e" role="1tU5fm">
-              <ref role="3uigEE" to="skwk:~FindIterable" resolve="FindIterable" />
-              <node concept="3uibUv" id="1jNpE3AdOsW" role="11_B2D">
-                <ref role="3uigEE" to="htiy:~Document" resolve="Document" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="1jNpE3AdOuP" role="33vP2m">
-              <node concept="2OqwBi" id="1jNpE3AdOmy" role="2Oq$k0">
-                <node concept="37vLTw" id="1jNpE3AdOlm" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3jMt7I9fa_D" resolve="projectsCol" />
-                </node>
-                <node concept="liA8E" id="1jNpE3AdOrv" role="2OqNvi">
-                  <ref role="37wK5l" node="5Ci2biiLWl$" resolve="getCollection" />
-                </node>
-              </node>
-              <node concept="liA8E" id="1jNpE3AdOTJ" role="2OqNvi">
-                <ref role="37wK5l" to="skwk:~MongoCollection.find(org.bson.conversions.Bson):com.mongodb.client.FindIterable" resolve="find" />
-                <node concept="37vLTw" id="1jNpE3Ae0Ky" role="37wK5m">
-                  <ref role="3cqZAo" node="1jNpE3Ae0dG" resolve="projectFilter" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1DcWWT" id="1jNpE3AdXr$" role="3cqZAp">
-          <node concept="3clFbS" id="1jNpE3AdXrA" role="2LFqv$">
-            <node concept="3cpWs8" id="6U_J9TPR15B" role="3cqZAp">
-              <node concept="3cpWsn" id="6U_J9TPR15C" role="3cpWs9">
-                <property role="TrG5h" value="moduleFilter" />
-                <node concept="3uibUv" id="6U_J9TPR15D" role="1tU5fm">
-                  <ref role="3uigEE" to="ncvd:~Bson" resolve="Bson" />
-                </node>
-                <node concept="2YIFZM" id="6U_J9TPR15E" role="33vP2m">
-                  <ref role="37wK5l" to="n0jz:~Filters.and(org.bson.conversions.Bson...):org.bson.conversions.Bson" resolve="and" />
-                  <ref role="1Pybhc" to="n0jz:~Filters" resolve="Filters" />
-                  <node concept="2YIFZM" id="6U_J9TPR15F" role="37wK5m">
-                    <ref role="37wK5l" to="n0jz:~Filters.and(org.bson.conversions.Bson...):org.bson.conversions.Bson" resolve="and" />
-                    <ref role="1Pybhc" to="n0jz:~Filters" resolve="Filters" />
-                    <node concept="2YIFZM" id="6U_J9TPR2tp" role="37wK5m">
-                      <ref role="1Pybhc" to="n0jz:~Filters" resolve="Filters" />
-                      <ref role="37wK5l" to="n0jz:~Filters.in(java.lang.String,java.lang.Object...):org.bson.conversions.Bson" resolve="in" />
-                      <node concept="Xl_RD" id="6U_J9TPR2tq" role="37wK5m">
-                        <property role="Xl_RC" value="_id" />
-                      </node>
-                      <node concept="2OqwBi" id="6U_J9TPR5ZR" role="37wK5m">
-                        <node concept="2OqwBi" id="6U_J9TPR5Iv" role="2Oq$k0">
-                          <node concept="2OqwBi" id="6U_J9TPR4Gu" role="2Oq$k0">
-                            <node concept="37vLTw" id="6U_J9TPR4B7" role="2Oq$k0">
-                              <ref role="3cqZAo" node="1jNpE3AdXrB" resolve="p" />
-                            </node>
-                            <node concept="liA8E" id="6U_J9TPR4ZC" role="2OqNvi">
-                              <ref role="37wK5l" to="htiy:~Document.get(java.lang.Object):java.lang.Object" resolve="get" />
-                              <node concept="Xl_RD" id="6U_J9TPR54M" role="37wK5m">
-                                <property role="Xl_RC" value="moduleId" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="6U_J9TPR5VW" role="2OqNvi">
-                            <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="6U_J9TPR6jj" role="2OqNvi">
-                          <ref role="37wK5l" to="wyt6:~String.split(java.lang.String):java.lang.String[]" resolve="split" />
-                          <node concept="Xl_RD" id="6U_J9TPR6na" role="37wK5m">
-                            <property role="Xl_RC" value="," />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2YIFZM" id="6U_J9TPR15L" role="37wK5m">
-                      <ref role="1Pybhc" to="n0jz:~Filters" resolve="Filters" />
-                      <ref role="37wK5l" to="n0jz:~Filters.eq(java.lang.String,java.lang.Object):org.bson.conversions.Bson" resolve="eq" />
-                      <node concept="Xl_RD" id="6U_J9TPR15M" role="37wK5m">
-                        <property role="Xl_RC" value="createdBy" />
-                      </node>
-                      <node concept="10M0yZ" id="6U_J9TPR15N" role="37wK5m">
-                        <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
-                        <ref role="3cqZAo" to="tt5a:7MNizV3oaqe" resolve="username" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs8" id="6U_J9TPR6Q$" role="3cqZAp">
-              <node concept="3cpWsn" id="6U_J9TPR6Q_" role="3cpWs9">
-                <property role="TrG5h" value="modules" />
-                <node concept="3uibUv" id="6U_J9TPR6QA" role="1tU5fm">
-                  <ref role="3uigEE" to="skwk:~FindIterable" resolve="FindIterable" />
-                  <node concept="3uibUv" id="6U_J9TPR6QB" role="11_B2D">
-                    <ref role="3uigEE" to="htiy:~Document" resolve="Document" />
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="6U_J9TPR6QC" role="33vP2m">
-                  <node concept="2OqwBi" id="6U_J9TPR6QD" role="2Oq$k0">
-                    <node concept="37vLTw" id="6U_J9TPR76$" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3jMt7I9fcdM" resolve="modulesCol" />
-                    </node>
-                    <node concept="liA8E" id="6U_J9TPR6QF" role="2OqNvi">
-                      <ref role="37wK5l" node="5Ci2biiLWl$" resolve="getCollection" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="6U_J9TPR6QG" role="2OqNvi">
-                    <ref role="37wK5l" to="skwk:~MongoCollection.find(org.bson.conversions.Bson):com.mongodb.client.FindIterable" resolve="find" />
-                    <node concept="37vLTw" id="6U_J9TPR78C" role="37wK5m">
-                      <ref role="3cqZAo" node="6U_J9TPR15C" resolve="moduleFilter" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="1DcWWT" id="6U_J9TPRpDJ" role="3cqZAp">
-              <node concept="3clFbS" id="6U_J9TPRpDL" role="2LFqv$">
-                <node concept="3cpWs8" id="6U_J9TPRpUz" role="3cqZAp">
-                  <node concept="3cpWsn" id="6U_J9TPRpU$" role="3cpWs9">
-                    <property role="TrG5h" value="modelFilter" />
-                    <node concept="3uibUv" id="6U_J9TPRpU_" role="1tU5fm">
-                      <ref role="3uigEE" to="ncvd:~Bson" resolve="Bson" />
-                    </node>
-                    <node concept="2YIFZM" id="6U_J9TPRpUA" role="33vP2m">
-                      <ref role="1Pybhc" to="n0jz:~Filters" resolve="Filters" />
-                      <ref role="37wK5l" to="n0jz:~Filters.and(org.bson.conversions.Bson...):org.bson.conversions.Bson" resolve="and" />
-                      <node concept="2YIFZM" id="6U_J9TPRpUB" role="37wK5m">
-                        <ref role="37wK5l" to="n0jz:~Filters.and(org.bson.conversions.Bson...):org.bson.conversions.Bson" resolve="and" />
-                        <ref role="1Pybhc" to="n0jz:~Filters" resolve="Filters" />
-                        <node concept="2YIFZM" id="6U_J9TPRpUC" role="37wK5m">
-                          <ref role="1Pybhc" to="n0jz:~Filters" resolve="Filters" />
-                          <ref role="37wK5l" to="n0jz:~Filters.in(java.lang.String,java.lang.Object...):org.bson.conversions.Bson" resolve="in" />
-                          <node concept="Xl_RD" id="6U_J9TPRpUD" role="37wK5m">
-                            <property role="Xl_RC" value="_id" />
-                          </node>
-                          <node concept="2OqwBi" id="6U_J9TPRpUE" role="37wK5m">
-                            <node concept="2OqwBi" id="6U_J9TPRpUF" role="2Oq$k0">
-                              <node concept="2OqwBi" id="6U_J9TPRpUG" role="2Oq$k0">
-                                <node concept="liA8E" id="6U_J9TPRpUI" role="2OqNvi">
-                                  <ref role="37wK5l" to="htiy:~Document.get(java.lang.Object):java.lang.Object" resolve="get" />
-                                  <node concept="Xl_RD" id="6U_J9TPRpUJ" role="37wK5m">
-                                    <property role="Xl_RC" value="modelId" />
-                                  </node>
-                                </node>
-                                <node concept="37vLTw" id="6U_J9TPRqjf" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="6U_J9TPRpDM" resolve="module" />
-                                </node>
-                              </node>
-                              <node concept="liA8E" id="6U_J9TPRpUK" role="2OqNvi">
-                                <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
-                              </node>
-                            </node>
-                            <node concept="liA8E" id="6U_J9TPRpUL" role="2OqNvi">
-                              <ref role="37wK5l" to="wyt6:~String.split(java.lang.String):java.lang.String[]" resolve="split" />
-                              <node concept="Xl_RD" id="6U_J9TPRpUM" role="37wK5m">
-                                <property role="Xl_RC" value="," />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="2YIFZM" id="6U_J9TPRpUN" role="37wK5m">
-                          <ref role="37wK5l" to="n0jz:~Filters.eq(java.lang.String,java.lang.Object):org.bson.conversions.Bson" resolve="eq" />
-                          <ref role="1Pybhc" to="n0jz:~Filters" resolve="Filters" />
-                          <node concept="Xl_RD" id="6U_J9TPRpUO" role="37wK5m">
-                            <property role="Xl_RC" value="createdBy" />
-                          </node>
-                          <node concept="10M0yZ" id="6U_J9TPRpUP" role="37wK5m">
-                            <ref role="3cqZAo" to="tt5a:7MNizV3oaqe" resolve="username" />
-                            <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3cpWs8" id="6U_J9TPRswk" role="3cqZAp">
-                  <node concept="3cpWsn" id="6U_J9TPRswl" role="3cpWs9">
-                    <property role="TrG5h" value="models" />
-                    <node concept="3uibUv" id="6U_J9TPRswm" role="1tU5fm">
-                      <ref role="3uigEE" to="skwk:~FindIterable" resolve="FindIterable" />
-                      <node concept="3uibUv" id="6U_J9TPRswn" role="11_B2D">
-                        <ref role="3uigEE" to="htiy:~Document" resolve="Document" />
-                      </node>
-                    </node>
-                    <node concept="2OqwBi" id="6U_J9TPRswo" role="33vP2m">
-                      <node concept="2OqwBi" id="6U_J9TPRswp" role="2Oq$k0">
-                        <node concept="37vLTw" id="6U_J9TPRsD0" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3jMt7I9fcqN" resolve="modelsCol" />
-                        </node>
-                        <node concept="liA8E" id="6U_J9TPRswr" role="2OqNvi">
-                          <ref role="37wK5l" node="5Ci2biiLWl$" resolve="getCollection" />
-                        </node>
-                      </node>
-                      <node concept="liA8E" id="6U_J9TPRsws" role="2OqNvi">
-                        <ref role="37wK5l" to="skwk:~MongoCollection.find(org.bson.conversions.Bson):com.mongodb.client.FindIterable" resolve="find" />
-                        <node concept="37vLTw" id="6U_J9TPRsFq" role="37wK5m">
-                          <ref role="3cqZAo" node="6U_J9TPRpU$" resolve="modelFilter" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="1DcWWT" id="6U_J9TPRtHL" role="3cqZAp">
-                  <node concept="3clFbS" id="6U_J9TPRtHN" role="2LFqv$">
-                    <node concept="3cpWs8" id="6U_J9TPRvcV" role="3cqZAp">
-                      <node concept="3cpWsn" id="6U_J9TPRvcW" role="3cpWs9">
-                        <property role="TrG5h" value="nodeFilter" />
-                        <node concept="3uibUv" id="6U_J9TPRvcX" role="1tU5fm">
-                          <ref role="3uigEE" to="ncvd:~Bson" resolve="Bson" />
-                        </node>
-                        <node concept="2YIFZM" id="6U_J9TPRvcY" role="33vP2m">
-                          <ref role="37wK5l" to="n0jz:~Filters.and(org.bson.conversions.Bson...):org.bson.conversions.Bson" resolve="and" />
-                          <ref role="1Pybhc" to="n0jz:~Filters" resolve="Filters" />
-                          <node concept="2YIFZM" id="6U_J9TPRvcZ" role="37wK5m">
-                            <ref role="1Pybhc" to="n0jz:~Filters" resolve="Filters" />
-                            <ref role="37wK5l" to="n0jz:~Filters.and(org.bson.conversions.Bson...):org.bson.conversions.Bson" resolve="and" />
-                            <node concept="2YIFZM" id="6U_J9TPRvd0" role="37wK5m">
-                              <ref role="1Pybhc" to="n0jz:~Filters" resolve="Filters" />
-                              <ref role="37wK5l" to="n0jz:~Filters.in(java.lang.String,java.lang.Object...):org.bson.conversions.Bson" resolve="in" />
-                              <node concept="Xl_RD" id="6U_J9TPRvd1" role="37wK5m">
-                                <property role="Xl_RC" value="modelId" />
-                              </node>
-                              <node concept="2OqwBi" id="6U_J9TPRB27" role="37wK5m">
-                                <node concept="2OqwBi" id="6U_J9TPRvd4" role="2Oq$k0">
-                                  <node concept="liA8E" id="6U_J9TPRvd5" role="2OqNvi">
-                                    <ref role="37wK5l" to="htiy:~Document.get(java.lang.Object):java.lang.Object" resolve="get" />
-                                    <node concept="Xl_RD" id="6U_J9TPRvd6" role="37wK5m">
-                                      <property role="Xl_RC" value="_id" />
-                                    </node>
-                                  </node>
-                                  <node concept="37vLTw" id="6U_J9TPRw87" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="6U_J9TPRtHO" resolve="model" />
-                                  </node>
-                                </node>
-                                <node concept="liA8E" id="6U_J9TPRB8b" role="2OqNvi">
-                                  <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="2YIFZM" id="6U_J9TPRvdb" role="37wK5m">
-                              <ref role="37wK5l" to="n0jz:~Filters.eq(java.lang.String,java.lang.Object):org.bson.conversions.Bson" resolve="eq" />
-                              <ref role="1Pybhc" to="n0jz:~Filters" resolve="Filters" />
-                              <node concept="Xl_RD" id="6U_J9TPRvdc" role="37wK5m">
-                                <property role="Xl_RC" value="createdBy" />
-                              </node>
-                              <node concept="10M0yZ" id="6U_J9TPRvdd" role="37wK5m">
-                                <ref role="3cqZAo" to="tt5a:7MNizV3oaqe" resolve="username" />
-                                <ref role="1PxDUh" to="tt5a:43Z2Okkk0Wq" resolve="Configuration" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3clFbF" id="6U_J9TPRwdM" role="3cqZAp">
-                      <node concept="2OqwBi" id="6U_J9TPRw_l" role="3clFbG">
-                        <node concept="2OqwBi" id="6U_J9TPRwwn" role="2Oq$k0">
-                          <node concept="37vLTw" id="6U_J9TPRwvC" role="2Oq$k0">
-                            <ref role="3cqZAo" node="3jMt7I9fcBU" resolve="nodesCol" />
-                          </node>
-                          <node concept="liA8E" id="6U_J9TPRw$u" role="2OqNvi">
-                            <ref role="37wK5l" node="5Ci2biiLWl$" resolve="getCollection" />
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="6U_J9TPRwZp" role="2OqNvi">
-                          <ref role="37wK5l" to="skwk:~MongoCollection.deleteMany(org.bson.conversions.Bson):com.mongodb.client.result.DeleteResult" resolve="deleteMany" />
-                          <node concept="37vLTw" id="6U_J9TPRx45" role="37wK5m">
-                            <ref role="3cqZAo" node="6U_J9TPRvcW" resolve="nodeFilter" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3cpWsn" id="6U_J9TPRtHO" role="1Duv9x">
-                    <property role="TrG5h" value="model" />
-                    <node concept="3uibUv" id="6U_J9TPRtPT" role="1tU5fm">
-                      <ref role="3uigEE" to="htiy:~Document" resolve="Document" />
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="6U_J9TPRtW5" role="1DdaDG">
-                    <ref role="3cqZAo" node="6U_J9TPRswl" resolve="models" />
-                  </node>
-                </node>
-                <node concept="3clFbF" id="6U_J9TPRxjT" role="3cqZAp">
-                  <node concept="2OqwBi" id="6U_J9TPRxzq" role="3clFbG">
-                    <node concept="2OqwBi" id="6U_J9TPRxxm" role="2Oq$k0">
-                      <node concept="37vLTw" id="6U_J9TPRxwN" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3jMt7I9fcqN" resolve="modelsCol" />
-                      </node>
-                      <node concept="liA8E" id="6U_J9TPRxyA" role="2OqNvi">
-                        <ref role="37wK5l" node="5Ci2biiLWl$" resolve="getCollection" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="6U_J9TPRxXv" role="2OqNvi">
-                      <ref role="37wK5l" to="skwk:~MongoCollection.deleteMany(org.bson.conversions.Bson):com.mongodb.client.result.DeleteResult" resolve="deleteMany" />
-                      <node concept="37vLTw" id="6U_J9TPRy2b" role="37wK5m">
-                        <ref role="3cqZAo" node="6U_J9TPRpU$" resolve="modelFilter" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3cpWsn" id="6U_J9TPRpDM" role="1Duv9x">
-                <property role="TrG5h" value="module" />
-                <node concept="3uibUv" id="6U_J9TPRpN4" role="1tU5fm">
-                  <ref role="3uigEE" to="htiy:~Document" resolve="Document" />
-                </node>
-              </node>
-              <node concept="37vLTw" id="6U_J9TPRpRQ" role="1DdaDG">
-                <ref role="3cqZAo" node="6U_J9TPR6Q_" resolve="modules" />
-              </node>
-            </node>
-            <node concept="3clFbF" id="6U_J9TPR7NH" role="3cqZAp">
-              <node concept="2OqwBi" id="6U_J9TPR7NI" role="3clFbG">
-                <node concept="2OqwBi" id="6U_J9TPR7NJ" role="2Oq$k0">
-                  <node concept="37vLTw" id="6U_J9TPR8g1" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3jMt7I9fcdM" resolve="modulesCol" />
-                  </node>
-                  <node concept="liA8E" id="6U_J9TPR7NL" role="2OqNvi">
-                    <ref role="37wK5l" node="5Ci2biiLWl$" resolve="getCollection" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="6U_J9TPR7NM" role="2OqNvi">
-                  <ref role="37wK5l" to="skwk:~MongoCollection.deleteMany(org.bson.conversions.Bson):com.mongodb.client.result.DeleteResult" resolve="deleteMany" />
-                  <node concept="37vLTw" id="6U_J9TPR8hQ" role="37wK5m">
-                    <ref role="3cqZAo" node="6U_J9TPR15C" resolve="moduleFilter" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3cpWsn" id="1jNpE3AdXrB" role="1Duv9x">
-            <property role="TrG5h" value="p" />
-            <node concept="3uibUv" id="1jNpE3AdXyT" role="1tU5fm">
-              <ref role="3uigEE" to="htiy:~Document" resolve="Document" />
-            </node>
-          </node>
-          <node concept="37vLTw" id="1jNpE3AdXBE" role="1DdaDG">
-            <ref role="3cqZAo" node="1jNpE3AdO7h" resolve="projects" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="1jNpE3AdY8X" role="3cqZAp">
-          <node concept="2OqwBi" id="1jNpE3AdYmA" role="3clFbG">
-            <node concept="2OqwBi" id="1jNpE3AdYfL" role="2Oq$k0">
-              <node concept="37vLTw" id="1jNpE3AdY8V" role="2Oq$k0">
-                <ref role="3cqZAo" node="3jMt7I9fa_D" resolve="projectsCol" />
-              </node>
-              <node concept="liA8E" id="1jNpE3AdYlL" role="2OqNvi">
-                <ref role="37wK5l" node="5Ci2biiLWl$" resolve="getCollection" />
-              </node>
-            </node>
-            <node concept="liA8E" id="1jNpE3AdYxG" role="2OqNvi">
-              <ref role="37wK5l" to="skwk:~MongoCollection.deleteMany(org.bson.conversions.Bson):com.mongodb.client.result.DeleteResult" resolve="deleteMany" />
-              <node concept="37vLTw" id="1jNpE3Ae0Vn" role="37wK5m">
-                <ref role="3cqZAo" node="1jNpE3Ae0dG" resolve="projectFilter" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
   <node concept="312cEu" id="5Ci2biiM21v">
     <property role="TrG5h" value="BaseCirclesDocument" />
@@ -2248,6 +1756,191 @@
     </node>
     <node concept="2tJIrI" id="6R$jUV_7ieM" role="jymVt" />
     <node concept="3Tm1VV" id="6R$jUV_7iep" role="1B3o_S" />
+  </node>
+  <node concept="312cEu" id="6RW8DBDcbcU">
+    <property role="TrG5h" value="NodeWriter" />
+    <node concept="3Tm1VV" id="6RW8DBDcbcV" role="1B3o_S" />
+    <node concept="3uibUv" id="6RW8DBDcbdV" role="EKbjA">
+      <ref role="3uigEE" to="ha1n:6RW8DBDbXG8" resolve="SVGWriter" />
+    </node>
+    <node concept="312cEg" id="6RW8DBDcbFa" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="node" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="6RW8DBDcbBr" role="1B3o_S" />
+      <node concept="3uibUv" id="6RW8DBDcbDR" role="1tU5fm">
+        <ref role="3uigEE" node="5Ci2biiM7U$" resolve="RootNodeDocument" />
+      </node>
+    </node>
+    <node concept="312cEg" id="6RW8DBDcbYL" role="jymVt">
+      <property role="TrG5h" value="parentCollection" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="6RW8DBDcbYM" role="1B3o_S" />
+      <node concept="3uibUv" id="6RW8DBDcbYO" role="1tU5fm">
+        <ref role="3uigEE" node="43Z2OkkkeYv" resolve="MongoDbCollection" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6RW8DBDcc87" role="jymVt" />
+    <node concept="3clFbW" id="6RW8DBDcbuG" role="jymVt">
+      <node concept="3cqZAl" id="6RW8DBDcbuI" role="3clF45" />
+      <node concept="3Tm1VV" id="6RW8DBDcbuJ" role="1B3o_S" />
+      <node concept="3clFbS" id="6RW8DBDcbuK" role="3clF47">
+        <node concept="3clFbF" id="6RW8DBDcbIb" role="3cqZAp">
+          <node concept="37vLTI" id="6RW8DBDcbNm" role="3clFbG">
+            <node concept="37vLTw" id="6RW8DBDcbQm" role="37vLTx">
+              <ref role="3cqZAo" node="6RW8DBDcb_s" resolve="node" />
+            </node>
+            <node concept="2OqwBi" id="6RW8DBDcbID" role="37vLTJ">
+              <node concept="Xjq3P" id="6RW8DBDcbIa" role="2Oq$k0" />
+              <node concept="2OwXpG" id="6RW8DBDcbKN" role="2OqNvi">
+                <ref role="2Oxat5" node="6RW8DBDcbFa" resolve="node" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6RW8DBDcccr" role="3cqZAp">
+          <node concept="37vLTI" id="6RW8DBDcchB" role="3clFbG">
+            <node concept="37vLTw" id="6RW8DBDcclf" role="37vLTx">
+              <ref role="3cqZAo" node="6RW8DBDcbQY" resolve="parentCollection" />
+            </node>
+            <node concept="2OqwBi" id="6RW8DBDccdh" role="37vLTJ">
+              <node concept="Xjq3P" id="6RW8DBDcccp" role="2Oq$k0" />
+              <node concept="2OwXpG" id="6RW8DBDccfB" role="2OqNvi">
+                <ref role="2Oxat5" node="6RW8DBDcbYL" resolve="parentCollection" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="6RW8DBDcb_s" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <node concept="3uibUv" id="6RW8DBDcb_r" role="1tU5fm">
+          <ref role="3uigEE" node="5Ci2biiM7U$" resolve="RootNodeDocument" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="6RW8DBDcbQY" role="3clF46">
+        <property role="TrG5h" value="parentCollection" />
+        <node concept="3uibUv" id="6RW8DBDcbTo" role="1tU5fm">
+          <ref role="3uigEE" node="43Z2OkkkeYv" resolve="MongoDbCollection" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6RW8DBDcbsq" role="jymVt" />
+    <node concept="3clFb_" id="6RW8DBDcbeq" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="write" />
+      <node concept="3Tm1VV" id="6RW8DBDcbes" role="1B3o_S" />
+      <node concept="3cqZAl" id="6RW8DBDcbet" role="3clF45" />
+      <node concept="37vLTG" id="6RW8DBDcbeu" role="3clF46">
+        <property role="TrG5h" value="svgFragment" />
+        <node concept="17QB3L" id="6RW8DBDcbev" role="1tU5fm" />
+      </node>
+      <node concept="3clFbS" id="6RW8DBDcbew" role="3clF47">
+        <node concept="3clFbF" id="6RW8DBDccmq" role="3cqZAp">
+          <node concept="2OqwBi" id="6RW8DBDccuR" role="3clFbG">
+            <node concept="2OqwBi" id="6RW8DBDccnu" role="2Oq$k0">
+              <node concept="Xjq3P" id="6RW8DBDccmp" role="2Oq$k0" />
+              <node concept="2OwXpG" id="6RW8DBDccra" role="2OqNvi">
+                <ref role="2Oxat5" node="6RW8DBDcbFa" resolve="node" />
+              </node>
+            </node>
+            <node concept="liA8E" id="6RW8DBDccMI" role="2OqNvi">
+              <ref role="37wK5l" node="5Ci2biiMage" resolve="setSvgFragment" />
+              <node concept="37vLTw" id="6RW8DBDccOk" role="37wK5m">
+                <ref role="3cqZAo" node="6RW8DBDcbeu" resolve="svgFragment" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="6RW8DBDcbfS" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="append" />
+      <node concept="3Tm1VV" id="6RW8DBDcbfU" role="1B3o_S" />
+      <node concept="3cqZAl" id="6RW8DBDcbfV" role="3clF45" />
+      <node concept="37vLTG" id="6RW8DBDcbfW" role="3clF46">
+        <property role="TrG5h" value="svgFragment" />
+        <node concept="17QB3L" id="6RW8DBDcbfX" role="1tU5fm" />
+      </node>
+      <node concept="3clFbS" id="6RW8DBDcbfY" role="3clF47">
+        <node concept="3clFbF" id="6RW8DBDccQy" role="3cqZAp">
+          <node concept="2OqwBi" id="6RW8DBDccQz" role="3clFbG">
+            <node concept="2OqwBi" id="6RW8DBDccQ$" role="2Oq$k0">
+              <node concept="Xjq3P" id="6RW8DBDccQ_" role="2Oq$k0" />
+              <node concept="2OwXpG" id="6RW8DBDccQA" role="2OqNvi">
+                <ref role="2Oxat5" node="6RW8DBDcbFa" resolve="node" />
+              </node>
+            </node>
+            <node concept="liA8E" id="6RW8DBDccQB" role="2OqNvi">
+              <ref role="37wK5l" node="5Ci2biiMage" resolve="setSvgFragment" />
+              <node concept="37vLTw" id="6RW8DBDccQC" role="37wK5m">
+                <ref role="3cqZAo" node="6RW8DBDcbfW" resolve="svgFragment" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="6RW8DBDcbfZ" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="close" />
+      <node concept="3Tm1VV" id="6RW8DBDcbg1" role="1B3o_S" />
+      <node concept="3cqZAl" id="6RW8DBDcbg2" role="3clF45" />
+      <node concept="3clFbS" id="6RW8DBDcbg3" role="3clF47">
+        <node concept="3clFbF" id="6RW8DBDccUg" role="3cqZAp">
+          <node concept="2OqwBi" id="6RW8DBDccWx" role="3clFbG">
+            <node concept="37vLTw" id="6RW8DBDccUf" role="2Oq$k0">
+              <ref role="3cqZAo" node="6RW8DBDcbYL" resolve="parentCollection" />
+            </node>
+            <node concept="liA8E" id="6RW8DBDccZh" role="2OqNvi">
+              <ref role="37wK5l" node="5Ci2biiLWma" resolve="addDocument" />
+              <node concept="2OqwBi" id="6RW8DBDcded" role="37wK5m">
+                <node concept="2OqwBi" id="6RW8DBDcd5P" role="2Oq$k0">
+                  <node concept="Xjq3P" id="6RW8DBDcd39" role="2Oq$k0" />
+                  <node concept="2OwXpG" id="6RW8DBDcda0" role="2OqNvi">
+                    <ref role="2Oxat5" node="6RW8DBDcbFa" resolve="node" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="6RW8DBDcdiB" role="2OqNvi">
+                  <ref role="37wK5l" node="5Ci2biiM23s" resolve="toDoc" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="6RW8DBDcfL2" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="toString" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="6RW8DBDcfL3" role="1B3o_S" />
+      <node concept="17QB3L" id="6RW8DBDcgc4" role="3clF45" />
+      <node concept="3clFbS" id="6RW8DBDcfL6" role="3clF47">
+        <node concept="3clFbF" id="6RW8DBDcfXu" role="3cqZAp">
+          <node concept="2OqwBi" id="6RW8DBDcg4E" role="3clFbG">
+            <node concept="2OqwBi" id="6RW8DBDcfYu" role="2Oq$k0">
+              <node concept="Xjq3P" id="6RW8DBDcfXr" role="2Oq$k0" />
+              <node concept="2OwXpG" id="6RW8DBDcg2a" role="2OqNvi">
+                <ref role="2Oxat5" node="6RW8DBDcbFa" resolve="node" />
+              </node>
+            </node>
+            <node concept="liA8E" id="6RW8DBDcgbh" role="2OqNvi">
+              <ref role="37wK5l" node="5Ci2biiMag8" resolve="getSvgFragment" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="6RW8DBDcfL7" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
   </node>
 </model>
 
