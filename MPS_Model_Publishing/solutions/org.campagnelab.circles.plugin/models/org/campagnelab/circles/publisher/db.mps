@@ -209,8 +209,8 @@
             <node concept="3uibUv" id="3jMt7I9fcqO" role="1tU5fm">
               <ref role="3uigEE" to="7fgt:43Z2OkkkeYv" resolve="MongoDbCollection" />
             </node>
-            <node concept="2YIFZM" id="3bxG5bqwBfJ" role="33vP2m">
-              <ref role="37wK5l" to="7fgt:3bxG5bqwAIr" resolve="getModulesCollection" />
+            <node concept="2YIFZM" id="6U_J9TPRzH3" role="33vP2m">
+              <ref role="37wK5l" to="7fgt:3bxG5bqwALg" resolve="getModelsCollection" />
               <ref role="1Pybhc" to="7fgt:3v5cxLOW0Yc" resolve="MongoDbAccess" />
             </node>
           </node>
