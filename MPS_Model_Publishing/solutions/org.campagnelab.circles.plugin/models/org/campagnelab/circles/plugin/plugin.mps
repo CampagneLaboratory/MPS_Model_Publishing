@@ -1161,7 +1161,7 @@
         <node concept="3clFbH" id="7jqSt7$Nj0v" role="3cqZAp" />
         <node concept="3cpWs8" id="7jqSt7yusPP" role="3cqZAp">
           <node concept="3cpWsn" id="7jqSt7yusPQ" role="3cpWs9">
-            <property role="TrG5h" value="hostname" />
+            <property role="TrG5h" value="dest" />
             <node concept="3uibUv" id="7jqSt7yusPR" role="1tU5fm">
               <ref role="3uigEE" to="dxuu:~JLabel" resolve="JLabel" />
             </node>
@@ -1169,7 +1169,7 @@
               <node concept="1pGfFk" id="7jqSt7yusYN" role="2ShVmc">
                 <ref role="37wK5l" to="dxuu:~JLabel.&lt;init&gt;(java.lang.String)" resolve="JLabel" />
                 <node concept="Xl_RD" id="7jqSt7yut2g" role="37wK5m">
-                  <property role="Xl_RC" value="Destination:" />
+                  <property role="Xl_RC" value="Publishing URL:" />
                 </node>
               </node>
             </node>
@@ -1190,7 +1190,7 @@
             <node concept="liA8E" id="7jqSt7yuvvs" role="2OqNvi">
               <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
               <node concept="37vLTw" id="7jqSt7yuvzf" role="37wK5m">
-                <ref role="3cqZAo" node="7jqSt7yusPQ" resolve="hostname" />
+                <ref role="3cqZAo" node="7jqSt7yusPQ" resolve="dest" />
               </node>
               <node concept="1rwKMM" id="7jqSt7$NjqD" role="37wK5m">
                 <property role="1rwKMK" value="label" />
@@ -1240,6 +1240,98 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="3bxG5bqyAC_" role="3cqZAp">
+          <node concept="3cpWsn" id="3bxG5bqyACA" role="3cpWs9">
+            <property role="TrG5h" value="help" />
+            <node concept="3uibUv" id="3bxG5bqyACB" role="1tU5fm">
+              <ref role="3uigEE" to="dxuu:~JLabel" resolve="JLabel" />
+            </node>
+            <node concept="2ShNRf" id="3bxG5bqyACC" role="33vP2m">
+              <node concept="1pGfFk" id="3bxG5bqyACD" role="2ShVmc">
+                <ref role="37wK5l" to="dxuu:~JLabel.&lt;init&gt;(java.lang.String)" resolve="JLabel" />
+                <node concept="Xl_RD" id="3bxG5bqyACE" role="37wK5m">
+                  <property role="Xl_RC" value="URL syntax: 'publish://&lt;user&gt;:&lt;password&gt;@&lt;hostname&gt;:&lt;port&gt;'" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="3bxG5bqyKCi" role="3cqZAp">
+          <node concept="3cpWsn" id="3bxG5bqyKCj" role="3cpWs9">
+            <property role="TrG5h" value="labelFont" />
+            <node concept="3uibUv" id="3bxG5bqyKCk" role="1tU5fm">
+              <ref role="3uigEE" to="z60i:~Font" resolve="Font" />
+            </node>
+            <node concept="2ShNRf" id="3bxG5bqyNgd" role="33vP2m">
+              <node concept="1pGfFk" id="3bxG5bqyUuf" role="2ShVmc">
+                <ref role="37wK5l" to="z60i:~Font.&lt;init&gt;(java.lang.String,int,int)" resolve="Font" />
+                <node concept="2OqwBi" id="3bxG5bqyXTH" role="37wK5m">
+                  <node concept="2OqwBi" id="3bxG5bqyVDe" role="2Oq$k0">
+                    <node concept="37vLTw" id="3bxG5bqyVe5" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3bxG5bqyACA" resolve="help" />
+                    </node>
+                    <node concept="liA8E" id="3bxG5bqyXRO" role="2OqNvi">
+                      <ref role="37wK5l" to="z60i:~Component.getFont():java.awt.Font" resolve="getFont" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="3bxG5bqyYTZ" role="2OqNvi">
+                    <ref role="37wK5l" to="z60i:~Font.getFontName():java.lang.String" resolve="getFontName" />
+                  </node>
+                </node>
+                <node concept="10M0yZ" id="3bxG5bqyZG4" role="37wK5m">
+                  <ref role="1PxDUh" to="z60i:~Font" resolve="Font" />
+                  <ref role="3cqZAo" to="z60i:~Font.ITALIC" resolve="ITALIC" />
+                </node>
+                <node concept="2OqwBi" id="3bxG5bqz4ms" role="37wK5m">
+                  <node concept="2OqwBi" id="3bxG5bqz26F" role="2Oq$k0">
+                    <node concept="37vLTw" id="3bxG5bqz1Ei" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3bxG5bqyACA" resolve="help" />
+                    </node>
+                    <node concept="liA8E" id="3bxG5bqz4kp" role="2OqNvi">
+                      <ref role="37wK5l" to="z60i:~Component.getFont():java.awt.Font" resolve="getFont" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="3bxG5bqz5mA" role="2OqNvi">
+                    <ref role="37wK5l" to="z60i:~Font.getSize():int" resolve="getSize" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3bxG5bqyFY1" role="3cqZAp">
+          <node concept="2OqwBi" id="3bxG5bqyGv8" role="3clFbG">
+            <node concept="37vLTw" id="3bxG5bqyFXZ" role="2Oq$k0">
+              <ref role="3cqZAo" node="3bxG5bqyACA" resolve="help" />
+            </node>
+            <node concept="liA8E" id="3bxG5bqyH2n" role="2OqNvi">
+              <ref role="37wK5l" to="dxuu:~JComponent.setFont(java.awt.Font):void" resolve="setFont" />
+              <node concept="37vLTw" id="3bxG5bqz68T" role="37wK5m">
+                <ref role="3cqZAo" node="3bxG5bqyKCj" resolve="labelFont" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3bxG5bqyAW1" role="3cqZAp">
+          <node concept="2OqwBi" id="3bxG5bqyAW2" role="3clFbG">
+            <node concept="Xjq3P" id="3bxG5bqyAW3" role="2Oq$k0" />
+            <node concept="liA8E" id="3bxG5bqyAW4" role="2OqNvi">
+              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
+              <node concept="37vLTw" id="3bxG5bqyBs5" role="37wK5m">
+                <ref role="3cqZAo" node="3bxG5bqyACA" resolve="help" />
+              </node>
+              <node concept="1rwKMM" id="3bxG5bqyAW6" role="37wK5m">
+                <property role="1rwKMK" value="label" />
+                <node concept="2$rviw" id="3bxG5bqyAW7" role="1rxHDW">
+                  <node concept="37vLTw" id="3bxG5bqyAW8" role="2$L3a6">
+                    <ref role="3cqZAo" node="2uFXGB4GldR" resolve="i" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="3bxG5bqyAyY" role="3cqZAp" />
       </node>
       <node concept="3Tm1VV" id="7jqSt7yc$aO" role="1B3o_S" />
     </node>
