@@ -14,7 +14,7 @@ public class Plugin_ApplicationPlugin extends BaseApplicationPlugin {
   }
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new DropDatabase_Action());
+    addAction(new DropProject_Action());
     addAction(new SerializeModulesToDB_Action());
     // groups 
     addGroup(new AddCirclesActions_ActionGroup());

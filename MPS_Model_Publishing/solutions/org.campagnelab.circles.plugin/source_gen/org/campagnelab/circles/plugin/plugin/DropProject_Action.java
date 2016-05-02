@@ -6,21 +6,19 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.jetbrains.annotations.NotNull;
-import java.util.List;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import org.jetbrains.annotations.NotNull;
 import org.campagnelab.circles.publisher.db.DbFactory;
 import org.campagnelab.circles.publisher.db.Connection;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
-public class SerializeModulesToDB_Action extends BaseAction {
+public class DropProject_Action extends BaseAction {
   private static final Icon ICON = null;
-  public SerializeModulesToDB_Action() {
-    super("Publish Module(s)", "", ICON);
+  public DropProject_Action() {
+    super("Drop Project", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -29,23 +27,9 @@ public class SerializeModulesToDB_Action extends BaseAction {
     return true;
   }
   @Override
-  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return true;
-  }
-  @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
-  }
-  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
-    }
-    {
-      List<SModule> p = event.getData(MPSCommonDataKeys.MODULES);
-      if (p == null) {
-        return false;
-      }
     }
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
@@ -57,34 +41,34 @@ public class SerializeModulesToDB_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    SerializeModulesToDB_Action.this.refresh(event);
-    DbFactory.getSerializer().serializeProjectWithModules(event.getData(MPSCommonDataKeys.MPS_PROJECT), event.getData(MPSCommonDataKeys.MODULES));
+    DropProject_Action.this.refresh(event);
+    DbFactory.getSerializer().dropProject(event.getData(MPSCommonDataKeys.MPS_PROJECT));
   }
   /*package*/ void refresh(final AnActionEvent event) {
-    Connection.hostname = check_oohtc0_a0a0a0(ProjectHelper.toIdeaProject(event.getData(MPSCommonDataKeys.MPS_PROJECT))).getStateObject().hostname;
-    Connection.port = check_oohtc0_a0a1a0(ProjectHelper.toIdeaProject(event.getData(MPSCommonDataKeys.MPS_PROJECT))).getStateObject().port;
-    Connection.username = check_oohtc0_a0a2a0(ProjectHelper.toIdeaProject(event.getData(MPSCommonDataKeys.MPS_PROJECT))).getStateObject().username;
-    Connection.pwd = check_oohtc0_a0a3a0(ProjectHelper.toIdeaProject(event.getData(MPSCommonDataKeys.MPS_PROJECT))).getStateObject().password;
+    Connection.hostname = check_dnkb5x_a0a0a0(ProjectHelper.toIdeaProject(event.getData(MPSCommonDataKeys.MPS_PROJECT))).getStateObject().hostname;
+    Connection.port = check_dnkb5x_a0a1a0(ProjectHelper.toIdeaProject(event.getData(MPSCommonDataKeys.MPS_PROJECT))).getStateObject().port;
+    Connection.username = check_dnkb5x_a0a2a0(ProjectHelper.toIdeaProject(event.getData(MPSCommonDataKeys.MPS_PROJECT))).getStateObject().username;
+    Connection.pwd = check_dnkb5x_a0a3a0(ProjectHelper.toIdeaProject(event.getData(MPSCommonDataKeys.MPS_PROJECT))).getStateObject().password;
   }
-  private static PublisherConnection_PreferencesComponent check_oohtc0_a0a0a0(Project checkedDotOperand) {
+  private static PublisherConnection_PreferencesComponent check_dnkb5x_a0a0a0(Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent(ProjectPluginManager.class).getPrefsComponent(PublisherConnection_PreferencesComponent.class);
     }
     return null;
   }
-  private static PublisherConnection_PreferencesComponent check_oohtc0_a0a1a0(Project checkedDotOperand) {
+  private static PublisherConnection_PreferencesComponent check_dnkb5x_a0a1a0(Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent(ProjectPluginManager.class).getPrefsComponent(PublisherConnection_PreferencesComponent.class);
     }
     return null;
   }
-  private static PublisherConnection_PreferencesComponent check_oohtc0_a0a2a0(Project checkedDotOperand) {
+  private static PublisherConnection_PreferencesComponent check_dnkb5x_a0a2a0(Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent(ProjectPluginManager.class).getPrefsComponent(PublisherConnection_PreferencesComponent.class);
     }
     return null;
   }
-  private static PublisherConnection_PreferencesComponent check_oohtc0_a0a3a0(Project checkedDotOperand) {
+  private static PublisherConnection_PreferencesComponent check_dnkb5x_a0a3a0(Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent(ProjectPluginManager.class).getPrefsComponent(PublisherConnection_PreferencesComponent.class);
     }

@@ -15,7 +15,7 @@ public class AddCirclesActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       AddCirclesActions_ActionGroup.this.addSeparator();
-      AddCirclesActions_ActionGroup.this.addAction("org.campagnelab.circles.plugin.plugin.DropDatabase_Action");
+      AddCirclesActions_ActionGroup.this.addAction("org.campagnelab.circles.plugin.plugin.DropProject_Action");
       AddCirclesActions_ActionGroup.this.addAction("org.campagnelab.circles.plugin.plugin.SerializeModulesToDB_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
