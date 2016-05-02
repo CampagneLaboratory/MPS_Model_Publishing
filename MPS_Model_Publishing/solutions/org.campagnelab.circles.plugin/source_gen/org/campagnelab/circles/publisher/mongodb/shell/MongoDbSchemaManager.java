@@ -8,10 +8,12 @@ import org.campagnelab.circles.publisher.mongodb.model.MongoDbAccess;
 public class MongoDbSchemaManager extends SchemaManager {
 
   public void createSchema() {
-    MongoDbAccess.open();
+    new MongoDbAccess().close();
   }
   public void dropSchema() {
-    MongoDbAccess.drop();
+    MongoDbAccess db = new MongoDbAccess();
+    db.drop();
+    db.close();
   }
 
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
   <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -9,126 +10,149 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <root nodeRef="r:deb87fab-190d-40b1-8364-c6d9ac5e7577(org.campagnelab.circles.publisher.mongodb.shell)/6490259584643909810">
     <file name="ModuleSerializer.java">
-      <node id="7972986104097894762" at="30,0,31,0" concept="2" trace="projectsCol" />
-      <node id="7972986104097894766" at="31,0,32,0" concept="2" trace="modulesCol" />
-      <node id="7972986104097894770" at="32,0,33,0" concept="2" trace="modelsCol" />
-      <node id="7972986104097894774" at="33,0,34,0" concept="2" trace="nodesCol" />
-      <node id="7972986104097927225" at="35,86,36,30" concept="1" />
-      <node id="7972986104097840885" at="36,30,37,72" concept="6" />
-      <node id="7972986104097840895" at="38,36,39,76" concept="6" />
-      <node id="7972986104097840903" at="39,76,40,55" concept="1" />
-      <node id="7972986104097840914" at="41,47,42,73" concept="6" />
-      <node id="7972986104097840922" at="42,73,43,54" concept="1" />
-      <node id="7972986104097840933" at="44,50,45,35" concept="6" />
-      <node id="7972986104097840938" at="46,191,47,87" concept="1" />
-      <node id="7972986104097840952" at="48,18,49,45" concept="1" />
-      <node id="7972986104097840957" at="50,11,51,54" concept="1" />
-      <node id="7972986104097840966" at="51,54,52,47" concept="1" />
-      <node id="7972986104097840973" at="52,47,53,64" concept="6" />
-      <node id="7972986104097840980" at="53,64,54,252" concept="6" />
-      <node id="7972986104097840986" at="54,252,55,104" concept="1" />
-      <node id="7972986104097840997" at="56,9,57,48" concept="1" />
-      <node id="7972986104097841004" at="57,48,58,45" concept="1" />
-      <node id="7972986104097841016" at="59,7,60,48" concept="1" />
-      <node id="7972986104097841023" at="60,48,61,46" concept="1" />
-      <node id="7972986104097841033" at="62,5,63,48" concept="1" />
-      <node id="7972986104097843067" at="66,47,67,135" concept="6" />
-      <node id="7972986104097843080" at="67,135,68,86" concept="6" />
-      <node id="7972986104097907602" at="69,33,70,59" concept="1" />
-      <node id="7972986104097843200" at="71,5,72,58" concept="1" />
-      <node id="7972986104097843092" at="75,49,76,126" concept="6" />
-      <node id="7972986104097843111" at="76,126,77,83" concept="6" />
-      <node id="7972986104097843123" at="78,37,79,160" concept="6" />
-      <node id="7972986104097843142" at="79,160,80,82" concept="6" />
-      <node id="7972986104097843154" at="81,37,82,149" concept="6" />
-      <node id="7972986104097843170" at="82,149,83,56" concept="1" />
-      <node id="7972986104097843180" at="84,7,85,56" concept="1" />
-      <node id="7972986104097843190" at="86,5,87,56" concept="1" />
-      <node id="7972986104097840950" at="48,16,50,11" concept="0" />
-      <node id="7972986104097843090" at="68,86,71,5" concept="3" />
-      <node id="7972986104097843152" at="80,82,84,7" concept="3" />
-      <node id="7972986104097840936" at="45,35,50,11" concept="4" />
-      <node id="7972986104097843046" at="66,0,74,0" concept="5" trace="dropProject#(Ljetbrains/mps/project/MPSProject;)V" />
-      <node id="7972986104097843121" at="77,83,86,5" concept="3" />
-      <node id="7972986104097840931" at="43,54,56,9" concept="3" />
-      <node id="7972986104097887493" at="75,0,89,0" concept="5" trace="dropModules#([Ljava/lang/String;)V" />
-      <node id="7972986104097840912" at="40,55,59,7" concept="3" />
-      <node id="7972986104097840893" at="37,72,62,5" concept="3" />
-      <node id="7972986104097840865" at="35,0,65,0" concept="5" trace="serializeProjectWithModules#(Ljetbrains/mps/project/MPSProject;Ljava/util/List;)V" />
-      <scope id="7972986104097840937" at="46,191,47,87" />
-      <scope id="7972986104097840951" at="48,18,49,45" />
-      <scope id="7972986104097843091" at="69,33,70,59" />
-      <scope id="7972986104097843153" at="81,37,83,56">
+      <node id="3666405441556899532" at="30,0,31,0" concept="3" trace="db" />
+      <node id="3666405441556899536" at="31,0,32,0" concept="3" trace="projectsCol" />
+      <node id="3666405441556899540" at="32,0,33,0" concept="3" trace="modulesCol" />
+      <node id="3666405441556899544" at="33,0,34,0" concept="3" trace="modelsCol" />
+      <node id="3666405441556899548" at="34,0,35,0" concept="3" trace="nodesCol" />
+      <node id="3666405441556950993" at="35,0,36,0" concept="3" trace="keepAlive" />
+      <node id="3666405441556902497" at="37,29,38,29" concept="2" />
+      <node id="3666405441556904059" at="38,29,39,45" concept="2" />
+      <node id="3666405441556904952" at="39,45,40,43" concept="2" />
+      <node id="3666405441556905799" at="40,43,41,41" concept="2" />
+      <node id="3666405441556906785" at="41,41,42,39" concept="2" />
+      <node id="3666405441556954440" at="45,86,46,26" concept="2" />
+      <node id="7972986104097927225" at="46,26,47,30" concept="2" />
+      <node id="3666405441556965002" at="47,30,48,27" concept="2" />
+      <node id="7972986104097840885" at="48,27,49,72" concept="7" />
+      <node id="7972986104097840895" at="50,36,51,76" concept="7" />
+      <node id="7972986104097840903" at="51,76,52,55" concept="2" />
+      <node id="7972986104097840914" at="53,47,54,73" concept="7" />
+      <node id="7972986104097840922" at="54,73,55,54" concept="2" />
+      <node id="7972986104097840933" at="56,50,57,35" concept="7" />
+      <node id="7972986104097840938" at="58,191,59,87" concept="2" />
+      <node id="7972986104097840952" at="60,18,61,45" concept="2" />
+      <node id="7972986104097840957" at="62,11,63,54" concept="2" />
+      <node id="7972986104097840966" at="63,54,64,47" concept="2" />
+      <node id="7972986104097840973" at="64,47,65,64" concept="7" />
+      <node id="7972986104097840980" at="65,64,66,252" concept="7" />
+      <node id="7972986104097840986" at="66,252,67,104" concept="2" />
+      <node id="7972986104097840997" at="68,9,69,48" concept="2" />
+      <node id="7972986104097841004" at="69,48,70,45" concept="2" />
+      <node id="7972986104097841016" at="71,7,72,48" concept="2" />
+      <node id="7972986104097841023" at="72,48,73,46" concept="2" />
+      <node id="7972986104097841033" at="74,5,75,48" concept="2" />
+      <node id="3666405441556929289" at="79,23,80,17" concept="2" />
+      <node id="7972986104097843067" at="84,47,85,135" concept="7" />
+      <node id="7972986104097843080" at="85,135,86,86" concept="7" />
+      <node id="7972986104097907602" at="87,33,88,59" concept="2" />
+      <node id="7972986104097843200" at="89,5,90,58" concept="2" />
+      <node id="3666405441556961954" at="90,58,91,17" concept="2" />
+      <node id="7972986104097843092" at="94,49,95,126" concept="7" />
+      <node id="7972986104097843111" at="95,126,96,83" concept="7" />
+      <node id="7972986104097843123" at="97,37,98,160" concept="7" />
+      <node id="7972986104097843142" at="98,160,99,82" concept="7" />
+      <node id="7972986104097843154" at="100,37,101,149" concept="7" />
+      <node id="7972986104097843170" at="101,149,102,56" concept="2" />
+      <node id="7972986104097843180" at="103,7,104,56" concept="2" />
+      <node id="7972986104097843190" at="105,5,106,56" concept="2" />
+      <node id="7972986104097840950" at="60,16,62,11" concept="0" />
+      <node id="3666405441556963603" at="78,24,81,5" concept="5" />
+      <node id="7972986104097843090" at="86,86,89,5" concept="4" />
+      <node id="7972986104097843152" at="99,82,103,7" concept="4" />
+      <node id="7972986104097840936" at="57,35,62,11" concept="5" />
+      <node id="3666405441556924391" at="78,0,83,0" concept="6" trace="close#()V" />
+      <node id="3666405441556895411" at="37,0,44,0" concept="1" trace="ModuleSerializer#()V" />
+      <node id="7972986104097843046" at="84,0,93,0" concept="6" trace="dropProject#(Ljetbrains/mps/project/MPSProject;)V" />
+      <node id="7972986104097843121" at="96,83,105,5" concept="4" />
+      <node id="7972986104097840931" at="55,54,68,9" concept="4" />
+      <node id="7972986104097887493" at="94,0,108,0" concept="6" trace="dropModules#([Ljava/lang/String;)V" />
+      <node id="7972986104097840912" at="52,55,71,7" concept="4" />
+      <node id="7972986104097840893" at="49,72,74,5" concept="4" />
+      <node id="7972986104097840865" at="45,0,77,0" concept="6" trace="serializeProjectWithModules#(Ljetbrains/mps/project/MPSProject;Ljava/util/List;)V" />
+      <scope id="7972986104097840937" at="58,191,59,87" />
+      <scope id="7972986104097840951" at="60,18,61,45" />
+      <scope id="3666405441556963605" at="79,23,80,17" />
+      <scope id="7972986104097843091" at="87,33,88,59" />
+      <scope id="7972986104097843153" at="100,37,102,56">
         <var name="nodeFilter" id="7972986104097843155" />
       </scope>
-      <scope id="7972986104097843090" at="68,86,71,5">
+      <scope id="3666405441556924394" at="78,24,81,5" />
+      <scope id="7972986104097843090" at="86,86,89,5">
         <var name="p" id="7972986104097843197" />
       </scope>
-      <scope id="7972986104097843152" at="80,82,84,7">
+      <scope id="7972986104097843152" at="99,82,103,7">
         <var name="model" id="7972986104097843177" />
       </scope>
-      <scope id="7972986104097843050" at="66,47,72,58">
+      <scope id="3666405441556895415" at="37,29,42,39" />
+      <scope id="3666405441556924391" at="78,0,83,0" />
+      <scope id="3666405441556895411" at="37,0,44,0" />
+      <scope id="7972986104097843050" at="84,47,91,17">
         <var name="projectFilter" id="7972986104097843068" />
         <var name="projects" id="7972986104097843081" />
       </scope>
-      <scope id="7972986104097843122" at="78,37,85,56">
+      <scope id="7972986104097843122" at="97,37,104,56">
         <var name="modelFilter" id="7972986104097843124" />
         <var name="models" id="7972986104097843143" />
       </scope>
-      <scope id="7972986104097843046" at="66,0,74,0">
+      <scope id="7972986104097843046" at="84,0,93,0">
         <var name="project" id="7972986104097843048" />
       </scope>
-      <scope id="7972986104097843121" at="77,83,86,5">
+      <scope id="7972986104097843121" at="96,83,105,5">
         <var name="module" id="7972986104097843187" />
       </scope>
-      <scope id="7972986104097840932" at="44,50,55,104">
+      <scope id="7972986104097840932" at="56,50,67,104">
         <var name="annotation" id="7972986104097840981" />
         <var name="nodeDoc" id="7972986104097840934" />
         <var name="writer" id="7972986104097840974" />
       </scope>
-      <scope id="7972986104097887496" at="75,49,87,56">
+      <scope id="7972986104097887496" at="94,49,106,56">
         <var name="moduleFilter" id="7972986104097843093" />
         <var name="modules" id="7972986104097843112" />
       </scope>
-      <scope id="7972986104097840931" at="43,54,56,9">
+      <scope id="7972986104097840931" at="55,54,68,9">
         <var name="snode" id="7972986104097840992" />
       </scope>
-      <scope id="7972986104097887493" at="75,0,89,0">
+      <scope id="7972986104097887493" at="94,0,108,0">
         <var name="modulesIds" id="7972986104097888002" />
       </scope>
-      <scope id="7972986104097840913" at="41,47,58,45">
+      <scope id="7972986104097840913" at="53,47,70,45">
         <var name="modelDoc" id="7972986104097840915" />
       </scope>
-      <scope id="7972986104097840912" at="40,55,59,7">
+      <scope id="7972986104097840912" at="52,55,71,7">
         <var name="model" id="7972986104097841011" />
       </scope>
-      <scope id="7972986104097840894" at="38,36,61,46">
+      <scope id="7972986104097840894" at="50,36,73,46">
         <var name="moduleDoc" id="7972986104097840896" />
       </scope>
-      <scope id="7972986104097840893" at="37,72,62,5">
+      <scope id="7972986104097840893" at="49,72,74,5">
         <var name="module" id="7972986104097841030" />
       </scope>
-      <scope id="7972986104097840867" at="35,86,63,48">
+      <scope id="7972986104097840867" at="45,86,75,48">
         <var name="projectDoc" id="7972986104097840886" />
       </scope>
-      <scope id="7972986104097840865" at="35,0,65,0">
+      <scope id="7972986104097840865" at="45,0,77,0">
         <var name="modules" id="7972986104097841044" />
         <var name="project" id="7972986104097841042" />
       </scope>
-      <unit id="6490259584643909810" at="29,0,90,0" name="org.campagnelab.circles.publisher.mongodb.shell.ModuleSerializer" />
+      <unit id="6490259584643909810" at="29,0,109,0" name="org.campagnelab.circles.publisher.mongodb.shell.ModuleSerializer" />
     </file>
   </root>
   <root nodeRef="r:deb87fab-190d-40b1-8364-c6d9ac5e7577(org.campagnelab.circles.publisher.mongodb.shell)/8985607314960473302">
     <file name="MongoDbSchemaManager.java">
-      <node id="3666405441556091321" at="10,30,11,25" concept="1" />
-      <node id="6490259584644068991" at="13,28,14,25" concept="1" />
-      <node id="8985607314960473373" at="10,0,13,0" concept="5" trace="createSchema#()V" />
-      <node id="8985607314960479863" at="13,0,16,0" concept="5" trace="dropSchema#()V" />
-      <scope id="8985607314960473377" at="10,30,11,25" />
-      <scope id="8985607314960479867" at="13,28,14,25" />
+      <node id="3666405441556853666" at="10,30,11,32" concept="2" />
+      <node id="3666405441556840066" at="13,28,14,43" concept="7" />
+      <node id="3666405441556840576" at="14,43,15,14" concept="2" />
+      <node id="3666405441556840075" at="15,14,16,15" concept="2" />
+      <node id="8985607314960473373" at="10,0,13,0" concept="6" trace="createSchema#()V" />
+      <node id="8985607314960479863" at="13,0,18,0" concept="6" trace="dropSchema#()V" />
+      <scope id="8985607314960473377" at="10,30,11,32" />
       <scope id="8985607314960473373" at="10,0,13,0" />
-      <scope id="8985607314960479863" at="13,0,16,0" />
-      <unit id="8985607314960473302" at="8,0,18,0" name="org.campagnelab.circles.publisher.mongodb.shell.MongoDbSchemaManager" />
+      <scope id="8985607314960479867" at="13,28,16,15">
+        <var name="db" id="3666405441556840067" />
+      </scope>
+      <scope id="8985607314960479863" at="13,0,18,0" />
+      <unit id="8985607314960473302" at="8,0,20,0" name="org.campagnelab.circles.publisher.mongodb.shell.MongoDbSchemaManager" />
     </file>
   </root>
 </debug-info>

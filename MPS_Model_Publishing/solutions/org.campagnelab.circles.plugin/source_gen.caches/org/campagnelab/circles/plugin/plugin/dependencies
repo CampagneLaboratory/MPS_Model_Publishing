@@ -7,28 +7,84 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="org.campagnelab.circles.plugin.plugin.DropDatabase_Action" file="DropDatabase_Action.java">
+  <dependency className="org.campagnelab.circles.plugin.plugin.DropProject_Action" file="DropProject_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
+    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="org.campagnelab.circles.publisher.db.ModuleSerializer" />
+    <classNode dependClassName="org.campagnelab.circles.plugin.plugin.PublisherConnection_PreferencesComponent" />
+    <classNode dependClassName="org.campagnelab.circles.publisher.db.Connection" />
+    <classNode dependClassName="org.campagnelab.circles.publisher.db.DbFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="org.campagnelab.circles.plugin.plugin.Plugin_ApplicationPlugin" file="Plugin_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="org.campagnelab.circles.plugin.plugin.AddCirclesActions_ActionGroup" />
-    <classNode dependClassName="org.campagnelab.circles.plugin.plugin.DropDatabase_Action" />
+    <classNode dependClassName="org.campagnelab.circles.plugin.plugin.DropProject_Action" />
     <classNode dependClassName="org.campagnelab.circles.plugin.plugin.SerializeModulesToDB_Action" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
+  <dependency className="org.campagnelab.circles.plugin.plugin.Plugin_ProjectPlugin" file="Plugin_ProjectPlugin.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent" />
+    <classNode dependClassName="org.campagnelab.circles.plugin.plugin.PublisherConnection_PreferencesComponent" />
+    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+  </dependency>
+  <dependency className="org.campagnelab.circles.plugin.plugin.PublisherConnection_PreferencesComponent" file="PublisherConnection_PreferencesComponent.java">
+    <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.util.xmlb.XmlSerializer" />
+    <classNode dependClassName="com.intellij.util.xmlb.annotations.Tag" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.plugins.prefs.BasePrefsPage" />
+    <classNode dependClassName="org.campagnelab.circles.plugin.plugin.PublisherConnection_Publisher_PreferencesPage" />
+    <classNode dependClassName="org.jdom.Element" />
+    <classNode extendsClassName="jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent" />
+  </dependency>
+  <dependency className="org.campagnelab.circles.plugin.plugin.PublisherConnection_Publisher_PreferencesPage" file="PublisherConnection_Publisher_PreferencesPage.java">
+    <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.regex.Matcher" />
+    <classNode dependClassName="java.util.regex.Pattern" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent" />
+    <classNode dependClassName="org.campagnelab.circles.plugin.plugin.PublisherConnection_PreferencesComponent" />
+    <classNode dependClassName="org.campagnelab.circles.plugin.plugin.PublisherPageComponent" />
+    <classNode extendsClassName="jetbrains.mps.plugins.prefs.BasePrefsPage" />
+  </dependency>
+  <dependency className="org.campagnelab.circles.plugin.plugin.PublisherPageComponent" file="PublisherPageComponent.java">
+    <classNode dependClassName="java.awt.Font" />
+    <classNode dependClassName="java.awt.GridBagLayout" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="javax.swing.JLabel" />
+    <classNode dependClassName="javax.swing.JTextField" />
+    <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
+    <classNode extendsClassName="com.intellij.ui.components.JBPanel" />
+  </dependency>
   <dependency className="org.campagnelab.circles.plugin.plugin.SerializeModulesToDB_Action" file="SerializeModulesToDB_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -36,8 +92,12 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
+    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="org.campagnelab.circles.publisher.db.ModuleSerializer" />
+    <classNode dependClassName="org.campagnelab.circles.plugin.plugin.PublisherConnection_PreferencesComponent" />
+    <classNode dependClassName="org.campagnelab.circles.publisher.db.Connection" />
+    <classNode dependClassName="org.campagnelab.circles.publisher.db.DbFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />

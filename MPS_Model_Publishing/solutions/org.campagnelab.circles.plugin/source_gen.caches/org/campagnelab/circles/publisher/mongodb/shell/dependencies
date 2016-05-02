@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="org.campagnelab.circles.publisher.mongodb.shell.ModuleSerializer" file="ModuleSerializer.java">
+    <classNode dependClassName="com.mongodb.client.FindIterable" />
+    <classNode dependClassName="com.mongodb.client.model.Filters" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.bson.Document" />
+    <classNode dependClassName="org.bson.conversions.Bson" />
+    <classNode dependClassName="org.campagnelab.circles.publisher.db.Connection" />
+    <classNode dependClassName="org.campagnelab.circles.publisher.mongodb.model.ModelDocument" />
+    <classNode dependClassName="org.campagnelab.circles.publisher.mongodb.model.ModuleDocument" />
+    <classNode dependClassName="org.campagnelab.circles.publisher.mongodb.model.MongoDbAccess" />
+    <classNode dependClassName="org.campagnelab.circles.publisher.mongodb.model.MongoDbCollection" />
+    <classNode dependClassName="org.campagnelab.circles.publisher.mongodb.model.NodeWriter" />
+    <classNode dependClassName="org.campagnelab.circles.publisher.mongodb.model.ProjectDocument" />
+    <classNode dependClassName="org.campagnelab.circles.publisher.mongodb.model.RootNodeDocument" />
+    <classNode dependClassName="org.campagnelab.mps.editor2pdf.behavior.EditorAnnotation__BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode extendsClassName="org.campagnelab.circles.publisher.db.Serializer" />
+  </dependency>
+  <dependency className="org.campagnelab.circles.publisher.mongodb.shell.MongoDbSchemaManager" file="MongoDbSchemaManager.java">
+    <classNode dependClassName="org.campagnelab.circles.publisher.mongodb.model.MongoDbAccess" />
+    <classNode extendsClassName="org.campagnelab.circles.publisher.db.SchemaManager" />
+  </dependency>
+</dependenciesRoot>
+
