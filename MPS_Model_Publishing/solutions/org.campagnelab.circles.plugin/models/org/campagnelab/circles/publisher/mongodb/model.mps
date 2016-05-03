@@ -120,6 +120,7 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
+      <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
@@ -1530,6 +1531,14 @@
   </node>
   <node concept="312cEu" id="5Ci2biiM7TL">
     <property role="TrG5h" value="ModelDocument" />
+    <node concept="312cEg" id="3bxG5bq$5rQ" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="parentModuleId" />
+      <property role="3TUv4t" value="false" />
+      <node concept="17QB3L" id="3bxG5bq$5rR" role="1tU5fm" />
+      <node concept="3Tm6S6" id="3bxG5bq$5rS" role="1B3o_S" />
+    </node>
     <node concept="2tJIrI" id="5Ci2biiMadO" role="jymVt" />
     <node concept="3clFbW" id="5Ci2biiMadX" role="jymVt">
       <property role="DiZV1" value="false" />
@@ -1551,6 +1560,73 @@
       <node concept="3Tm1VV" id="5Ci2biiMae4" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="5Ci2biiMadQ" role="jymVt" />
+    <node concept="3clFb_" id="3bxG5bq$5tF" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="setParentModule" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="3bxG5bq$5tI" role="3clF47">
+        <node concept="3clFbF" id="3bxG5bq$5vH" role="3cqZAp">
+          <node concept="37vLTI" id="3bxG5bq$5AV" role="3clFbG">
+            <node concept="37vLTw" id="3bxG5bq$5CT" role="37vLTx">
+              <ref role="3cqZAo" node="3bxG5bq$5uC" resolve="moduleId" />
+            </node>
+            <node concept="2OqwBi" id="3bxG5bq$5wA" role="37vLTJ">
+              <node concept="Xjq3P" id="3bxG5bq$5vG" role="2Oq$k0" />
+              <node concept="2OwXpG" id="3bxG5bq$5zB" role="2OqNvi">
+                <ref role="2Oxat5" node="3bxG5bq$5rQ" resolve="parentModuleId" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3bxG5bq$5T0" role="3cqZAp">
+          <node concept="2OqwBi" id="3bxG5bq$5T1" role="3clFbG">
+            <node concept="2OqwBi" id="3bxG5bq$5T2" role="2Oq$k0">
+              <node concept="Xjq3P" id="3bxG5bq$5T3" role="2Oq$k0" />
+              <node concept="2OwXpG" id="3bxG5bq$5T4" role="2OqNvi">
+                <ref role="2Oxat5" node="5Ci2biiM21S" resolve="document" />
+              </node>
+            </node>
+            <node concept="liA8E" id="3bxG5bq$5T5" role="2OqNvi">
+              <ref role="37wK5l" to="htiy:~Document.append(java.lang.String,java.lang.Object):org.bson.Document" resolve="append" />
+              <node concept="Xl_RD" id="3bxG5bq$5T6" role="37wK5m">
+                <property role="Xl_RC" value="moduleId" />
+              </node>
+              <node concept="37vLTw" id="3bxG5bq$6fT" role="37wK5m">
+                <ref role="3cqZAo" node="3bxG5bq$5uC" resolve="moduleId" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="3bxG5bq$5Sr" role="3cqZAp" />
+      </node>
+      <node concept="3Tm1VV" id="3bxG5bq$5sZ" role="1B3o_S" />
+      <node concept="3cqZAl" id="3bxG5bq$5tA" role="3clF45" />
+      <node concept="37vLTG" id="3bxG5bq$5uC" role="3clF46">
+        <property role="TrG5h" value="moduleId" />
+        <node concept="17QB3L" id="3bxG5bq$5uB" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="3bxG5bq$5HR" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getParentModule" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="3bxG5bq$5HU" role="3clF47">
+        <node concept="3clFbF" id="3bxG5bq$5K0" role="3cqZAp">
+          <node concept="2OqwBi" id="3bxG5bq$5L1" role="3clFbG">
+            <node concept="Xjq3P" id="3bxG5bq$5JZ" role="2Oq$k0" />
+            <node concept="2OwXpG" id="3bxG5bq$5O2" role="2OqNvi">
+              <ref role="2Oxat5" node="3bxG5bq$5rQ" resolve="parentModuleId" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3bxG5bq$5Gw" role="1B3o_S" />
+      <node concept="17QB3L" id="3bxG5bq$5HL" role="3clF45" />
+    </node>
     <node concept="3Tm1VV" id="5Ci2biiM7TM" role="1B3o_S" />
     <node concept="3uibUv" id="5Ci2biiM7Us" role="1zkMxy">
       <ref role="3uigEE" node="5Ci2biiM21v" resolve="BaseCirclesDocument" />
