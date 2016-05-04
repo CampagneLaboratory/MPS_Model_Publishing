@@ -50,9 +50,11 @@ public class ModuleSerializer extends Serializer {
     for (SModule module : modules) {
       ModuleDocument moduleDoc = new ModuleDocument(module.getModuleName());
       moduleDoc.setId(module.getModuleId().toString());
+      moduleDoc.setParentProject(projectDoc.getId());
       for (SModel model : module.getModels()) {
         ModelDocument modelDoc = new ModelDocument(model.getModelName());
         modelDoc.setId(model.getModelId().toString());
+        modelDoc.setParentModule(moduleDoc.getId());
         for (SNode snode : model.getRootNodes()) {
           RootNodeDocument nodeDoc;
           if (snode.isInstanceOfConcept(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
@@ -73,6 +75,7 @@ public class ModuleSerializer extends Serializer {
       projectDoc.addModule(moduleDoc.getId());
     }
     projectsCol.addDocument(projectDoc.toDoc());
+    // TODO: if we close the connection here, the db does not flush properly the new data 
   }
 
   private void close() {

@@ -8,6 +8,7 @@ import java.util.Collections;
 
 public class ModuleDocument extends BaseCirclesDocument {
 
+  private String parentProjectId;
   private List<String> models;
 
   public ModuleDocument(String name) {
@@ -22,6 +23,14 @@ public class ModuleDocument extends BaseCirclesDocument {
   public void addModel(String modelId) {
     models.add(modelId);
     this.document.append("modelId", String.join(",", this.models));
+  }
+  public void setParentProject(String projectId) {
+    this.parentProjectId = projectId;
+    this.document.append("projectId", projectId);
+
+  }
+  public String getParentProject() {
+    return this.parentProjectId;
   }
 
 }

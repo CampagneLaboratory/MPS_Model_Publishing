@@ -8,6 +8,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <root nodeRef="r:deb87fab-190d-40b1-8364-c6d9ac5e7577(org.campagnelab.circles.publisher.mongodb.shell)/6490259584643909810">
     <file name="ModuleSerializer.java">
       <node id="3666405441556899532" at="30,0,31,0" concept="3" trace="db" />
@@ -27,115 +28,118 @@
       <node id="7972986104097840885" at="48,27,49,72" concept="7" />
       <node id="7972986104097840895" at="50,36,51,76" concept="7" />
       <node id="7972986104097840903" at="51,76,52,55" concept="2" />
-      <node id="7972986104097840914" at="53,47,54,73" concept="7" />
-      <node id="7972986104097840922" at="54,73,55,54" concept="2" />
-      <node id="7972986104097840933" at="56,50,57,35" concept="7" />
-      <node id="7972986104097840938" at="58,191,59,87" concept="2" />
-      <node id="7972986104097840952" at="60,18,61,45" concept="2" />
-      <node id="7972986104097840957" at="62,11,63,54" concept="2" />
-      <node id="7972986104097840966" at="63,54,64,47" concept="2" />
-      <node id="7972986104097840973" at="64,47,65,64" concept="7" />
-      <node id="7972986104097840980" at="65,64,66,252" concept="7" />
-      <node id="7972986104097840986" at="66,252,67,104" concept="2" />
-      <node id="7972986104097840997" at="68,9,69,48" concept="2" />
-      <node id="7972986104097841004" at="69,48,70,45" concept="2" />
-      <node id="7972986104097841016" at="71,7,72,48" concept="2" />
-      <node id="7972986104097841023" at="72,48,73,46" concept="2" />
-      <node id="7972986104097841033" at="74,5,75,48" concept="2" />
-      <node id="3666405441556929289" at="79,23,80,17" concept="2" />
-      <node id="7972986104097843067" at="84,47,85,135" concept="7" />
-      <node id="7972986104097843080" at="85,135,86,86" concept="7" />
-      <node id="7972986104097907602" at="87,33,88,59" concept="2" />
-      <node id="7972986104097843200" at="89,5,90,58" concept="2" />
-      <node id="3666405441556961954" at="90,58,91,17" concept="2" />
-      <node id="7972986104097843092" at="94,49,95,126" concept="7" />
-      <node id="7972986104097843111" at="95,126,96,83" concept="7" />
-      <node id="7972986104097843123" at="97,37,98,160" concept="7" />
-      <node id="7972986104097843142" at="98,160,99,82" concept="7" />
-      <node id="7972986104097843154" at="100,37,101,149" concept="7" />
-      <node id="7972986104097843170" at="101,149,102,56" concept="2" />
-      <node id="7972986104097843180" at="103,7,104,56" concept="2" />
-      <node id="7972986104097843190" at="105,5,106,56" concept="2" />
-      <node id="7972986104097840950" at="60,16,62,11" concept="0" />
-      <node id="3666405441556963603" at="78,24,81,5" concept="5" />
-      <node id="7972986104097843090" at="86,86,89,5" concept="4" />
-      <node id="7972986104097843152" at="99,82,103,7" concept="4" />
-      <node id="7972986104097840936" at="57,35,62,11" concept="5" />
-      <node id="3666405441556924391" at="78,0,83,0" concept="6" trace="close#()V" />
+      <node id="3666405441557037250" at="52,55,53,53" concept="2" />
+      <node id="7972986104097840914" at="54,47,55,73" concept="7" />
+      <node id="7972986104097840922" at="55,73,56,54" concept="2" />
+      <node id="3666405441557000365" at="56,54,57,52" concept="2" />
+      <node id="7972986104097840933" at="58,50,59,35" concept="7" />
+      <node id="7972986104097840938" at="60,191,61,87" concept="2" />
+      <node id="7972986104097840952" at="62,18,63,45" concept="2" />
+      <node id="7972986104097840957" at="64,11,65,54" concept="2" />
+      <node id="7972986104097840966" at="65,54,66,47" concept="2" />
+      <node id="7972986104097840973" at="66,47,67,64" concept="7" />
+      <node id="7972986104097840980" at="67,64,68,252" concept="7" />
+      <node id="7972986104097840986" at="68,252,69,104" concept="2" />
+      <node id="7972986104097840997" at="70,9,71,48" concept="2" />
+      <node id="7972986104097841004" at="71,48,72,45" concept="2" />
+      <node id="7972986104097841016" at="73,7,74,48" concept="2" />
+      <node id="7972986104097841023" at="74,48,75,46" concept="2" />
+      <node id="7972986104097841033" at="76,5,77,48" concept="2" />
+      <node id="3666405441556987035" at="77,48,78,90" concept="8" />
+      <node id="3666405441556929289" at="82,23,83,17" concept="2" />
+      <node id="7972986104097843067" at="87,47,88,135" concept="7" />
+      <node id="7972986104097843080" at="88,135,89,86" concept="7" />
+      <node id="7972986104097907602" at="90,33,91,59" concept="2" />
+      <node id="7972986104097843200" at="92,5,93,58" concept="2" />
+      <node id="3666405441556961954" at="93,58,94,17" concept="2" />
+      <node id="7972986104097843092" at="97,49,98,126" concept="7" />
+      <node id="7972986104097843111" at="98,126,99,83" concept="7" />
+      <node id="7972986104097843123" at="100,37,101,160" concept="7" />
+      <node id="7972986104097843142" at="101,160,102,82" concept="7" />
+      <node id="7972986104097843154" at="103,37,104,149" concept="7" />
+      <node id="7972986104097843170" at="104,149,105,56" concept="2" />
+      <node id="7972986104097843180" at="106,7,107,56" concept="2" />
+      <node id="7972986104097843190" at="108,5,109,56" concept="2" />
+      <node id="7972986104097840950" at="62,16,64,11" concept="0" />
+      <node id="3666405441556963603" at="81,24,84,5" concept="5" />
+      <node id="7972986104097843090" at="89,86,92,5" concept="4" />
+      <node id="7972986104097843152" at="102,82,106,7" concept="4" />
+      <node id="7972986104097840936" at="59,35,64,11" concept="5" />
+      <node id="3666405441556924391" at="81,0,86,0" concept="6" trace="close#()V" />
       <node id="3666405441556895411" at="37,0,44,0" concept="1" trace="ModuleSerializer#()V" />
-      <node id="7972986104097843046" at="84,0,93,0" concept="6" trace="dropProject#(Ljetbrains/mps/project/MPSProject;)V" />
-      <node id="7972986104097843121" at="96,83,105,5" concept="4" />
-      <node id="7972986104097840931" at="55,54,68,9" concept="4" />
-      <node id="7972986104097887493" at="94,0,108,0" concept="6" trace="dropModules#([Ljava/lang/String;)V" />
-      <node id="7972986104097840912" at="52,55,71,7" concept="4" />
-      <node id="7972986104097840893" at="49,72,74,5" concept="4" />
-      <node id="7972986104097840865" at="45,0,77,0" concept="6" trace="serializeProjectWithModules#(Ljetbrains/mps/project/MPSProject;Ljava/util/List;)V" />
-      <scope id="7972986104097840937" at="58,191,59,87" />
-      <scope id="7972986104097840951" at="60,18,61,45" />
-      <scope id="3666405441556963605" at="79,23,80,17" />
-      <scope id="7972986104097843091" at="87,33,88,59" />
-      <scope id="7972986104097843153" at="100,37,102,56">
+      <node id="7972986104097843046" at="87,0,96,0" concept="6" trace="dropProject#(Ljetbrains/mps/project/MPSProject;)V" />
+      <node id="7972986104097843121" at="99,83,108,5" concept="4" />
+      <node id="7972986104097840931" at="57,52,70,9" concept="4" />
+      <node id="7972986104097887493" at="97,0,111,0" concept="6" trace="dropModules#([Ljava/lang/String;)V" />
+      <node id="7972986104097840912" at="53,53,73,7" concept="4" />
+      <node id="7972986104097840893" at="49,72,76,5" concept="4" />
+      <node id="7972986104097840865" at="45,0,80,0" concept="6" trace="serializeProjectWithModules#(Ljetbrains/mps/project/MPSProject;Ljava/util/List;)V" />
+      <scope id="7972986104097840937" at="60,191,61,87" />
+      <scope id="7972986104097840951" at="62,18,63,45" />
+      <scope id="3666405441556963605" at="82,23,83,17" />
+      <scope id="7972986104097843091" at="90,33,91,59" />
+      <scope id="7972986104097843153" at="103,37,105,56">
         <var name="nodeFilter" id="7972986104097843155" />
       </scope>
-      <scope id="3666405441556924394" at="78,24,81,5" />
-      <scope id="7972986104097843090" at="86,86,89,5">
+      <scope id="3666405441556924394" at="81,24,84,5" />
+      <scope id="7972986104097843090" at="89,86,92,5">
         <var name="p" id="7972986104097843197" />
       </scope>
-      <scope id="7972986104097843152" at="99,82,103,7">
+      <scope id="7972986104097843152" at="102,82,106,7">
         <var name="model" id="7972986104097843177" />
       </scope>
       <scope id="3666405441556895415" at="37,29,42,39" />
-      <scope id="3666405441556924391" at="78,0,83,0" />
+      <scope id="3666405441556924391" at="81,0,86,0" />
       <scope id="3666405441556895411" at="37,0,44,0" />
-      <scope id="7972986104097843050" at="84,47,91,17">
+      <scope id="7972986104097843050" at="87,47,94,17">
         <var name="projectFilter" id="7972986104097843068" />
         <var name="projects" id="7972986104097843081" />
       </scope>
-      <scope id="7972986104097843122" at="97,37,104,56">
+      <scope id="7972986104097843122" at="100,37,107,56">
         <var name="modelFilter" id="7972986104097843124" />
         <var name="models" id="7972986104097843143" />
       </scope>
-      <scope id="7972986104097843046" at="84,0,93,0">
+      <scope id="7972986104097843046" at="87,0,96,0">
         <var name="project" id="7972986104097843048" />
       </scope>
-      <scope id="7972986104097843121" at="96,83,105,5">
+      <scope id="7972986104097843121" at="99,83,108,5">
         <var name="module" id="7972986104097843187" />
       </scope>
-      <scope id="7972986104097840932" at="56,50,67,104">
+      <scope id="7972986104097840932" at="58,50,69,104">
         <var name="annotation" id="7972986104097840981" />
         <var name="nodeDoc" id="7972986104097840934" />
         <var name="writer" id="7972986104097840974" />
       </scope>
-      <scope id="7972986104097887496" at="94,49,106,56">
+      <scope id="7972986104097887496" at="97,49,109,56">
         <var name="moduleFilter" id="7972986104097843093" />
         <var name="modules" id="7972986104097843112" />
       </scope>
-      <scope id="7972986104097840931" at="55,54,68,9">
+      <scope id="7972986104097840931" at="57,52,70,9">
         <var name="snode" id="7972986104097840992" />
       </scope>
-      <scope id="7972986104097887493" at="94,0,108,0">
+      <scope id="7972986104097887493" at="97,0,111,0">
         <var name="modulesIds" id="7972986104097888002" />
       </scope>
-      <scope id="7972986104097840913" at="53,47,70,45">
+      <scope id="7972986104097840913" at="54,47,72,45">
         <var name="modelDoc" id="7972986104097840915" />
       </scope>
-      <scope id="7972986104097840912" at="52,55,71,7">
+      <scope id="7972986104097840912" at="53,53,73,7">
         <var name="model" id="7972986104097841011" />
       </scope>
-      <scope id="7972986104097840894" at="50,36,73,46">
+      <scope id="7972986104097840894" at="50,36,75,46">
         <var name="moduleDoc" id="7972986104097840896" />
       </scope>
-      <scope id="7972986104097840893" at="49,72,74,5">
+      <scope id="7972986104097840893" at="49,72,76,5">
         <var name="module" id="7972986104097841030" />
       </scope>
-      <scope id="7972986104097840867" at="45,86,75,48">
+      <scope id="7972986104097840867" at="45,86,78,90">
         <var name="projectDoc" id="7972986104097840886" />
       </scope>
-      <scope id="7972986104097840865" at="45,0,77,0">
+      <scope id="7972986104097840865" at="45,0,80,0">
         <var name="modules" id="7972986104097841044" />
         <var name="project" id="7972986104097841042" />
       </scope>
-      <unit id="6490259584643909810" at="29,0,109,0" name="org.campagnelab.circles.publisher.mongodb.shell.ModuleSerializer" />
+      <unit id="6490259584643909810" at="29,0,112,0" name="org.campagnelab.circles.publisher.mongodb.shell.ModuleSerializer" />
     </file>
   </root>
   <root nodeRef="r:deb87fab-190d-40b1-8364-c6d9ac5e7577(org.campagnelab.circles.publisher.mongodb.shell)/8985607314960473302">

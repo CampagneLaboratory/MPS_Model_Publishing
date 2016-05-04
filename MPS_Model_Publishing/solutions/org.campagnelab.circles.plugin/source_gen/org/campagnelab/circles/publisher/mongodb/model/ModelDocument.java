@@ -4,9 +4,18 @@ package org.campagnelab.circles.publisher.mongodb.model;
 
 
 public class ModelDocument extends BaseCirclesDocument {
+  private String parentModuleId;
 
   public ModelDocument(String name) {
     super(name);
   }
 
+  public void setParentModule(String moduleId) {
+    this.parentModuleId = moduleId;
+    this.document.append("moduleId", moduleId);
+
+  }
+  public String getParentModule() {
+    return this.parentModuleId;
+  }
 }

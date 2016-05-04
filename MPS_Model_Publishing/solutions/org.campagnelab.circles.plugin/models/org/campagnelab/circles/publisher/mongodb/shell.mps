@@ -417,6 +417,24 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbF" id="3bxG5bq$g32" role="3cqZAp">
+              <node concept="2OqwBi" id="3bxG5bq$ghb" role="3clFbG">
+                <node concept="37vLTw" id="3bxG5bq$g30" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6U_J9TPS9W0" resolve="moduleDoc" />
+                </node>
+                <node concept="liA8E" id="3bxG5bq$gNV" role="2OqNvi">
+                  <ref role="37wK5l" to="7fgt:3bxG5bq$bAN" resolve="setParentProject" />
+                  <node concept="2OqwBi" id="3bxG5bq$gVO" role="37wK5m">
+                    <node concept="37vLTw" id="3bxG5bq$gUp" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6U_J9TPS9VQ" resolve="projectDoc" />
+                    </node>
+                    <node concept="liA8E" id="3bxG5bq$gZQ" role="2OqNvi">
+                      <ref role="37wK5l" to="7fgt:5Ci2biiM232" resolve="getId" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="1DcWWT" id="6U_J9TPS9Wg" role="3cqZAp">
               <node concept="3clFbS" id="6U_J9TPS9Wh" role="2LFqv$">
                 <node concept="3cpWs8" id="6U_J9TPS9Wi" role="3cqZAp">
