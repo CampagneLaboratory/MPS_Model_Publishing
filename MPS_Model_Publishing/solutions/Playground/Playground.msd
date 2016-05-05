@@ -7,7 +7,7 @@
   </models>
   <sourcePath />
   <languageVersions>
-    <language id="aa5fe41a-45eb-4e2a-a3a4-80a1e980cdac" fqName="TestLanguage" version="-1" />
+    <language id="aa5fe41a-45eb-4e2a-a3a4-80a1e980cdac" fqName="TestLanguage" version="0" />
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" fqName="jetbrains.mps.lang.core" version="1" />
   </languageVersions>
   <dependencyVersions>

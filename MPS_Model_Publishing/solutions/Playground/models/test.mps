@@ -2,7 +2,7 @@
 <model ref="r:3fdb4b4a-fef4-4077-b3e7-a0d8b047388d(test)">
   <persistence version="9" />
   <languages>
-    <use id="aa5fe41a-45eb-4e2a-a3a4-80a1e980cdac" name="TestLanguage" version="-1" />
+    <use id="aa5fe41a-45eb-4e2a-a3a4-80a1e980cdac" name="TestLanguage" version="0" />
   </languages>
   <imports />
   <registry>
