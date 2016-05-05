@@ -12,6 +12,9 @@
   <registry>
     <language id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build">
       <concept id="5481553824944787378" name="jetbrains.mps.build.structure.BuildSourceProjectRelativePath" flags="ng" index="55IIr" />
+      <concept id="9126048691955220717" name="jetbrains.mps.build.structure.BuildLayout_File" flags="ng" index="28jJK3">
+        <child id="9126048691955220762" name="path" index="28jJRO" />
+      </concept>
       <concept id="2755237150521975431" name="jetbrains.mps.build.structure.BuildVariableMacroInitWithString" flags="ng" index="aVJcg">
         <child id="2755237150521975437" name="value" index="aVJcq" />
       </concept>
@@ -179,6 +182,19 @@
         </node>
         <node concept="m$_wl" id="5L4pdtyHuJx" role="39821P">
           <ref role="m_rDy" node="5L4pdtyHuJk" resolve="MPS_Model_Publishing" />
+          <node concept="28jJK3" id="5L4pdtyHwJJ" role="39821P">
+            <node concept="55IIr" id="5L4pdtyHwJK" role="28jJRO">
+              <node concept="2Ry0Ak" id="5L4pdtyHwK8" role="iGT6I">
+                <property role="2Ry0Am" value="solutions" />
+                <node concept="2Ry0Ak" id="5L4pdtyHwKh" role="2Ry0An">
+                  <property role="2Ry0Am" value="com.mongodb.driver" />
+                  <node concept="2Ry0Ak" id="5L4pdtyHwKq" role="2Ry0An">
+                    <property role="2Ry0Am" value="mongo-java-driver-3.2.0.jar" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
