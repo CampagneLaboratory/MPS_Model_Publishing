@@ -41,6 +41,10 @@
         <reference id="5617550519002745380" name="script" index="1l3spb" />
         <child id="4129895186893471026" name="artifacts" index="2JcizS" />
       </concept>
+      <concept id="927724900262033858" name="jetbrains.mps.build.structure.BuildSource_JavaOptions" flags="ng" index="2_Ic$z">
+        <property id="6998860900671147996" name="javaLevel" index="TZNOO" />
+        <property id="4416461515995611908" name="fork" index="1ck6Xt" />
+      </concept>
       <concept id="4380385936562003279" name="jetbrains.mps.build.structure.BuildString" flags="ng" index="NbPM2">
         <child id="4903714810883783243" name="parts" index="3MwsjC" />
       </concept>
@@ -307,7 +311,7 @@
         </node>
       </node>
       <node concept="1E1JtA" id="5L4pdtyHuJi" role="2G$12L">
-        <property role="BnDLt" value="true" />
+        <property role="BnDLt" value="false" />
         <property role="TrG5h" value="org.campagnelab.circles.plugin" />
         <property role="3LESm3" value="029b58a0-078e-421d-8fcf-cfa0bf9e220b" />
         <property role="2GAjPV" value="false" />
@@ -364,12 +368,6 @@
             <ref role="3bR37D" to="mixo:2B3cBtBfXt_" resolve="org.campagnelab.mps.editor2pdf" />
           </node>
         </node>
-        <node concept="1SiIV0" id="5L4pdtyHwg8" role="3bR37C">
-          <node concept="3bR9La" id="5L4pdtyHwg9" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:5xwbQ0eEV3B" resolve="jetbrains.mps.ide.java.basePlatform" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="5L4pdtyHwga" role="3bR37C">
           <node concept="3bR9La" id="5L4pdtyHwgb" role="1SiIV1">
             <property role="3bR36h" value="true" />
@@ -382,7 +380,17 @@
             <ref role="3bR37D" to="ffeo:7KapL9OABnm" resolve="jetbrains.mps.ide.ui" />
           </node>
         </node>
+        <node concept="1SiIV0" id="2IzChywKnx3" role="3bR37C">
+          <node concept="3bR9La" id="2IzChywKnx4" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:5xwbQ0eEV3B" resolve="jetbrains.mps.ide.java.basePlatform" />
+          </node>
+        </node>
       </node>
+    </node>
+    <node concept="2_Ic$z" id="$MLxxYnVCu" role="3989C9">
+      <property role="TZNOO" value="1.8" />
+      <property role="1ck6Xt" value="true" />
     </node>
   </node>
 </model>
