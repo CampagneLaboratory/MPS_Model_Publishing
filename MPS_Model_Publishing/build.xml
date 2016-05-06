@@ -40,8 +40,8 @@
       <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
         <id>org.campagnelab.ModulePublisher</id>
         <name>org.campagnelab.ModulePublisher</name>
-        <description>An plugin for MPS that allows to publish modules, models and nodes in a mongo DB instance. </description>
-        <version>${mpsBootstrapCore.version}</version>
+        <description>A plugin that allows to publish modules, models and nodes in a selected mongo DB instance. </description>
+        <version>${publisher_version}</version>
         <vendor url="http://campagnelab.org">Campagne Laboratory</vendor>
         <depends>jetbrains.mps.core</depends>
         <depends>org.campagnelab.Editor2PDF</depends>
@@ -158,7 +158,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true" targetJavaVersion="1.8">
       <plugin path="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../.." />
       <plugin path="${artifacts.mps}/plugins/mps-testing" />
       <plugin path="${build.tmp}/deps/org.campagnelab.Editor2PDF/Editor2PDF-_dl__lbrace_version_rbrace_.zip/Editor2PDF" />
@@ -266,7 +266,7 @@
   <target name="java.compile.com.mongodb.driver">
     <mkdir dir="${basedir}/solutions/com.mongodb.driver/source_gen" />
     <mkdir dir="${build.tmp}/java/out/com.mongodb.driver" />
-    <javac destdir="${build.tmp}/java/out/com.mongodb.driver" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/com.mongodb.driver" fork="true" encoding="utf8" includeantruntime="false" source="1.8" target="1.8">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/solutions/com.mongodb.driver/source_gen" />
@@ -275,12 +275,15 @@
         <fileset file="${basedir}/solutions/com.mongodb.driver/mongo-java-driver-3.2.0.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/com.mongodb.driver">
+      <fileset dir="${basedir}/solutions/com.mongodb.driver/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.org.campagnelab.circles.plugin" depends="java.compile.com.mongodb.driver, fetchDependencies">
     <mkdir dir="${basedir}/solutions/org.campagnelab.circles.plugin/source_gen" />
     <mkdir dir="${build.tmp}/java/out/org.campagnelab.circles.plugin" />
-    <javac destdir="${build.tmp}/java/out/org.campagnelab.circles.plugin" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/org.campagnelab.circles.plugin" fork="true" encoding="utf8" includeantruntime="false" source="1.8" target="1.8">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/solutions/org.campagnelab.circles.plugin/source_gen" />
@@ -335,6 +338,9 @@
         <fileset file="${build.tmp}/deps/org.campagnelab.Editor2PDF/Editor2PDF-_dl__lbrace_version_rbrace_.zip/Editor2PDF/languages/Editor2PDF/org.jfreesvg.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/org.campagnelab.circles.plugin">
+      <fileset dir="${basedir}/solutions/org.campagnelab.circles.plugin/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="cleanSources">
