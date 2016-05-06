@@ -189,7 +189,7 @@
       <node concept="3981dG" id="5L4pdtyHuJu" role="39821P">
         <node concept="3_J27D" id="5L4pdtyHuJv" role="Nbhlr">
           <node concept="3Mxwew" id="5L4pdtyHuJw" role="3MwsjC">
-            <property role="3MwjfP" value="MPS_Model_Publishing-" />
+            <property role="3MwjfP" value="MPS_Web_Publisher-" />
           </node>
           <node concept="3Mxwey" id="5L4pdtyHwHV" role="3MwsjC">
             <ref role="3Mxwex" node="3gMg70bX6Gp" resolve="publisher_version" />
@@ -199,7 +199,7 @@
           </node>
         </node>
         <node concept="m$_wl" id="5L4pdtyHuJx" role="39821P">
-          <ref role="m_rDy" node="5L4pdtyHuJk" resolve="org.campagnelab.ModulePublisher" />
+          <ref role="m_rDy" node="5L4pdtyHuJk" resolve="org.campagnelab.WebPublisher" />
           <node concept="28jJK3" id="5L4pdtyHwJJ" role="39821P">
             <node concept="55IIr" id="5L4pdtyHwJK" role="28jJRO">
               <node concept="2Ry0Ak" id="5L4pdtyHwK8" role="iGT6I">
@@ -217,7 +217,7 @@
       </node>
     </node>
     <node concept="m$_wf" id="5L4pdtyHuJk" role="3989C9">
-      <property role="m$_wk" value="org.campagnelab.ModulePublisher" />
+      <property role="m$_wk" value="org.campagnelab.WebPublisher" />
       <node concept="2pNNFK" id="7ZmC9JYEfXQ" role="20twgj">
         <property role="2pNNFO" value="idea-version" />
         <node concept="2pNUuL" id="7ZmC9JYEfXR" role="2pNNFR">
@@ -235,16 +235,16 @@
       </node>
       <node concept="3_J27D" id="5L4pdtyHuJl" role="m$_yQ">
         <node concept="3Mxwew" id="5L4pdtyHuJm" role="3MwsjC">
-          <property role="3MwjfP" value="org.campagnelab.ModulePublisher" />
+          <property role="3MwjfP" value="org.campagnelab.WebPublisher" />
         </node>
       </node>
       <node concept="3_J27D" id="5L4pdtyHuJn" role="m$_w8">
         <node concept="3Mxwey" id="5L4pdtyHxFt" role="3MwsjC">
-          <ref role="3Mxwex" to="ffeo:5HVSRHdVf2d" resolve="version" />
+          <ref role="3Mxwex" node="3gMg70bX6Gp" resolve="publisher_version" />
         </node>
       </node>
       <node concept="m$f5U" id="5L4pdtyHuJp" role="m$_yh">
-        <ref role="m$f5T" node="5L4pdtyHuJj" resolve="MPS_Model_Publishing" />
+        <ref role="m$f5T" node="5L4pdtyHuJj" resolve="MPS_Web_Publisher" />
       </node>
       <node concept="m$_yC" id="5L4pdtyHuJq" role="m$_yJ">
         <ref role="m$_y1" to="ffeo:4k71ibbKLe8" resolve="jetbrains.mps.core" />
@@ -257,7 +257,7 @@
       </node>
       <node concept="3_J27D" id="5L4pdtyHuJr" role="m_cZH">
         <node concept="3Mxwew" id="5L4pdtyHuJs" role="3MwsjC">
-          <property role="3MwjfP" value="MPS_Module_Publishing" />
+          <property role="3MwjfP" value="MPS_Web_Publishing" />
         </node>
       </node>
       <node concept="2iUeEo" id="5L4pdtyHxFH" role="2iVFfd">
@@ -266,12 +266,12 @@
       </node>
       <node concept="3_J27D" id="5L4pdtyHxHc" role="3s6cr7">
         <node concept="3Mxwew" id="5L4pdtyHxHw" role="3MwsjC">
-          <property role="3MwjfP" value="An plugin for MPS that allows to publish modules, models and nodes in a mongo DB instance. " />
+          <property role="3MwjfP" value="A plugin that allows to publish MPS modules on the web. Access to &quot;url&quot; to see your published modules." />
         </node>
       </node>
     </node>
     <node concept="2G$12M" id="5L4pdtyHuJj" role="3989C9">
-      <property role="TrG5h" value="MPS_Model_Publishing" />
+      <property role="TrG5h" value="MPS_Web_Publisher" />
       <node concept="1E1JtA" id="5L4pdtyHuJc" role="2G$12L">
         <property role="BnDLt" value="true" />
         <property role="TrG5h" value="com.mongodb.driver" />

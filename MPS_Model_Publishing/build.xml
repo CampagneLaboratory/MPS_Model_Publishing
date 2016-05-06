@@ -33,14 +33,14 @@
   
   <target name="assemble" depends="classes, declare-mps-tasks">
     <mkdir dir="${build.layout}" />
-    <mkdir dir="${build.tmp}/default/MPS_Model_Publishing-_dl__lbrace_publisher_version_rbrace_.zip" />
-    <mkdir dir="${build.tmp}/default/MPS_Model_Publishing-_dl__lbrace_publisher_version_rbrace_.zip/MPS_Module_Publishing" />
-    <mkdir dir="${build.tmp}/default/MPS_Model_Publishing-_dl__lbrace_publisher_version_rbrace_.zip/MPS_Module_Publishing/META-INF" />
-    <echoxml file="${build.tmp}/default/MPS_Model_Publishing-_dl__lbrace_publisher_version_rbrace_.zip/MPS_Module_Publishing/META-INF/plugin.xml">
+    <mkdir dir="${build.tmp}/default/MPS_Web_Publisher-_dl__lbrace_publisher_version_rbrace_.zip" />
+    <mkdir dir="${build.tmp}/default/MPS_Web_Publisher-_dl__lbrace_publisher_version_rbrace_.zip/MPS_Web_Publishing" />
+    <mkdir dir="${build.tmp}/default/MPS_Web_Publisher-_dl__lbrace_publisher_version_rbrace_.zip/MPS_Web_Publishing/META-INF" />
+    <echoxml file="${build.tmp}/default/MPS_Web_Publisher-_dl__lbrace_publisher_version_rbrace_.zip/MPS_Web_Publishing/META-INF/plugin.xml">
       <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
-        <id>org.campagnelab.ModulePublisher</id>
-        <name>org.campagnelab.ModulePublisher</name>
-        <description>A plugin that allows to publish modules, models and nodes in a selected mongo DB instance. </description>
+        <id>org.campagnelab.WebPublisher</id>
+        <name>org.campagnelab.WebPublisher</name>
+        <description>A plugin that allows to publish MPS modules on the web. Access to "url" to see your published modules.</description>
         <version>${publisher_version}</version>
         <vendor url="http://campagnelab.org">Campagne Laboratory</vendor>
         <depends>jetbrains.mps.core</depends>
@@ -53,8 +53,8 @@
         </extensions>
       </idea-plugin>
     </echoxml>
-    <mkdir dir="${build.tmp}/default/MPS_Model_Publishing-_dl__lbrace_publisher_version_rbrace_.zip/MPS_Module_Publishing/languages" />
-    <mkdir dir="${build.tmp}/default/MPS_Model_Publishing-_dl__lbrace_publisher_version_rbrace_.zip/MPS_Module_Publishing/languages/MPS_Model_Publishing" />
+    <mkdir dir="${build.tmp}/default/MPS_Web_Publisher-_dl__lbrace_publisher_version_rbrace_.zip/MPS_Web_Publishing/languages" />
+    <mkdir dir="${build.tmp}/default/MPS_Web_Publisher-_dl__lbrace_publisher_version_rbrace_.zip/MPS_Web_Publishing/languages/MPS_Web_Publisher" />
     <mkdir dir="${build.tmp}/default/com.mongodb.driver.jar" />
     <mkdir dir="${build.tmp}/default/com.mongodb.driver.jar/META-INF" />
     <echoxml file="${build.tmp}/default/com.mongodb.driver.jar/META-INF/module.xml">
@@ -66,7 +66,7 @@
         <sources jar="com.mongodb.driver-src.jar" descriptor="com.mongodb.driver.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/MPS_Model_Publishing-_dl__lbrace_publisher_version_rbrace_.zip/MPS_Module_Publishing/languages/MPS_Model_Publishing/com.mongodb.driver.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/MPS_Web_Publisher-_dl__lbrace_publisher_version_rbrace_.zip/MPS_Web_Publishing/languages/MPS_Web_Publisher/com.mongodb.driver.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/com.mongodb.driver" />
       <fileset dir="${basedir}/solutions/com.mongodb.driver" includes="icons/**, resources/**" />
       <fileset dir="${basedir}/solutions/com.mongodb.driver/source_gen" includes="**/trace.info, **/exports" />
@@ -75,7 +75,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/solutions-com.mongodb.driver-models">
       <fileset dir="${basedir}/solutions/com.mongodb.driver/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/MPS_Model_Publishing-_dl__lbrace_publisher_version_rbrace_.zip/MPS_Module_Publishing/languages/MPS_Model_Publishing/com.mongodb.driver-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/MPS_Web_Publisher-_dl__lbrace_publisher_version_rbrace_.zip/MPS_Web_Publishing/languages/MPS_Web_Publisher/com.mongodb.driver-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/solutions/com.mongodb.driver/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -106,7 +106,7 @@
         <sources jar="org.campagnelab.circles.plugin-src.jar" descriptor="org.campagnelab.circles.plugin.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/MPS_Model_Publishing-_dl__lbrace_publisher_version_rbrace_.zip/MPS_Module_Publishing/languages/MPS_Model_Publishing/org.campagnelab.circles.plugin.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/MPS_Web_Publisher-_dl__lbrace_publisher_version_rbrace_.zip/MPS_Web_Publishing/languages/MPS_Web_Publisher/org.campagnelab.circles.plugin.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/org.campagnelab.circles.plugin" />
       <fileset dir="${basedir}/solutions/org.campagnelab.circles.plugin" includes="icons/**, resources/**" />
       <fileset dir="${basedir}/solutions/org.campagnelab.circles.plugin/source_gen" includes="**/trace.info, **/exports" />
@@ -115,7 +115,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/solutions-org.campagnelab.circles.plugin-models">
       <fileset dir="${basedir}/solutions/org.campagnelab.circles.plugin/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/MPS_Model_Publishing-_dl__lbrace_publisher_version_rbrace_.zip/MPS_Module_Publishing/languages/MPS_Model_Publishing/org.campagnelab.circles.plugin-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/MPS_Web_Publisher-_dl__lbrace_publisher_version_rbrace_.zip/MPS_Web_Publishing/languages/MPS_Web_Publisher/org.campagnelab.circles.plugin-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/solutions/org.campagnelab.circles.plugin/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -123,9 +123,9 @@
       <zipfileset file="${basedir}/solutions/org.campagnelab.circles.plugin/org.campagnelab.circles.plugin.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/solutions-org.campagnelab.circles.plugin-models" prefix="module/models" />
     </jar>
-    <zip destfile="${build.layout}/MPS_Model_Publishing-${publisher_version}.zip">
-      <zipfileset file="${basedir}/solutions/com.mongodb.driver/mongo-java-driver-3.2.0.jar" prefix="MPS_Module_Publishing" />
-      <fileset dir="${build.tmp}/default/MPS_Model_Publishing-_dl__lbrace_publisher_version_rbrace_.zip" />
+    <zip destfile="${build.layout}/MPS_Web_Publisher-${publisher_version}.zip">
+      <zipfileset file="${basedir}/solutions/com.mongodb.driver/mongo-java-driver-3.2.0.jar" prefix="MPS_Web_Publishing" />
+      <fileset dir="${build.tmp}/default/MPS_Web_Publisher-_dl__lbrace_publisher_version_rbrace_.zip" />
     </zip>
     <echo file="${build.layout}/build.properties">MPS_Model_Publishing.publisher_version=${publisher_version}${line.separator}mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}org.campagnelab.Editor2PDF.version=${org.campagnelab.Editor2PDF.version}</echo>
   </target>
