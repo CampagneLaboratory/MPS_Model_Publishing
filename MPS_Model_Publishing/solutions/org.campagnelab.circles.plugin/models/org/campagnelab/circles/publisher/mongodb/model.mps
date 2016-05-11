@@ -81,6 +81,7 @@
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
+      <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
         <property id="8606350594693632173" name="isTransient" index="eg7rD" />
@@ -1011,12 +1012,22 @@
                   <property role="3SKdUp" value="todo: should we tolerate a failure for a single doc?" />
                 </node>
               </node>
+              <node concept="3cpWs6" id="7eDbMXGKC99" role="3cqZAp">
+                <node concept="3clFbT" id="7eDbMXGKCkf" role="3cqZAk">
+                  <property role="3clFbU" value="false" />
+                </node>
+              </node>
             </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="7eDbMXGKBKK" role="3cqZAp">
+          <node concept="3clFbT" id="7eDbMXGKBXV" role="3cqZAk">
+            <property role="3clFbU" value="true" />
           </node>
         </node>
       </node>
       <node concept="3Tm1VV" id="5Ci2biiLWml" role="1B3o_S" />
-      <node concept="3cqZAl" id="5Ci2biiLWmm" role="3clF45" />
+      <node concept="10P_77" id="7eDbMXGKBzl" role="3clF45" />
     </node>
     <node concept="2tJIrI" id="5Ci2biiLWin" role="jymVt" />
   </node>
@@ -1417,6 +1428,30 @@
       <node concept="3cqZAl" id="5Ci2biiM440" role="3clF45" />
     </node>
     <node concept="2tJIrI" id="5Ci2biiM42R" role="jymVt" />
+    <node concept="3clFb_" id="7eDbMXGKIlU" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="countModules" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="7eDbMXGKIlX" role="3clF47">
+        <node concept="3clFbF" id="7eDbMXGKI_C" role="3cqZAp">
+          <node concept="2OqwBi" id="7eDbMXGKIQQ" role="3clFbG">
+            <node concept="2OqwBi" id="7eDbMXGKIAL" role="2Oq$k0">
+              <node concept="Xjq3P" id="7eDbMXGKI_B" role="2Oq$k0" />
+              <node concept="2OwXpG" id="7eDbMXGKIHi" role="2OqNvi">
+                <ref role="2Oxat5" node="5Ci2biiM42Y" resolve="modules" />
+              </node>
+            </node>
+            <node concept="liA8E" id="7eDbMXGKKxF" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="7eDbMXGKI72" role="1B3o_S" />
+      <node concept="10Oyi0" id="7eDbMXGKIlK" role="3clF45" />
+    </node>
     <node concept="3Tm1VV" id="5Ci2biiM3RD" role="1B3o_S" />
     <node concept="3uibUv" id="5Ci2biiM42H" role="1zkMxy">
       <ref role="3uigEE" node="5Ci2biiM21v" resolve="BaseCirclesDocument" />

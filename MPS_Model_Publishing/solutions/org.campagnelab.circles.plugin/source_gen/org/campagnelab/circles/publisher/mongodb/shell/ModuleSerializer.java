@@ -10,7 +10,10 @@ import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.campagnelab.circles.publisher.mongodb.model.ProjectDocument;
 import org.campagnelab.circles.publisher.mongodb.model.ModuleDocument;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.project.Solution;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.apache.log4j.Level;
 import org.campagnelab.circles.publisher.mongodb.model.ModelDocument;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.campagnelab.circles.publisher.mongodb.model.RootNodeDocument;
@@ -25,6 +28,8 @@ import com.mongodb.client.model.Filters;
 import org.campagnelab.circles.publisher.db.Connection;
 import com.mongodb.client.FindIterable;
 import org.bson.Document;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ModuleSerializer extends Serializer {
   private MongoDbAccess db;
@@ -51,7 +56,21 @@ public class ModuleSerializer extends Serializer {
       ModuleDocument moduleDoc = new ModuleDocument(module.getModuleName());
       moduleDoc.setId(module.getModuleId().toString());
       moduleDoc.setParentProject(projectDoc.getId());
+      if (module instanceof Language) {
+        moduleDoc.setModuleType(ModuleDocument.TYPE.LANGUAGE);
+      } else if (module instanceof Solution) {
+        moduleDoc.setModuleType(ModuleDocument.TYPE.SOLUTION);
+      } else {
+        moduleDoc.setModuleType(ModuleDocument.TYPE.UNKNONWN);
+      }
+
       for (SModel model : module.getModels()) {
+        if (model.getModelName().endsWith("@java_stub")) {
+          if (LOG.isEnabledFor(Level.WARN)) {
+            LOG.warn("Skipping java stubs model " + model.getModelName());
+          }
+          continue;
+        }
         ModelDocument modelDoc = new ModelDocument(model.getModelName());
         modelDoc.setId(model.getModelId().toString());
         modelDoc.setParentModule(moduleDoc.getId());
@@ -71,10 +90,22 @@ public class ModuleSerializer extends Serializer {
         modelsCol.addDocument(modelDoc.toDoc());
         moduleDoc.addModel(modelDoc.getId());
       }
-      modulesCol.addDocument(moduleDoc.toDoc());
-      projectDoc.addModule(moduleDoc.getId());
+      // add the module to the project only if it was accepted in the collection 
+      if (modulesCol.addDocument(moduleDoc.toDoc())) {
+        projectDoc.addModule(moduleDoc.getId());
+      }
     }
-    projectsCol.addDocument(projectDoc.toDoc());
+    if (projectDoc.countModules() > 0) {
+      projectsCol.addDocument(projectDoc.toDoc());
+      if (LOG.isInfoEnabled()) {
+        LOG.info("The project has been successfully published.");
+      }
+
+    } else {
+      if (LOG.isEnabledFor(Level.WARN)) {
+        LOG.warn("The project has not been published: no module selected or all the modules have been already published.");
+      }
+    }
     // TODO: if we close the connection here, the db does not flush properly the new data 
   }
 
@@ -88,7 +119,9 @@ public class ModuleSerializer extends Serializer {
     Bson projectFilter = Filters.and(Filters.and(Filters.eq("name", project.getName()), Filters.eq("createdBy", Connection.username)));
     FindIterable<Document> projects = projectsCol.getCollection().find(projectFilter);
     for (Document p : projects) {
-      dropModules(p.get("moduleId").toString().split(","));
+      if (p.get("moduleId") != null && isNotEmptyString(p.get("moduleId").toString())) {
+        dropModules(p.get("moduleId").toString().split(","));
+      }
     }
     projectsCol.getCollection().deleteMany(projectFilter);
     this.close();
@@ -98,14 +131,20 @@ public class ModuleSerializer extends Serializer {
     Bson moduleFilter = Filters.and(Filters.and(Filters.in("_id", modulesIds), Filters.eq("createdBy", Connection.username)));
     FindIterable<Document> modules = modulesCol.getCollection().find(moduleFilter);
     for (Document module : modules) {
-      Bson modelFilter = Filters.and(Filters.and(Filters.in("_id", module.get("modelId").toString().split(",")), Filters.eq("createdBy", Connection.username)));
-      FindIterable<Document> models = modelsCol.getCollection().find(modelFilter);
-      for (Document model : models) {
-        Bson nodeFilter = Filters.and(Filters.and(Filters.in("modelId", model.get("_id").toString()), Filters.eq("createdBy", Connection.username)));
-        nodesCol.getCollection().deleteMany(nodeFilter);
+      if (module.get("modelId") != null && isNotEmptyString(module.get("modelId").toString())) {
+        Bson modelFilter = Filters.and(Filters.and(Filters.in("_id", module.get("modelId").toString().split(",")), Filters.eq("createdBy", Connection.username)));
+        FindIterable<Document> models = modelsCol.getCollection().find(modelFilter);
+        for (Document model : models) {
+          Bson nodeFilter = Filters.and(Filters.and(Filters.in("modelId", model.get("_id").toString()), Filters.eq("createdBy", Connection.username)));
+          nodesCol.getCollection().deleteMany(nodeFilter);
+        }
+        modelsCol.getCollection().deleteMany(modelFilter);
       }
-      modelsCol.getCollection().deleteMany(modelFilter);
     }
     modulesCol.getCollection().deleteMany(moduleFilter);
+  }
+  protected static Logger LOG = LogManager.getLogger(ModuleSerializer.class);
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }

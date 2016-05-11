@@ -24,4 +24,7 @@ public class ProjectDocument extends BaseCirclesDocument {
     this.document.append("moduleId", String.join(",", this.modules));
   }
 
+  public int countModules() {
+    return this.modules.size();
+  }
 }

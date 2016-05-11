@@ -6,6 +6,7 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import com.mongodb.client.MongoCollection;
 import org.campagnelab.circles.publisher.db.Connection;
+import com.mongodb.MongoWriteException;
 
 public class MongoDbCollection {
 
@@ -41,9 +42,15 @@ public class MongoDbCollection {
     return false;
   }
 
-  public void addDocument(Document document) {
+  public boolean addDocument(Document document) {
     document.append("createdBy", Connection.username);
-    this.getCollection().insertOne(document);
+    try {
+      this.getCollection().insertOne(document);
+    } catch (MongoWriteException mwe) {
+      // todo: should we tolerate a failure for a single doc? 
+      return false;
+    }
+    return true;
   }
 
 }

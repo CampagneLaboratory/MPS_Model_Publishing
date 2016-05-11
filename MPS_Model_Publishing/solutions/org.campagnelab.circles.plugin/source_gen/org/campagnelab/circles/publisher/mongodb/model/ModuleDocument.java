@@ -9,6 +9,29 @@ import java.util.Collections;
 public class ModuleDocument extends BaseCirclesDocument {
 
   private String parentProjectId;
+  private ModuleDocument.TYPE type;
+  public static   enum TYPE {
+    LANGUAGE() {
+      public String toString() {
+        return "language";
+      }
+
+    },
+    SOLUTION() {
+      public String toString() {
+        return "solution";
+      }
+
+    },
+    UNKNONWN() {
+      public String toString() {
+        return "unknown";
+      }
+
+    };
+
+    public abstract String toString();
+  }
   private List<String> models;
 
   public ModuleDocument(String name) {
@@ -32,5 +55,11 @@ public class ModuleDocument extends BaseCirclesDocument {
   public String getParentProject() {
     return this.parentProjectId;
   }
-
+  public ModuleDocument.TYPE getModuleType() {
+    return this.type;
+  }
+  public void setModuleType(ModuleDocument.TYPE type) {
+    this.type = type;
+    this.document.append("type", type.toString());
+  }
 }

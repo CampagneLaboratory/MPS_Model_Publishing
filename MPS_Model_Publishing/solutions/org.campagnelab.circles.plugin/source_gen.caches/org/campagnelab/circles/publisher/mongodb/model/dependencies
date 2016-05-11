@@ -35,6 +35,7 @@
     <classNode dependClassName="org.campagnelab.circles.publisher.mongodb.model.MongoDbCollection" />
   </dependency>
   <dependency className="org.campagnelab.circles.publisher.mongodb.model.MongoDbCollection" file="MongoDbCollection.java">
+    <classNode dependClassName="com.mongodb.MongoWriteException" />
     <classNode dependClassName="com.mongodb.client.MongoCollection" />
     <classNode dependClassName="com.mongodb.client.MongoDatabase" />
     <classNode dependClassName="java.lang.Class" />
