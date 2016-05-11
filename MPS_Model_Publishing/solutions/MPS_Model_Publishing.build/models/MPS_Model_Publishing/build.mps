@@ -262,11 +262,11 @@
       </node>
       <node concept="2iUeEo" id="5L4pdtyHxFH" role="2iVFfd">
         <property role="2iUeEt" value="Campagne Laboratory" />
-        <property role="2iUeEu" value="http://campagnelab.org" />
+        <property role="2iUeEu" value="http://circles.campagnelab.org/" />
       </node>
       <node concept="3_J27D" id="5L4pdtyHxHc" role="3s6cr7">
         <node concept="3Mxwew" id="5L4pdtyHxHw" role="3MwsjC">
-          <property role="3MwjfP" value="A plugin that allows to publish MPS modules on the web. Access to &quot;url&quot; to see your published modules." />
+          <property role="3MwjfP" value="A plugin that allows to publish MPS modules on the web. See http://circles.campagnelab.org/." />
         </node>
       </node>
     </node>

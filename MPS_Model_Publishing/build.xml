@@ -40,9 +40,9 @@
       <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
         <id>org.campagnelab.WebPublisher</id>
         <name>org.campagnelab.WebPublisher</name>
-        <description>A plugin that allows to publish MPS modules on the web. Access to "url" to see your published modules.</description>
+        <description>A plugin that allows to publish MPS modules on the web. See http://circles.campagnelab.org/.</description>
         <version>${publisher_version}</version>
-        <vendor url="http://campagnelab.org">Campagne Laboratory</vendor>
+        <vendor url="http://circles.campagnelab.org/">Campagne Laboratory</vendor>
         <depends>jetbrains.mps.core</depends>
         <depends>org.campagnelab.Editor2PDF</depends>
         <depends>jetbrains.mps.ide.devkit</depends>
